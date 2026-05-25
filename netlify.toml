@@ -1,0 +1,48 @@
+[[redirects]]
+  from = "/"
+  to = "/snapenglish-homepage.html"
+  status = 200
+
+[[redirects]]
+  from = "/methode"
+  to = "/snapenglish-methode.html"
+  status = 200
+
+[[redirects]]
+  from = "/formations/anglais-medical"
+  to = "/snapenglish-anglais-medical.html"
+  status = 200
+
+[[redirects]]
+  from = "/formations/anglais-professionnel"
+  to = "/snapenglish-anglais-professionnel.html"
+  status = 200
+
+[[redirects]]
+  from = "/formations/anglais-deplacements"
+  to = "/snapenglish-anglais-deplacements.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/sound-less-french"
+  to = "/snapenglish-shop-sound-less-french.html"
+  status = 200
+
+[[redirects]]
+  from = "/cpf"
+  to = "/snapenglish-cpf.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=86400"
