@@ -5,8 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comment utiliser son CPF pour une formation anglais à distance | SnapEnglish</title>
   <meta name="description" content="Utilisez votre CPF pour financer une formation anglais à distance. Processus simple, programme sur mesure, organisme certifié Qualiopi. Reste à charge : 150 €." />
+  <meta name="keywords" content="formation anglais CPF, formation anglais à distance, CPF anglais, cours anglais en ligne CPF, organisme formation anglais Qualiopi" />
   <link rel="canonical" href="https://www.snapenglish.fr/blog/comment-utiliser-cpf-formation-anglais-distance" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Comment utiliser son CPF pour une formation anglais à distance | SnapEnglish" />
+  <meta property="og:description" content="Vous avez des droits CPF et vous souhaitez progresser en anglais professionnel ? Découvrez comment financer votre formation anglais à distance en quelques étapes simples. Reste à charge : 150 €." />
+  <meta property="og:url" content="https://www.snapenglish.fr/blog/comment-utiliser-cpf-formation-anglais-distance" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="SnapEnglish" />
+  <meta property="article:published_time" content="2026-05-18" />
+  <meta property="article:author" content="Caroline Cousin" />
+
+  <!-- Schema JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -18,10 +30,11 @@
     "author": {
       "@type": "Person",
       "name": "Caroline Cousin",
-      "url": "https://www.snapenglish.fr/a-propos"
+      "jobTitle": "Formatrice d'anglais certifiée",
+      "url": "https://www.snapenglish.fr"
     },
     "publisher": {
-      "@type": "EducationalOrganization",
+      "@type": "Organization",
       "name": "SnapEnglish",
       "url": "https://www.snapenglish.fr"
     },
@@ -32,137 +45,405 @@
   }
   </script>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <style>
+    /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --cream: #F7F4EF; --warm: #EDE8DF; --sand: #D4C9B4;
-      --navy: #1B2A4A; --navy-light: #2A3F6F; --charcoal: #2C2C2C;
-      --gold: #B8975A; --white: #FDFCFA;
+      --cream:   #F7F4EF;
+      --warm:    #EDE8DF;
+      --sand:    #D4C9B4;
+      --navy:    #1B2A4A;
+      --navy-light: #2A3F6F;
+      --charcoal: #2C2C2C;
+      --gold:    #B8975A;
+      --white:   #FDFCFA;
+
       --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-      --max: 1200px; --gutter: clamp(1.5rem, 5vw, 4rem);
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      --max: 800px;
+      --gutter: clamp(1.5rem, 5vw, 4rem);
     }
+
     html { scroll-behavior: smooth; }
-    body { background: var(--cream); color: var(--charcoal); font-family: var(--font-body); font-size: 1rem; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
-    @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
-    .reveal { opacity:0; transform:translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity:1; transform:translateY(0); }
-
-    /* NAV */
-    nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.25rem var(--gutter); display:flex; align-items:center; justify-content:space-between; background:rgba(247,244,239,0.92); backdrop-filter:blur(12px); border-bottom:1px solid rgba(180,160,120,0.15); transition:box-shadow 0.3s; }
-    nav.scrolled { box-shadow:0 2px 24px rgba(27,42,74,0.08); }
-    .nav-logo { text-decoration:none; }
-    .nav-links { display:flex; align-items:center; gap:2rem; list-style:none; }
-    .nav-links a { font-size:0.85rem; font-weight:500; letter-spacing:0.04em; text-transform:uppercase; color:var(--navy); text-decoration:none; opacity:0.75; transition:opacity 0.2s; }
-    .nav-links a:hover { opacity:1; }
-    .nav-cta { background:var(--navy) !important; color:var(--cream) !important; opacity:1 !important; padding:0.55rem 1.25rem; border-radius:2px; font-size:0.8rem !important; }
-    .nav-mobile-btn { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
-    .nav-mobile-btn span { display:block; width:24px; height:2px; background:var(--navy); }
-
-    /* BREADCRUMB */
-    .breadcrumb { padding: 6rem var(--gutter) 0; max-width: var(--max); margin: 0 auto; }
-    .breadcrumb-inner { display:flex; align-items:center; gap:0.5rem; font-size:0.75rem; font-weight:500; color:var(--navy); opacity:0.5; }
-    .breadcrumb-inner a { color:inherit; text-decoration:none; }
-    .breadcrumb-inner span { opacity:0.4; }
-
-    /* ARTICLE LAYOUT */
-    .article-wrapper { max-width: 780px; margin: 0 auto; padding: 3rem var(--gutter) 5rem; }
-
-    .article-meta { display:flex; align-items:center; gap:1rem; margin-bottom:2rem; flex-wrap:wrap; }
-    .article-category { display:inline-flex; align-items:center; gap:0.6rem; font-size:0.72rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); }
-    .article-category::before { content:''; display:block; width:1.5rem; height:1px; background:var(--gold); }
-    .article-date { font-size:0.78rem; font-weight:300; color:var(--charcoal); opacity:0.5; }
-    .article-read { font-size:0.78rem; font-weight:300; color:var(--charcoal); opacity:0.5; }
-    .article-sep { font-size:0.78rem; color:var(--charcoal); opacity:0.25; }
-
-    .article-title { font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.8rem); font-weight:400; color:var(--navy); line-height:1.15; letter-spacing:-0.02em; margin-bottom:1.5rem; }
-    .article-title em { font-style:italic; color:var(--gold); }
-
-    .article-byline { font-size:0.82rem; font-weight:300; color:var(--charcoal); opacity:0.55; font-style:italic; margin-bottom:2.5rem; padding-bottom:2rem; border-bottom:1px solid var(--sand); }
-
-    .article-body h2 { font-family:var(--font-display); font-size:1.5rem; font-weight:500; color:var(--navy); margin:2.5rem 0 1rem; line-height:1.3; }
-    .article-body h3 { font-family:var(--font-display); font-size:1.15rem; font-weight:500; color:var(--navy); margin:2rem 0 0.75rem; }
-    .article-body p { font-size:1rem; font-weight:300; color:var(--charcoal); line-height:1.85; margin-bottom:1.25rem; }
-    .article-body strong { font-weight:500; color:var(--navy); }
-    .article-body ul, .article-body ol { margin:1rem 0 1.5rem 1.5rem; }
-    .article-body li { font-size:1rem; font-weight:300; color:var(--charcoal); line-height:1.75; margin-bottom:0.4rem; }
-    .article-body a { color:var(--navy); font-weight:400; text-decoration:underline; text-underline-offset:3px; transition:color 0.2s; }
-    .article-body a:hover { color:var(--gold); }
-
-    .article-highlight { background:var(--warm); border-left:3px solid var(--gold); padding:1.5rem 1.75rem; margin:2rem 0; }
-    .article-highlight p { margin-bottom:0; font-size:0.95rem; }
-
-    .article-step { display:grid; grid-template-columns:2.5rem 1fr; gap:1rem; padding:1.25rem 0; border-bottom:1px solid var(--sand); }
-    .article-step:last-child { border-bottom:none; }
-    .step-num { font-family:var(--font-display); font-size:1rem; color:var(--gold); padding-top:0.1rem; }
-    .step-content h3 { margin:0 0 0.5rem; font-size:1rem; }
-    .step-content p { margin-bottom:0; font-size:0.92rem; }
-
-    .faq-block { margin:2.5rem 0; }
-    .faq-item { border-bottom:1px solid var(--sand); }
-    .faq-question { width:100%; background:none; border:none; text-align:left; padding:1.1rem 0; font-family:var(--font-body); font-size:0.92rem; font-weight:500; color:var(--navy); cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:1rem; transition:color 0.2s; }
-    .faq-question:hover { color:var(--gold); }
-    .faq-icon { font-size:1.1rem; color:var(--gold); flex-shrink:0; transition:transform 0.3s; }
-    .faq-item.open .faq-icon { transform:rotate(45deg); }
-    .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s; }
-    .faq-item.open .faq-answer { max-height:300px; padding-bottom:1.1rem; }
-    .faq-answer p { font-size:0.88rem; font-weight:300; color:var(--charcoal); opacity:0.8; line-height:1.8; margin-bottom:0; }
-
-    .article-author { background:var(--white); border-left:3px solid var(--gold); padding:1.5rem 1.75rem; margin:3rem 0 2rem; display:flex; flex-direction:column; gap:0.4rem; }
-    .author-label { font-size:0.7rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); }
-    .author-name { font-family:var(--font-display); font-size:1rem; color:var(--navy); }
-    .author-bio { font-size:0.85rem; font-weight:300; color:var(--charcoal); opacity:0.7; line-height:1.6; }
-
-    .article-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin:2rem 0; }
-    .article-tag { font-size:0.72rem; font-weight:500; letter-spacing:0.06em; color:var(--navy); border:1px solid var(--sand); padding:0.3rem 0.7rem; opacity:0.6; }
-
-    /* CTA */
-    .cta-section { background:var(--navy); padding:clamp(3rem,6vw,5rem) var(--gutter); text-align:center; }
-    .cta-inner { max-width:640px; margin:0 auto; }
-    .cta-title { font-family:var(--font-display); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:400; color:var(--cream); line-height:1.3; margin-bottom:1rem; }
-    .cta-title em { font-style:italic; color:var(--gold); }
-    .cta-sub { font-size:0.9rem; font-weight:300; color:rgba(247,244,239,0.6); margin-bottom:2rem; line-height:1.7; }
-    .cta-actions { display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap; }
-    .btn-gold { background:var(--gold); color:var(--navy); padding:0.9rem 2rem; font-family:var(--font-body); font-size:0.88rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; text-decoration:none; border:2px solid var(--gold); border-radius:2px; transition:background 0.25s; }
-    .btn-gold:hover { background:#c9a96a; }
-    .btn-secondary-light { font-size:0.88rem; font-weight:500; color:rgba(247,244,239,0.7); text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; transition:color 0.2s; }
-    .btn-secondary-light:hover { color:var(--cream); }
-
-    /* FOOTER */
-    footer { background:#111827; padding:3rem var(--gutter) 2rem; }
-    .footer-inner { max-width:var(--max); margin:0 auto; }
-    .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:3rem; padding-bottom:2.5rem; border-bottom:1px solid rgba(255,255,255,0.07); }
-    .footer-logo { margin-bottom:0.75rem; }
-    .footer-tagline { font-size:0.82rem; font-weight:300; color:rgba(247,244,239,0.45); line-height:1.6; max-width:220px; }
-    .footer-contact { margin-top:1.25rem; display:flex; flex-direction:column; gap:0.35rem; }
-    .footer-contact a { font-size:0.8rem; font-weight:300; color:rgba(247,244,239,0.55); text-decoration:none; transition:color 0.2s; }
-    .footer-contact a:hover { color:var(--gold); }
-    .footer-col-title { font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(247,244,239,0.4); margin-bottom:1rem; }
-    .footer-links { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
-    .footer-links a { font-size:0.82rem; font-weight:300; color:rgba(247,244,239,0.55); text-decoration:none; transition:color 0.2s; }
-    .footer-links a:hover { color:var(--cream); }
-    .footer-bottom { display:flex; align-items:center; justify-content:space-between; padding-top:1.5rem; flex-wrap:wrap; gap:1rem; }
-    .footer-copy { font-size:0.75rem; color:rgba(247,244,239,0.25); }
-    .footer-certifs { display:flex; align-items:center; gap:1rem; }
-    .footer-certif-badge { font-size:0.7rem; font-weight:500; letter-spacing:0.06em; color:rgba(247,244,239,0.35); border:1px solid rgba(255,255,255,0.1); padding:0.25rem 0.6rem; }
-
-    @media (max-width:900px) {
-      .footer-grid { grid-template-columns:1fr 1fr; }
-      .nav-links { display:none; }
-      .nav-mobile-btn { display:flex; }
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
     }
-    @media (max-width:600px) {
-      .footer-grid { grid-template-columns:1fr; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(247, 244, 239, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(180, 160, 120, 0.15);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(27, 42, 74, 0.08); }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-cta {
+      background: var(--navy);
+      color: var(--cream) !important;
+      opacity: 1 !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: 2px;
+      font-size: 0.8rem !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--navy-light) !important; }
+
+    .nav-mobile-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-mobile-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      transition: 0.3s;
+    }
+
+    /* ── ARTICLE LAYOUT ── */
+    .article-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 7rem var(--gutter) 5rem;
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2.5rem;
+    }
+    .breadcrumb a {
+      color: var(--gold);
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .breadcrumb a:hover { opacity: 1; }
+    .breadcrumb span { opacity: 0.4; }
+
+    /* ── ARTICLE HEADER ── */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: var(--charcoal);
+      opacity: 0.55;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .article-meta .cat {
+      background: var(--warm);
+      color: var(--navy);
+      opacity: 1;
+      padding: 0.2rem 0.7rem;
+      border-radius: 2px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .article-subtitle {
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      opacity: 0.7;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+
+    .article-divider {
+      width: 3rem;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 3rem;
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 500;
+      color: var(--navy);
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .article-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+
+    .article-body p {
+      margin-bottom: 1.25rem;
+      color: var(--charcoal);
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-body strong { color: var(--navy); }
+
+    .article-body a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity 0.2s;
+    }
+    .article-body a:hover { opacity: 0.75; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--warm);
+      border-left: 3px solid var(--gold);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout p { margin-bottom: 0; }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      background: var(--navy);
+      color: var(--cream);
+      padding: 2.5rem;
+      border-radius: 4px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    .cta-block p {
+      color: rgba(247,244,239,0.85);
+      margin-bottom: 1.5rem;
+    }
+    .cta-block a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.75rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+    .cta-block a:hover { opacity: 0.85; }
+    .cta-block .cta-note {
+      font-size: 0.8rem;
+      opacity: 0.55;
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* ── AUTHOR BIO ── */
+    .author-bio {
+      border-top: 1px solid var(--sand);
+      margin-top: 4rem;
+      padding-top: 2rem;
+      font-size: 0.875rem;
+      color: var(--charcoal);
+      opacity: 0.65;
+      font-style: italic;
+    }
+
+    /* ── TAGS ── */
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+    }
+    .article-tags span {
+      background: var(--warm);
+      color: var(--navy);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 2px;
+      opacity: 0.8;
+    }
+
+    /* ── BACK TO BLOG ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0.65;
+      margin-top: 3rem;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 1; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(247,244,239,0.7);
+      padding: 3rem var(--gutter) 2rem;
+      margin-top: 5rem;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-tagline {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+    }
+    .footer-contact a {
+      color: rgba(247,244,239,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-col-title {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a {
+      color: rgba(247,244,239,0.55);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy { font-size: 0.8rem; opacity: 0.4; }
+    .footer-certifs { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .footer-certif-badge {
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(184,151,90,0.35);
+      color: var(--gold);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      opacity: 0.7;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .article-wrap { padding-top: 5.5rem; }
     }
   </style>
 </head>
+
 <body>
 
+<!-- ── NAVIGATION ── -->
 <nav id="nav" role="navigation" aria-label="Navigation principale">
   <a href="/" class="nav-logo" aria-label="SnapEnglish - Accueil">
     <svg width="148" height="34" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -184,199 +465,152 @@
   </button>
 </nav>
 
-<div class="breadcrumb">
-  <nav class="breadcrumb-inner" aria-label="Fil d'Ariane">
-    <a href="/">Accueil</a>
-    <span>›</span>
-    <a href="/blog">Blog</a>
-    <span>›</span>
-    <span aria-current="page">Formation anglais CPF à distance</span>
-  </nav>
-</div>
-
+<!-- ── ARTICLE ── -->
 <main>
-<article class="article-wrapper" itemscope itemtype="https://schema.org/Article">
+  <article class="article-wrap">
 
-  <div class="article-meta">
-    <span class="article-category">Formation CPF</span>
-    <span class="article-sep">·</span>
-    <span class="article-date">18 mai 2026</span>
-    <span class="article-sep">·</span>
-    <span class="article-read">7 min de lecture</span>
-  </div>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a>
+      <span>›</span>
+      <a href="/blog">Blog</a>
+      <span>›</span>
+      <span>Formation CPF</span>
+    </nav>
 
-  <h1 class="article-title" itemprop="headline">
-    Comment utiliser son CPF pour une formation<br>
-    <em>anglais à distance</em>
-  </h1>
+    <header>
+      <div class="article-meta">
+        <span class="cat">Formation CPF</span>
+        <span>18 mai 2026</span>
+        <span>7 min de lecture</span>
+      </div>
 
-  <p class="article-byline">Dernière mise à jour : mai 2026 · Par Caroline Cousin, formatrice d'anglais certifiée</p>
+      <h1 class="article-title">Comment utiliser son CPF pour une formation anglais à distance</h1>
+      <p class="article-subtitle">Par Caroline Cousin, formatrice d'anglais certifiée — Dernière mise à jour : mai 2026</p>
+      <div class="article-divider"></div>
+    </header>
 
-  <div class="article-body" itemprop="articleBody">
+    <div class="article-body">
 
-    <div class="article-highlight">
-      <p><strong>Une formation anglais à distance CPF</strong>, c'est un programme d'apprentissage de l'anglais professionnel, suivi entièrement en visio avec un formateur certifié, et financé via vos droits sur votre Compte Personnel de Formation. Elle s'adresse à tout actif en France souhaitant progresser en anglais pour des raisons professionnelles, sans avancer de frais dans la grande majorité des cas.</p>
+      <p><strong>Une formation anglais à distance financée par le CPF, c'est quoi ?</strong></p>
+      <p>Une formation anglais à distance CPF est un programme d'apprentissage de l'anglais professionnel, suivi entièrement en visio avec un formateur certifié, et financé via les droits disponibles sur votre Compte Personnel de Formation. Elle s'adresse à tout actif en France souhaitant progresser en anglais pour des raisons professionnelles, sans avancer de frais dans la grande majorité des cas.</p>
+
+      <p>Vous avez entendu parler du CPF, mais vous ne savez pas exactement comment ça fonctionne pour financer une formation en anglais ?</p>
+      <p>Vous n'êtes pas seul(e). Beaucoup de professionnels ont des droits disponibles sur leur compte mais ne franchissent jamais le pas, faute de savoir par où commencer.</p>
+      <p>Bonne nouvelle : le processus est plus simple qu'il n'y paraît. Et une formation anglais à distance financée par le CPF, c'est tout à fait possible, et même très courant.</p>
+      <p>Voici tout ce que vous devez savoir, étape par étape.</p>
+
+      <h2>1. Qu'est-ce que le CPF ?</h2>
+      <p>Le CPF, ou Compte Personnel de Formation, est un dispositif qui permet à chaque actif en France d'accumuler des droits pour financer des formations professionnelles.</p>
+      <p>Ces droits sont exprimés en euros et disponibles sur la plateforme <strong>Mon Compte Formation</strong> (<a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener">moncompteformation.gouv.fr</a>). Ils s'accumulent automatiquement chaque année, tant que vous êtes en activité (salarié, indépendant, demandeur d'emploi…).</p>
+      <p>En pratique, la plupart des actifs disposent de plusieurs centaines d'euros, parfois plus de 1 000 €, selon leur ancienneté et leur situation professionnelle.</p>
+
+      <p><strong>Qui peut en bénéficier ?</strong></p>
+      <ul>
+        <li>Les salariés du secteur privé</li>
+        <li>Les travailleurs indépendants</li>
+        <li>Les demandeurs d'emploi</li>
+        <li>Les agents de la fonction publique</li>
+      </ul>
+
+      <p>Selon le rapport annuel 2024 de la Caisse des Dépôts, 40,1 millions d'actifs en France sont aujourd'hui titulaires d'un CPF alimenté.</p>
+      <p>En 2025, deux des cinq formations les plus financées par le CPF sont dédiées à la maîtrise de l'anglais, confirmation que l'anglais professionnel est devenu une compétence incontournable pour les actifs français.</p>
+
+      <h2>2. Pourquoi choisir une formation anglais à distance ?</h2>
+      <p>Avant de vous expliquer comment procéder, voici pourquoi le format à distance est souvent le meilleur choix pour les professionnels.</p>
+
+      <p><strong>La flexibilité avant tout.</strong> Une formation en visio s'adapte à votre agenda, pas l'inverse. Pas besoin de vous déplacer, pas de trajet à prévoir. Vous vous connectez depuis votre bureau ou votre domicile, au moment qui vous convient.</p>
+      <p><strong>Un suivi véritablement personnalisé.</strong> Contrairement aux cours en groupe, les séances individuelles à distance permettent de travailler exactement sur ce dont vous avez besoin : prise de parole en réunion, emails professionnels, vocabulaire de votre secteur d'activité…</p>
+      <p><strong>Des résultats concrets et plus rapides.</strong> Parce que chaque séance est centrée sur vous, vous progressez plus vite qu'en cours collectif. Vous pratiquez réellement l'anglais à chaque séance, sans temps d'attente.</p>
+      <p><strong>Un cadre sérieux et encadré.</strong> Une formation CPF à distance n'est pas une application mobile ou des tutoriels en ligne. C'est un programme structuré, avec un formateur qualifié, des objectifs définis et un suivi de votre progression.</p>
+
+      <h2>3. Des exemples concrets : à quoi ressemble une formation sur mesure ?</h2>
+      <p>Chaque formation SnapEnglish est construite autour d'un objectif réel, d'un métier précis, d'une situation concrète. Voici quatre exemples de clientes accompagnées récemment.</p>
+
+      <h3>Une infirmière qui prépare son exercice en Australie</h3>
+      <p>Pour exercer en Australie, les professionnels de santé formés en France doivent valider un équivalent de leur diplôme en anglais, un examen qui comporte une partie théorique et une partie pratique.</p>
+      <p>Cette cliente a suivi une formation SnapEnglish "anglais infirmier" entièrement dédiée à cet objectif : réussir son examen pour exercer en Australie. Elle vient de réussir la partie théorique !</p>
+      <p>Nous travaillons maintenant la partie pratique : comment mettre à l'aise un patient, lui expliquer les soins étape par étape, parler de la douleur, rassurer dans des moments difficiles. Des situations qui demandent non seulement du vocabulaire médical, mais aussi une vraie aisance à l'oral dans des contextes émotionnellement chargés.</p>
+
+      <div class="callout">
+        <p>Vous travaillez dans le secteur médical ? Découvrez notre article ➜ <a href="/blog/vocabulaire-medical-en-anglais-symptomes">Vocabulaire médical en anglais : comment décrire les symptômes pour les soignants</a></p>
+      </div>
+
+      <h3>Une vétérinaire qui anime des formations commerciales en anglais</h3>
+      <p>Cette cliente commercialise un appareil neurologique auprès d'acheteurs vétérinaires anglophones. Son défi : animer elle-même les formations produit en anglais, face à un public d'experts.</p>
+      <p>Nous avons travaillé le vocabulaire spécifique à son domaine, les formulations naturelles pour structurer une présentation, et surtout la capacité à répondre aux questions avec clarté et assurance. Chaque séance inclut des simulations de questions d'audience, les vraies objections, les vraies demandes de précision, pour qu'elle s'entraîne dans des conditions proches de la réalité.</p>
+
+      <h3>Une professionnelle du digital qui échange sur des stratégies marketing en anglais</h3>
+      <p>Cette cliente travaille dans le secteur du digital et doit régulièrement échanger en anglais avec des interlocuteurs anglophones : calls professionnels, workshops, et salons à Paris où les échanges se font naturellement en anglais.</p>
+      <p>Son besoin était très précis : ne plus chercher ses mots quand il s'agit d'expliquer une stratégie marketing, d'argumenter un choix créatif ou de participer activement à un workshop. Nous avons travaillé à partir de ses échanges réels, en reproduisant des conversations types avec un vocabulaire professionnel naturel, adapté à son univers. La fluidité qui s'est installée au fil des séances lui permet aujourd'hui d'aborder ces situations avec beaucoup plus d'assurance.</p>
+
+      <h3>Une professionnelle qui voyageait beaucoup mais bloquait hors des réunions</h3>
+      <p>Cette cliente se déplace régulièrement à l'étranger pour rencontrer ses clients. En contexte professionnel — réunions, présentations, échanges techniques — elle s'en sortait bien. Mais dès que la conversation devenait informelle, un repas, un trajet, une soirée avec les clients, elle se sentait bloquée, incapable de trouver ses mots.</p>
+      <p>Nous avons travaillé à partir de ses expériences passées : les situations gênantes, les sujets de conversation auxquels elle avait déjà été confrontée, les moments où elle avait décroché. Séance après séance, nous avons enrichi son vocabulaire du quotidien et simulé des échanges spontanés. Depuis sa formation, elle se sent vraiment à l'aise dans ces moments informels — ce qui était, selon ses mots, "un vrai soulagement".</p>
+
+      <h2>4. Comment se déroule une formation anglais à distance CPF avec SnapEnglish ?</h2>
+      <p>Voici le déroulé complet d'une formation anglais à distance avec SnapEnglish, de l'inscription à la dernière séance.</p>
+
+      <h3>Étape 1 — Vous trouvez la formation sur Mon Compte Formation</h3>
+      <p>Rendez-vous sur <a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener">moncompteformation.gouv.fr</a>, connectez-vous avec France Connect, et recherchez "formation anglais à distance" puis ajoutez dans le filtre organismes de formation : "SNAPENGLISH". Vous accédez directement à notre catalogue officiel, avec les détails de chaque programme et le prix pris en charge par votre CPF.</p>
+      <p>Encore plus simple ➜ <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/resultats?q=%7B%22ou%22:%7B%22modality%22:%22A_DISTANCE%22,%22type%22:%22CP%22%7D,%22debutPagination%22:1,%22nombreOccurences%22:10,%22contexteFormation%22:%22ACTIVITE_PROFESSIONNELLE%22,%22quoi%22:%22ANGLAIS%22,%22quoiReferentiel%22:null,%22nomOrganisme%22:%22SNAPENGLISH%22%7D" target="_blank" rel="noopener">cliquez sur ce lien</a> pour retrouver les formations SnapEnglish dans le CPF.</p>
+
+      <h3>Étape 2 — Vous faites votre demande en ligne</h3>
+      <p>Tout se fait depuis la plateforme MCF : vous sélectionnez la formation, vous vérifiez que votre solde est suffisant, et vous soumettez votre demande en cliquant sur le bouton <strong>"demander un devis"</strong>.</p>
+
+      <h3>Étape 3 — On prend contact pour une évaluation de niveau</h3>
+      <p>Une fois votre dossier validé, nous vous contactons pour fixer un premier rendez-vous. Cet entretien téléphonique de positionnement (gratuit, sans engagement) permet de cerner votre niveau actuel, vos objectifs et vos besoins spécifiques. C'est à partir de là que votre programme personnalisé est construit.</p>
+
+      <h3>Étape 4 — Les séances en visio sur Zoom</h3>
+      <p>Les cours se déroulent en tête-à-tête avec votre formatrice, par visio sur Zoom. Chaque séance dure généralement 1h. Le rythme est défini ensemble selon vos disponibilités — une ou deux fois par semaine, selon votre programme. Pas besoin d'installer quoi que ce soit de compliqué : un ordinateur, tablette ou mobile, une connexion internet, et vous êtes prêt(e).</p>
+
+      <h3>Étape 5 — Le suivi et la progression</h3>
+      <p>Entre les séances, vous recevez des exercices et ressources adaptés à ce que vous avez travaillé. Votre progression est suivie tout au long de la formation. En fin de parcours, une évaluation permet de mesurer les acquis. Enfin, vous passerez un test de niveau de langue en ligne à l'issue de la formation avec un certificateur (Leveltel ou CLOE).</p>
+
+      <h2>5. Les questions fréquentes</h2>
+
+      <p><strong>Est-ce que mon employeur doit valider ma demande ?</strong><br>
+      Non, dans la plupart des cas. Si vous suivez la formation en dehors de vos heures de travail, vous n'avez pas besoin de l'accord de votre employeur. Si vous souhaitez la suivre pendant vos heures de travail, un accord préalable peut être nécessaire.</p>
+
+      <p><strong>Combien de temps dure la formation ?</strong><br>
+      Cela dépend du programme choisi et de vos objectifs. Les formations CPF SnapEnglish durent généralement entre 10h et 20h, étalées sur plusieurs semaines ou mois selon votre rythme.</p>
+
+      <p><strong>À quel niveau peut-on commencer ?</strong><br>
+      Du débutant (A2) au niveau intermédiaire-avancé (B2). L'évaluation de positionnement réalisée avant le début de la formation permet d'adapter le programme à votre niveau réel.</p>
+
+      <p><strong>Que se passe-t-il si mon solde CPF ne couvre pas la totalité du coût ?</strong><br>
+      Selon les cas, un reste à charge peut s'appliquer. Nous vous expliquons tout clairement lors de votre premier contact, sans surprise.</p>
+
+      <div class="callout">
+        <p><strong>Reste à charge CPF : 150 €, pour qui et pourquoi ?</strong><br>
+        Depuis le 2 avril 2026, l'État impose un reste à charge obligatoire de 150 € pour toute formation financée par le CPF. Ce montant est à régler directement par le stagiaire en ligne lors de la validation de votre inscription, sauf si vous êtes demandeur d'emploi — dans ce cas, vous en êtes exonéré(e).</p>
+      </div>
+
+      <div class="cta-block">
+        <p>Utiliser son CPF pour une formation anglais à distance, c'est investir dans une compétence professionnelle concrète. Si vous avez des questions ou souhaitez vérifier votre éligibilité, contactez-moi directement. Je vous réponds dans les 24h.</p>
+        <a href="mailto:contact@snapenglish.fr">contact@snapenglish.fr</a>
+        <p class="cta-note">Ou retrouvez les formations SnapEnglish sur <a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener" style="color:var(--gold);">Mon Compte Formation</a></p>
+      </div>
+
+      <div class="article-tags">
+        <span>Formation anglais CPF</span>
+        <span>Anglais à distance</span>
+        <span>CPF anglais</span>
+        <span>Cours anglais en ligne</span>
+        <span>Anglais professionnel</span>
+        <span>Mon Compte Formation</span>
+        <span>Qualiopi</span>
+        <span>Reste à charge CPF</span>
+      </div>
+
+      <p class="author-bio">Article rédigé par Caroline Cousin — Licenciée en anglais, formatrice en anglais professionnel et fondatrice de SnapEnglish, organisme de formation certifié Qualiopi.</p>
+
+      <a href="/blog" class="back-link">← Retour au blog</a>
+
     </div>
-
-    <p>Vous avez entendu parler du CPF, mais vous ne savez pas exactement comment ça fonctionne pour financer une formation en anglais ? Vous n'êtes pas seul(e). Beaucoup de professionnels ont des droits disponibles sur leur compte mais ne franchissent jamais le pas, faute de savoir par où commencer.</p>
-
-    <p>Bonne nouvelle : le processus est plus simple qu'il n'y paraît. Voici tout ce que vous devez savoir, étape par étape.</p>
-
-    <h2>1. Qu'est-ce que le CPF ?</h2>
-
-    <p>Le CPF, ou Compte Personnel de Formation, est un dispositif qui permet à chaque actif en France d'accumuler des droits pour financer des formations professionnelles. Ces droits sont exprimés en euros et disponibles sur la plateforme <strong>Mon Compte Formation</strong> (<a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener">moncompteformation.gouv.fr</a>). Ils s'accumulent automatiquement chaque année, tant que vous êtes en activité.</p>
-
-    <p>En pratique, la plupart des actifs disposent de plusieurs centaines d'euros, parfois plus de 1 000 €, selon leur ancienneté et leur situation professionnelle.</p>
-
-    <p><strong>Qui peut en bénéficier ?</strong></p>
-    <ul>
-      <li>Les salariés du secteur privé</li>
-      <li>Les travailleurs indépendants</li>
-      <li>Les demandeurs d'emploi</li>
-      <li>Les agents de la fonction publique</li>
-    </ul>
-
-    <p>Selon le rapport annuel 2024 de la Caisse des Dépôts, 40,1 millions d'actifs en France sont aujourd'hui titulaires d'un CPF alimenté. En 2025, deux des cinq formations les plus financées par le CPF sont dédiées à la maîtrise de l'anglais — confirmation que l'anglais professionnel est devenu une compétence incontournable.</p>
-
-    <h2>2. Pourquoi choisir une formation anglais à distance ?</h2>
-
-    <p><strong>La flexibilité avant tout.</strong> Une formation en visio s'adapte à votre agenda, pas l'inverse. Pas besoin de vous déplacer, pas de trajet à prévoir. Vous vous connectez depuis votre bureau ou votre domicile, au moment qui vous convient.</p>
-
-    <p><strong>Un suivi véritablement personnalisé.</strong> Contrairement aux cours en groupe, les séances individuelles à distance permettent de travailler exactement sur ce dont vous avez besoin : prise de parole en réunion, emails professionnels, vocabulaire de votre secteur d'activité.</p>
-
-    <p><strong>Des résultats concrets et plus rapides.</strong> Parce que chaque séance est centrée sur vous, vous progressez plus vite qu'en cours collectif. Vous pratiquez réellement l'anglais à chaque séance, sans temps d'attente.</p>
-
-    <p><strong>Un cadre sérieux et encadré.</strong> Une formation CPF à distance n'est pas une application mobile ou des tutoriels en ligne. C'est un programme structuré, avec un formateur qualifié, des objectifs définis et un suivi de votre progression.</p>
-
-    <h2>3. Des exemples concrets : à quoi ressemble une formation sur mesure ?</h2>
-
-    <p>Chaque formation SnapEnglish est construite autour d'un objectif réel, d'un métier précis, d'une situation concrète. Voici quatre exemples de clientes accompagnées récemment.</p>
-
-    <h3>Une infirmière qui prépare son exercice en Australie</h3>
-    <p>Pour exercer en Australie, les professionnels de santé formés en France doivent valider un équivalent de leur diplôme en anglais — un examen qui comporte une partie théorique et une partie pratique. Cette cliente a suivi une formation SnapEnglish "anglais infirmier" entièrement dédiée à cet objectif. Elle vient de réussir la partie théorique. Nous travaillons maintenant la partie pratique : comment mettre à l'aise un patient, lui expliquer les soins étape par étape, parler de la douleur, rassurer dans des moments difficiles.</p>
-
-    <h3>Une vétérinaire qui anime des formations commerciales en anglais</h3>
-    <p>Cette cliente commercialise un appareil neurologique auprès d'acheteurs vétérinaires anglophones. Son défi : animer elle-même les formations produit en anglais, face à un public d'experts. Nous avons travaillé le vocabulaire spécifique à son domaine, les formulations naturelles pour structurer une présentation, et la capacité à répondre aux questions avec clarté et assurance.</p>
-
-    <h3>Une professionnelle du digital qui échange sur des stratégies marketing en anglais</h3>
-    <p>Cette cliente travaille dans le secteur du digital et doit régulièrement échanger en anglais avec des interlocuteurs anglophones : calls professionnels, workshops, salons. Son besoin : ne plus chercher ses mots quand il s'agit d'expliquer une stratégie marketing ou d'argumenter un choix créatif. La fluidité qui s'est installée au fil des séances lui permet aujourd'hui d'aborder ces situations avec beaucoup plus d'assurance.</p>
-
-    <h3>Une professionnelle qui bloquait hors des réunions formelles</h3>
-    <p>Cette cliente se déplace régulièrement à l'étranger pour rencontrer ses clients. En contexte professionnel, elle s'en sortait bien. Mais dès que la conversation devenait informelle — un repas, un trajet, une soirée avec les clients — elle se sentait bloquée. Depuis sa formation, elle se sent vraiment à l'aise dans ces moments informels, ce qui était, selon ses mots, "un vrai soulagement".</p>
-
-    <h2>4. Comment se déroule une formation anglais à distance CPF avec SnapEnglish ?</h2>
-
-    <div class="article-step">
-      <div class="step-num">01</div>
-      <div class="step-content">
-        <h3>Vous trouvez la formation sur Mon Compte Formation</h3>
-        <p>Rendez-vous sur <a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener">moncompteformation.gouv.fr</a>, connectez-vous avec France Connect, et recherchez "formation anglais à distance" en filtrant par organisme "SNAPENGLISH". Vous accédez directement à notre catalogue officiel.</p>
-      </div>
-    </div>
-    <div class="article-step">
-      <div class="step-num">02</div>
-      <div class="step-content">
-        <h3>Vous faites votre demande en ligne</h3>
-        <p>Tout se fait depuis la plateforme MCF : vous sélectionnez la formation, vous vérifiez que votre solde est suffisant, et vous soumettez votre demande en cliquant sur "demander un devis".</p>
-      </div>
-    </div>
-    <div class="article-step">
-      <div class="step-num">03</div>
-      <div class="step-content">
-        <h3>On prend contact pour une évaluation de niveau</h3>
-        <p>Une fois votre dossier validé, nous vous contactons pour fixer un premier rendez-vous. Cet entretien de positionnement (gratuit, sans engagement) permet de cerner votre niveau actuel, vos objectifs et vos besoins spécifiques.</p>
-      </div>
-    </div>
-    <div class="article-step">
-      <div class="step-num">04</div>
-      <div class="step-content">
-        <h3>Les séances en visio sur Zoom</h3>
-        <p>Les cours se déroulent en tête-à-tête avec votre formatrice, par visio sur Zoom. Chaque séance dure généralement 1h. Le rythme est défini ensemble selon vos disponibilités — une ou deux fois par semaine.</p>
-      </div>
-    </div>
-    <div class="article-step">
-      <div class="step-num">05</div>
-      <div class="step-content">
-        <h3>Le suivi et la certification</h3>
-        <p>Entre les séances, vous recevez des exercices adaptés à ce que vous avez travaillé. En fin de parcours, vous passerez un test de niveau avec un certificateur officiel (LEVELTEL ou CLOE).</p>
-      </div>
-    </div>
-
-    <h2>5. Les questions fréquentes</h2>
-
-    <div class="faq-block">
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          Est-ce que mon employeur doit valider ma demande ?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer"><p>Non, dans la plupart des cas. Si vous suivez la formation en dehors de vos heures de travail, vous n'avez pas besoin de l'accord de votre employeur. Si vous souhaitez la suivre pendant vos heures de travail, un accord préalable peut être nécessaire.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          Combien de temps dure la formation ?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer"><p>Cela dépend du programme choisi et de vos objectifs. Les formations CPF SnapEnglish durent généralement entre 10h et 20h, étalées sur plusieurs semaines ou mois selon votre rythme.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          À quel niveau peut-on commencer ?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer"><p>Du débutant (A2) au niveau intermédiaire-avancé (B2). L'évaluation de positionnement réalisée avant le début de la formation permet d'adapter le programme à votre niveau réel.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          Reste à charge CPF : 150 €, pour qui et pourquoi ?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer"><p>Depuis le 2 avril 2026, l'État impose un reste à charge obligatoire de 150 € pour toute formation financée par le CPF. Ce montant est à régler directement en ligne lors de la validation de votre inscription, sauf si vous êtes demandeur d'emploi — dans ce cas, vous en êtes exonéré(e).</p></div>
-      </div>
-    </div>
-
-    <div class="article-highlight">
-      <p>Vous avez des questions ou souhaitez vérifier votre éligibilité ? Contactez-moi directement à <a href="mailto:contact@snapenglish.fr">contact@snapenglish.fr</a> — je vous réponds dans les 24h.</p>
-    </div>
-
-  </div><!-- /article-body -->
-
-  <div class="article-author">
-    <span class="author-label">Auteure</span>
-    <span class="author-name">Caroline Cousin</span>
-    <span class="author-bio">Licenciée en anglais, formatrice en anglais professionnel et fondatrice de SnapEnglish, organisme de formation certifié Qualiopi. 25 ans d'expérience en formation professionnelle.</span>
-  </div>
-
-  <div class="article-tags" aria-label="Mots-clés">
-    <span class="article-tag">Formation CPF</span>
-    <span class="article-tag">Anglais à distance</span>
-    <span class="article-tag">CPF anglais</span>
-    <span class="article-tag">Mon Compte Formation</span>
-    <span class="article-tag">Anglais professionnel</span>
-    <span class="article-tag">Qualiopi</span>
-  </div>
-
-</article>
+  </article>
 </main>
 
-<!-- CTA -->
-<section class="cta-section" aria-labelledby="cta-title">
-  <div class="cta-inner">
-    <h2 id="cta-title" class="cta-title">
-      Prêt(e) à utiliser votre CPF<br>
-      <em>pour progresser en anglais ?</em>
-    </h2>
-    <p class="cta-sub">
-      Un premier échange gratuit pour comprendre votre situation
-      et construire le parcours qui vous correspond.
-    </p>
-    <div class="cta-actions">
-      <a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener" class="btn-gold">Voir les formations sur CPF</a>
-      <a href="mailto:contact@snapenglish.fr?subject=Formation anglais CPF - Question" class="btn-secondary-light">Échange gratuit →</a>
-    </div>
-  </div>
-</section>
-
+<!-- ── FOOTER ── -->
 <footer role="contentinfo">
   <div class="footer-inner">
     <div class="footer-grid">
@@ -402,22 +636,21 @@
           <li><a href="/formations/anglais-medical">Anglais médical</a></li>
           <li><a href="/formations/anglais-professionnel">Anglais professionnel</a></li>
           <li><a href="/formations/anglais-deplacements">Anglais déplacements</a></li>
+          <li><a href="/cpf">Financement CPF</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">SnapEnglish</div>
         <ul class="footer-links">
           <li><a href="/methode">La méthode</a></li>
-          <li><a href="/a-propos">À propos</a></li>
           <li><a href="/blog">Blog</a></li>
-          <li><a href="/cpf">Financement CPF</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Contact</div>
+        <div class="footer-col-title">Produits</div>
         <ul class="footer-links">
           <li><a href="/shop/sound-less-french">Sound Less French</a></li>
-          <li><a href="/contact">Contact</a></li>
           <li><a href="/mentions-legales">Mentions légales</a></li>
           <li><a href="/politique-de-confidentialite">Confidentialité</a></li>
         </ul>
@@ -425,11 +658,11 @@
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">© 2026 SnapEnglish · Caroline Cousin · Tous droits réservés</span>
-      <div class="footer-certifs" role="list">
-        <span class="footer-certif-badge" role="listitem">Qualiopi</span>
-        <span class="footer-certif-badge" role="listitem">CPF</span>
-        <span class="footer-certif-badge" role="listitem">CLOE</span>
-        <span class="footer-certif-badge" role="listitem">LEVELTEL</span>
+      <div class="footer-certifs">
+        <span class="footer-certif-badge">Qualiopi</span>
+        <span class="footer-certif-badge">CPF</span>
+        <span class="footer-certif-badge">CLOE</span>
+        <span class="footer-certif-badge">LEVELTEL</span>
       </div>
     </div>
   </div>
@@ -437,23 +670,23 @@
 
 <script>
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  reveals.forEach(r => observer.observe(r));
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-question').setAttribute('aria-expanded','false'); });
-    if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
-  }
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
   function toggleMenu() {
     const links = document.querySelector('.nav-links');
     links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-    links.style.cssText += ';flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:1rem 2rem;border-bottom:1px solid var(--sand);';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '70px';
+    links.style.left = '0';
+    links.style.right = '0';
+    links.style.background = 'var(--cream)';
+    links.style.padding = '1rem 2rem';
+    links.style.borderBottom = '1px solid var(--sand)';
   }
 </script>
+
 </body>
 </html>
