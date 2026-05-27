@@ -11,6 +11,11 @@
   to = "/snapenglish-cpf.html"
   status = 200
   
+  [[redirects]]
+  from = "/contact"
+  to = "/snapenglish-contact.html"
+  status = 200
+  
 [[redirects]]
   from = "/methode"
   to = "/snapenglish-methode.html"
