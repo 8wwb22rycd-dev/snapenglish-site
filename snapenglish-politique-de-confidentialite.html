@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité | SnapEnglish</title>
+  <meta name="description" content="Politique de confidentialité et protection des données personnelles — SnapEnglish, organisme de formation anglais certifié Qualiopi." />
+  <link rel="canonical" href="https://www.snapenglish.fr/politique-de-confidentialite" />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F4EF; --warm: #EDE8DF; --sand: #D4C9B4;
+      --navy: #1B2A4A; --navy-light: #2A3F6F; --charcoal: #2C2C2C;
+      --gold: #B8975A; --white: #FDFCFA;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max: 760px; --gutter: clamp(1.5rem, 5vw, 4rem);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--charcoal); font-family: var(--font-body); font-size: 1rem; line-height: 1.7; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; padding: 1.25rem var(--gutter); display: flex; align-items: center; justify-content: space-between; background: rgba(247,244,239,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(180,160,120,0.15); transition: box-shadow 0.3s; }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(27,42,74,0.08); }
+    .nav-logo { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--navy); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--navy); text-decoration: none; opacity: 0.75; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta { background: var(--navy); color: var(--cream) !important; opacity: 1 !important; padding: 0.55rem 1.25rem; border-radius: 2px; font-size: 0.8rem !important; }
+    .nav-mobile-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-mobile-btn span { display: block; width: 24px; height: 2px; background: var(--navy); }
+
+    /* PAGE */
+    .legal-wrap { max-width: var(--max); margin: 0 auto; padding: 9rem var(--gutter) 5rem; }
+    .legal-header { margin-bottom: 3rem; }
+    .legal-header h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .legal-header p { font-size: 1rem; opacity: 0.65; }
+    .legal-divider { width: 3rem; height: 2px; background: var(--gold); margin-top: 1.5rem; }
+
+    .legal-section { margin-bottom: 2.5rem; }
+    .legal-section h2 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; color: var(--navy); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--sand); }
+    .legal-section p { margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--charcoal); opacity: 0.85; }
+    .legal-section ul { padding-left: 1.25rem; margin-bottom: 0.6rem; }
+    .legal-section ul li { font-size: 0.95rem; opacity: 0.85; margin-bottom: 0.35rem; }
+    .legal-section a { color: var(--navy); }
+    .legal-section strong { color: var(--navy); font-weight: 500; }
+
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.75rem; }
+    .rights-item { background: var(--white); border: 1px solid var(--sand); border-radius: 4px; padding: 1rem 1.25rem; }
+    .rights-item strong { display: block; color: var(--navy); font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .rights-item span { font-size: 0.85rem; opacity: 0.75; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(247,244,239,0.7); padding: 3rem var(--gutter) 2rem; margin-top: 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-tagline { font-size: 0.85rem; opacity: 0.6; margin-top: 1rem; line-height: 1.6; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 1.25rem; }
+    .footer-contact a { color: rgba(247,244,239,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-col-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a { color: rgba(247,244,239,0.55); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 0.8rem; opacity: 0.4; }
+    .footer-certifs { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .footer-certif-badge { font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid rgba(184,151,90,0.35); color: var(--gold); padding: 0.2rem 0.6rem; border-radius: 2px; opacity: 0.7; }
+
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } .nav-links { display: none; } .nav-mobile-btn { display: flex; } }
+    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } .rights-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+
+<body>
+<nav id="nav" role="navigation" aria-label="Navigation principale">
+  <a href="/" class="nav-logo" aria-label="SnapEnglish - Accueil">
+    <svg width="148" height="34" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#1B2A4A" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+      <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#B8975A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <text x="34" y="23" font-family="Georgia, serif" font-size="17" font-weight="700" fill="#1B2A4A">Snap</text>
+      <text x="76" y="23" font-family="Georgia, serif" font-size="17" font-weight="400" fill="#B8975A">English</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/formations">Formations CPF</a></li>
+    <li><a href="/methode">Méthode</a></li>
+    <li><a href="/shop/sound-less-french">Shop</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-mobile-btn" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<main>
+  <div class="legal-wrap">
+
+    <div class="legal-header">
+      <h1>Politique de confidentialité</h1>
+      <p>Protection de vos données personnelles — conformément au RGPD (Règlement UE 2016/679) et à la loi Informatique et Libertés.</p>
+      <div class="legal-divider"></div>
+    </div>
+
+    <!-- 1. RESPONSABLE -->
+    <section class="legal-section">
+      <h2>1. Responsable du traitement</h2>
+      <p><strong>Identité :</strong> Caroline Cousin — SnapEnglish</p>
+      <p><strong>Adresse :</strong> Hauts-de-France, France</p>
+      <p><strong>Email :</strong> <a href="mailto:contact@snapenglish.fr">contact@snapenglish.fr</a></p>
+      <p><strong>Téléphone :</strong> 06 80 26 63 14</p>
+    </section>
+
+    <!-- 2. DONNÉES COLLECTÉES -->
+    <section class="legal-section">
+      <h2>2. Données collectées et finalités</h2>
+      <p>SnapEnglish collecte des données personnelles uniquement dans le cadre de ses activités de formation et de communication. Les données collectées et leurs finalités sont les suivantes :</p>
+      <ul>
+        <li><strong>Coordonnées (nom, email, téléphone) :</strong> répondre à vos demandes de contact, gérer votre inscription à une formation.</li>
+        <li><strong>Données de navigation (adresse IP, pages visitées) :</strong> assurer le bon fonctionnement du site et améliorer l'expérience utilisateur — via les journaux serveur de l'hébergeur Netlify uniquement.</li>
+        <li><strong>Données de formation :</strong> suivi pédagogique, émission d'attestations de formation, obligations légales liées à la certification Qualiopi.</li>
+      </ul>
+      <p>Aucune donnée n'est vendue à des tiers. Aucun profilage commercial n'est effectué.</p>
+    </section>
+
+    <!-- 3. BASE LÉGALE -->
+    <section class="legal-section">
+      <h2>3. Base légale des traitements</h2>
+      <ul>
+        <li><strong>Exécution du contrat :</strong> traitement des inscriptions et suivi des formations.</li>
+        <li><strong>Intérêt légitime :</strong> amélioration du site, réponse aux demandes d'information.</li>
+        <li><strong>Obligation légale :</strong> conservation des documents liés à la formation professionnelle (art. L.6353-8 du Code du travail).</li>
+        <li><strong>Consentement :</strong> envoi d'emails marketing ou newsletter, si vous y avez explicitement consenti.</li>
+      </ul>
+    </section>
+
+    <!-- 4. DURÉE DE CONSERVATION -->
+    <section class="legal-section">
+      <h2>4. Durée de conservation</h2>
+      <ul>
+        <li><strong>Données de contact / prospects :</strong> 3 ans à compter du dernier contact.</li>
+        <li><strong>Données clients / stagiaires :</strong> 5 ans après la fin de la formation (obligations comptables et légales).</li>
+        <li><strong>Données de navigation :</strong> 13 mois maximum (journaux serveur Netlify).</li>
+      </ul>
+    </section>
+
+    <!-- 5. DESTINATAIRES -->
+    <section class="legal-section">
+      <h2>5. Destinataires des données</h2>
+      <p>Vos données sont traitées par Caroline Cousin / SnapEnglish et peuvent être transmises aux sous-traitants suivants, dans le cadre strict de leurs missions :</p>
+      <ul>
+        <li><strong>Netlify, Inc.</strong> (hébergement du site web) — USA, soumis aux clauses contractuelles types de la Commission européenne.</li>
+        <li><strong>Zoom Video Communications</strong> (réalisation des cours en visioconférence).</li>
+        <li><strong>Mon Compte Formation / Caisse des Dépôts</strong> (gestion administrative des dossiers CPF).</li>
+      </ul>
+      <p>Aucune donnée n'est transférée hors UE sans garanties appropriées.</p>
+    </section>
+
+    <!-- 6. DROITS -->
+    <section class="legal-section">
+      <h2>6. Vos droits</h2>
+      <p>Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles :</p>
+      <div class="rights-grid">
+        <div class="rights-item"><strong>Droit d'accès</strong><span>Obtenir une copie de vos données.</span></div>
+        <div class="rights-item"><strong>Droit de rectification</strong><span>Corriger des données inexactes.</span></div>
+        <div class="rights-item"><strong>Droit à l'effacement</strong><span>Demander la suppression de vos données.</span></div>
+        <div class="rights-item"><strong>Droit à la portabilité</strong><span>Recevoir vos données dans un format structuré.</span></div>
+        <div class="rights-item"><strong>Droit d'opposition</strong><span>Vous opposer à un traitement fondé sur l'intérêt légitime.</span></div>
+        <div class="rights-item"><strong>Droit à la limitation</strong><span>Suspendre temporairement un traitement.</span></div>
+      </div>
+      <p style="margin-top:1rem;">Pour exercer vos droits, envoyez un email à <a href="mailto:contact@snapenglish.fr">contact@snapenglish.fr</a>. Nous nous engageons à répondre dans un délai d'un mois.</p>
+      <p>Vous pouvez également introduire une réclamation auprès de la <strong>CNIL</strong> (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>), autorité de contrôle française.</p>
+    </section>
+
+    <!-- 7. COOKIES -->
+    <section class="legal-section">
+      <h2>7. Cookies</h2>
+      <p>Ce site n'utilise pas de cookies de publicité, de réseaux sociaux ou d'analyse comportementale (type Google Analytics). Seuls des cookies techniques strictement nécessaires au bon fonctionnement du site peuvent être présents ; ils ne nécessitent pas de consentement au titre de l'article 82 de la loi Informatique et Libertés.</p>
+    </section>
+
+    <!-- 8. SÉCURITÉ -->
+    <section class="legal-section">
+      <h2>8. Sécurité des données</h2>
+      <p>SnapEnglish met en œuvre les mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, destruction ou altération : connexion HTTPS, hébergeur sécurisé, accès restreint aux données.</p>
+    </section>
+
+    <!-- 9. MODIFICATIONS -->
+    <section class="legal-section">
+      <h2>9. Modification de la présente politique</h2>
+      <p>Cette politique de confidentialité peut être mise à jour pour refléter les évolutions légales ou les pratiques de traitement. La date de mise à jour est indiquée en bas de page. En cas de modification substantielle, vous en serez informé par email si vous êtes client ou stagiaire.</p>
+    </section>
+
+    <p style="font-size:0.8rem; opacity:0.5; margin-top:2rem;">Dernière mise à jour : mai 2026</p>
+
+  </div>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="140" height="32" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="rgba(247,244,239,0.8)" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+            <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#B8975A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+            <text x="34" y="23" font-family="Georgia, serif" font-size="17" font-weight="700" fill="rgba(247,244,239,0.9)">Snap</text>
+            <text x="76" y="23" font-family="Georgia, serif" font-size="17" font-weight="400" fill="#B8975A">English</text>
+          </svg>
+        </div>
+        <p class="footer-tagline">Organisme de formation anglais certifié Qualiopi. Cours particuliers 100% en ligne, spécialisé anglais médical et professionnel.</p>
+        <div class="footer-contact">
+          <a href="mailto:contact@snapenglish.fr">contact@snapenglish.fr</a>
+          <a href="tel:+33680266314">06 80 26 63 14</a>
+          <a href="https://www.linkedin.com/in/caroline-cousin-snapenglish/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div><div class="footer-col-title">Formations</div><ul class="footer-links"><li><a href="/formations/anglais-medical">Anglais médical</a></li><li><a href="/formations/anglais-professionnel">Anglais professionnel</a></li><li><a href="/formations/anglais-deplacements">Anglais déplacements</a></li><li><a href="/cpf">Financement CPF</a></li></ul></div>
+      <div><div class="footer-col-title">SnapEnglish</div><ul class="footer-links"><li><a href="/methode">La méthode</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
+      <div><div class="footer-col-title">Produits</div><ul class="footer-links"><li><a href="/shop/sound-less-french">Sound Less French</a></li><li><a href="/mentions-legales">Mentions légales</a></li><li><a href="/politique-de-confidentialite">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 SnapEnglish · Caroline Cousin · Tous droits réservés</span>
+      <div class="footer-certifs"><span class="footer-certif-badge">Qualiopi</span><span class="footer-certif-badge">CPF</span><span class="footer-certif-badge">CLOE</span><span class="footer-certif-badge">LEVELTEL</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+  function toggleMenu() { const l = document.querySelector('.nav-links'); l.style.display = l.style.display === 'flex' ? 'none' : 'flex'; l.style.flexDirection = 'column'; l.style.position = 'absolute'; l.style.top = '70px'; l.style.left = '0'; l.style.right = '0'; l.style.background = 'var(--cream)'; l.style.padding = '1rem 2rem'; l.style.borderBottom = '1px solid var(--sand)'; }
+</script>
+</body>
+</html>

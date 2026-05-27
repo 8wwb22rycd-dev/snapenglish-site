@@ -37,8 +37,23 @@
   status = 200
 
 [[redirects]]
+  from = "/shop"
+  to = "/snapenglish-shop-sound-less-french.html"
+  status = 200
+
+[[redirects]]
   from = "/shop/sound-less-french"
   to = "/snapenglish-shop-sound-less-french.html"
+  status = 200
+
+[[redirects]]
+  from = "/mentions-legales"
+  to = "/snapenglish-mentions-legales.html"
+  status = 200
+
+[[redirects]]
+  from = "/politique-de-confidentialite"
+  to = "/snapenglish-politique-de-confidentialite.html"
   status = 200
 
 [[redirects]]
