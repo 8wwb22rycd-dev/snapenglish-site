@@ -1,0 +1,193 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/snapenglish-homepage.html"
+  status = 200
+  
+[[redirects]]
+  from = "/formations"
+  to = "/snapenglish-cpf.html"
+  status = 200
+  
+  [[redirects]]
+  from = "/contact"
+  to = "/snapenglish-contact.html"
+  status = 200
+  
+[[redirects]]
+  from = "/methode"
+  to = "/snapenglish-methode.html"
+  status = 200
+
+[[redirects]]
+  from = "/formations/anglais-medical"
+  to = "/snapenglish-anglais-medical.html"
+  status = 200
+
+[[redirects]]
+  from = "/formations/anglais-professionnel"
+  to = "/snapenglish-anglais-professionnel.html"
+  status = 200
+
+[[redirects]]
+  from = "/formations/anglais-deplacements"
+  to = "/snapenglish-anglais-deplacements.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop"
+  to = "/snapenglish-shop-sound-less-french.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/sound-less-french"
+  to = "/snapenglish-shop-sound-less-french.html"
+  status = 200
+
+[[redirects]]
+  from = "/cpf"
+  to = "/snapenglish-cpf.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/snapenglish-blog.html"
+  status = 200
+
+# ── BLOG : Formation CPF ──
+[[redirects]]
+  from = "/blog/comment-utiliser-cpf-formation-anglais-distance"
+  to = "/snapenglish-blog-cpf-formation-anglais-distance.html"
+  status = 200
+
+# ── BLOG : Le voyage ──
+[[redirects]]
+  from = "/blog/anglais-en-voyage-phrases-essentielles"
+  to = "/snapenglish-blog-anglais-voyage-phrases-essentielles.html"
+  status = 200
+
+# ── BLOG : Conversations en anglais ──
+[[redirects]]
+  from = "/blog/expressions-du-quotidien-en-anglais"
+  to = "/snapenglish-blog-expressions-quotidien-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/comment-penser-en-anglais-au-travail"
+  to = "/snapenglish-blog-penser-en-anglais-au-travail.html"
+  status = 200
+
+# ── BLOG : Anglais médical ──
+[[redirects]]
+  from = "/blog/vocabulaire-medical-en-anglais-symptomes"
+  to = "/snapenglish-blog-vocabulaire-medical-anglais-symptomes.html"
+  status = 200
+
+# ── BLOG : L'IA ──
+[[redirects]]
+  from = "/blog/pratiquer-anglais-oral-chatgpt"
+  to = "/snapenglish-blog-pratiquer-anglais-oral-chatgpt.html"
+  status = 200
+
+# ── BLOG : Les réunions en anglais ──
+[[redirects]]
+  from = "/blog/fixer-un-rendez-vous-en-anglais"
+  to = "/snapenglish-blog-fixer-rendez-vous-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/reporter-une-reunion-en-anglais"
+  to = "/snapenglish-blog-reporter-reunion-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/etre-en-reunion-en-anglais"
+  to = "/snapenglish-blog-etre-en-reunion-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/deadlines-en-anglais"
+  to = "/snapenglish-blog-deadlines-en-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/commencer-visioconference-en-anglais"
+  to = "/snapenglish-blog-commencer-visioconference-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/accueillir-participants-reunion-anglais"
+  to = "/snapenglish-blog-accueillir-participants-reunion-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/ne-pas-participer-reunion-anglais"
+  to = "/snapenglish-blog-ne-pas-participer-reunion-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/conclure-une-reunion-en-anglais"
+  to = "/snapenglish-blog-conclure-reunion-anglais.html"
+  status = 200
+
+# ── BLOG : Les e-mails ──
+[[redirects]]
+  from = "/blog/emails-professionnels-anglais"
+  to = "/snapenglish-blog-emails-professionnels-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/recontacter-interlocuteur-anglais"
+  to = "/snapenglish-blog-recontacter-interlocuteur-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/commencer-un-email-en-anglais"
+  to = "/snapenglish-blog-commencer-email-anglais.html"
+  status = 200
+
+# ── BLOG : Les vœux ──
+[[redirects]]
+  from = "/blog/voeux-noel-anglais"
+  to = "/snapenglish-blog-voeux-noel-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/voeux-nouvel-an-anglais"
+  to = "/snapenglish-blog-voeux-nouvel-an-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/voeux-fetes-anglais"
+  to = "/snapenglish-blog-voeux-fetes-anglais.html"
+  status = 200
+  
+[[redirects]]
+  from = "/blog/dire-au-revoir-en-anglais"
+  to = "/snapenglish-blog-dire-au-revoir-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/s-excuser-en-anglais"
+  to = "/snapenglish-blog-s-excuser-en-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/formules-politesse-demander-anglais"
+  to = "/snapenglish-blog-formules-politesse-demander-anglais.html"
+  status = 200
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=86400"
