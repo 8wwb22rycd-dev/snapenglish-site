@@ -201,3 +201,8 @@
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
     Cache-Control = "public, max-age=86400"
+
+[[redirects]]
+  from = "/exercices"
+  to = "/exercices/index.html"
+  status = 200
