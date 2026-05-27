@@ -5,7 +5,12 @@
   from = "/"
   to = "/snapenglish-homepage.html"
   status = 200
-
+  
+[[redirects]]
+  from = "/formations"
+  to = "/snapenglish-cpf.html"
+  status = 200
+  
 [[redirects]]
   from = "/methode"
   to = "/snapenglish-methode.html"
