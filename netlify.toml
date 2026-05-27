@@ -148,7 +148,21 @@
   from = "/blog/voeux-fetes-anglais"
   to = "/snapenglish-blog-voeux-fetes-anglais.html"
   status = 200
+  
+[[redirects]]
+  from = "/blog/dire-au-revoir-en-anglais"
+  to = "/snapenglish-blog-dire-au-revoir-anglais.html"
+  status = 200
 
+[[redirects]]
+  from = "/blog/s-excuser-en-anglais"
+  to = "/snapenglish-blog-s-excuser-en-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/formules-politesse-demander-anglais"
+  to = "/snapenglish-blog-formules-politesse-demander-anglais.html"
+  status = 200
 [[headers]]
   for = "/*"
   [headers.values]
