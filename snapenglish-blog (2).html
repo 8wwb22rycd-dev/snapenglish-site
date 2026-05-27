@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog anglais professionnel | SnapEnglish</title>
+  <meta name="description" content="Expressions, réunions, emails, vœux, anglais médical… Retrouvez tous les articles de blog SnapEnglish pour progresser en anglais professionnel." />
+  <link rel="canonical" href="https://www.snapenglish.fr/blog" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F4EF; --warm: #EDE8DF; --sand: #D4C9B4;
+      --navy: #1B2A4A; --navy-light: #2A3F6F; --charcoal: #2C2C2C;
+      --gold: #B8975A; --white: #FDFCFA;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max: 900px; --gutter: clamp(1.5rem, 5vw, 4rem);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--charcoal); font-family: var(--font-body); font-size: 1rem; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; padding: 1.25rem var(--gutter); display: flex; align-items: center; justify-content: space-between; background: rgba(247,244,239,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(180,160,120,0.15); transition: box-shadow 0.3s; }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(27,42,74,0.08); }
+    .nav-logo { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--navy); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--navy); text-decoration: none; opacity: 0.75; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta { background: var(--navy); color: var(--cream) !important; opacity: 1 !important; padding: 0.55rem 1.25rem; border-radius: 2px; font-size: 0.8rem !important; }
+    .nav-mobile-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-mobile-btn span { display: block; width: 24px; height: 2px; background: var(--navy); }
+
+    /* HEADER */
+    .blog-header { max-width: var(--max); margin: 0 auto; padding: 8rem var(--gutter) 3rem; }
+    .blog-header h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .blog-header p { font-size: 1.05rem; opacity: 0.65; max-width: 520px; }
+    .blog-divider { width: 3rem; height: 2px; background: var(--gold); margin: 1.5rem 0 0; }
+
+    /* MAIN */
+    .blog-main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 5rem; }
+
+    /* CATEGORY */
+    .category { margin-bottom: 3.5rem; }
+    .category-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--navy); }
+    .category-icon { font-size: 1.1rem; }
+    .category-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 500; color: var(--navy); }
+    .category-count { font-size: 0.75rem; color: var(--gold); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-left: auto; }
+
+    /* ARTICLE LIST */
+    .article-list { display: flex; flex-direction: column; gap: 0; }
+    .article-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 4px; text-decoration: none; color: var(--charcoal); transition: background 0.15s; border-bottom: 1px solid rgba(212,201,180,0.35); }
+    .article-item:last-child { border-bottom: none; }
+    .article-item:hover { background: var(--warm); }
+    .article-item:hover .article-arrow { opacity: 1; transform: translateX(3px); }
+    .article-title-text { font-size: 0.95rem; font-weight: 500; color: var(--navy); flex: 1; line-height: 1.4; }
+    .article-date { font-size: 0.78rem; color: var(--charcoal); opacity: 0.45; white-space: nowrap; flex-shrink: 0; }
+    .article-arrow { color: var(--gold); opacity: 0.4; font-size: 0.9rem; transition: opacity 0.2s, transform 0.2s; flex-shrink: 0; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(247,244,239,0.7); padding: 3rem var(--gutter) 2rem; margin-top: 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-tagline { font-size: 0.85rem; opacity: 0.6; margin-top: 1rem; line-height: 1.6; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 1.25rem; }
+    .footer-contact a { color: rgba(247,244,239,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-col-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a { color: rgba(247,244,239,0.55); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 0.8rem; opacity: 0.4; }
+    .footer-certifs { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .footer-certif-badge { font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid rgba(184,151,90,0.35); color: var(--gold); padding: 0.2rem 0.6rem; border-radius: 2px; opacity: 0.7; }
+
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } .nav-links { display: none; } .nav-mobile-btn { display: flex; } }
+    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } .article-date { display: none; } }
+  main { position: relative; z-index: 0; }
+  </style>
+</head>
+
+<body>
+<nav id="nav" role="navigation" aria-label="Navigation principale">
+  <a href="/" class="nav-logo" aria-label="SnapEnglish - Accueil">
+    <svg width="148" height="34" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#1B2A4A" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+      <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#B8975A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <text x="34" y="23" font-family="Georgia, serif" font-size="17" font-weight="700" fill="#1B2A4A">Snap</text>
+      <text x="76" y="23" font-family="Georgia, serif" font-size="17" font-weight="400" fill="#B8975A">English</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/formations">Formations CPF</a></li>
+    <li><a href="/methode">Méthode</a></li>
+    <li><a href="/shop/sound-less-french">Shop</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-mobile-btn" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<main>
+  <div class="blog-header">
+    <h1>Blog SnapEnglish</h1>
+    <p>Expressions, réunions, emails, vocabulaire médical… des articles concrets pour progresser en anglais professionnel.</p>
+    <div class="blog-divider"></div>
+  </div>
+
+  <div class="blog-main">
+
+    <!-- LES RÉUNIONS -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-icon">🗓️</span>
+        <h2 class="category-title">Les réunions en anglais</h2>
+        <span class="category-count">8 articles</span>
+      </div>
+      <div class="article-list">
+        <a href="/blog/fixer-un-rendez-vous-en-anglais" class="article-item">
+          <span class="article-title-text">6 expressions pour fixer un rendez-vous en anglais</span>
+          <span class="article-date">avr. 2021</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/reporter-une-reunion-en-anglais" class="article-item">
+          <span class="article-title-text">Reporter une réunion en anglais : 6 expressions à retenir</span>
+          <span class="article-date">avr. 2021</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/etre-en-reunion-en-anglais" class="article-item">
+          <span class="article-title-text">Être en réunion en anglais : 5 expressions à connaître</span>
+          <span class="article-date">mai 2021</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/deadlines-en-anglais" class="article-item">
+          <span class="article-title-text">Deadlines en anglais : 5 expressions essentielles</span>
+          <span class="article-date">mai 2021</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/commencer-visioconference-en-anglais" class="article-item">
+          <span class="article-title-text">Commencer une visioconférence en anglais : 9 expressions</span>
+          <span class="article-date">juin 2021</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/accueillir-participants-reunion-anglais" class="article-item">
+          <span class="article-title-text">Commencer une réunion en anglais : accueillir les participants</span>
+          <span class="article-date">juil. 2024</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/ne-pas-participer-reunion-anglais" class="article-item">
+          <span class="article-title-text">Ne pas pouvoir participer à une réunion en anglais : 8 expressions</span>
+          <span class="article-date">août 2024</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/conclure-une-reunion-en-anglais" class="article-item">
+          <span class="article-title-text">Conclure une réunion en anglais : 5 expressions clés</span>
+          <span class="article-date">oct. 2024</span>
+          <span class="article-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- LES E-MAILS -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-icon">✉️</span>
+        <h2 class="category-title">Les e-mails</h2>
+        <span class="category-count">3 articles</span>
+      </div>
+      <div class="article-list">
+        <a href="/blog/emails-professionnels-anglais" class="article-item">
+          <span class="article-title-text">10 expressions essentielles pour écrire des emails professionnels en anglais</span>
+          <span class="article-date">août 2024</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/recontacter-interlocuteur-anglais" class="article-item">
+          <span class="article-title-text">5 expressions pour recontacter votre interlocuteur en anglais</span>
+          <span class="article-date">sept. 2024</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/commencer-un-email-en-anglais" class="article-item">
+          <span class="article-title-text">5 façons de commencer un email en anglais</span>
+          <span class="article-date">mars 2026</span>
+          <span class="article-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONVERSATIONS -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-icon">💬</span>
+        <h2 class="category-title">Conversations en anglais</h2>
+        <span class="category-count">5 articles</span>
+      </div>
+      <div class="article-list">
+        <a href="/blog/dire-au-revoir-en-anglais" class="article-item">
+          <span class="article-title-text">Comment dire au revoir en anglais : 8 expressions essentielles</span>
+          <span class="article-date">août 2024</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/s-excuser-en-anglais" class="article-item">
+          <span class="article-title-text">Comment s'excuser en anglais : 8 expressions indispensables</span>
+          <span class="article-date">sept. 2024</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/formules-politesse-demander-anglais" class="article-item">
+          <span class="article-title-text">5 formules de politesse pour demander quelque chose en anglais</span>
+          <span class="article-date">nov. 2024</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/expressions-du-quotidien-en-anglais" class="article-item">
+          <span class="article-title-text">Expressions du quotidien en anglais : les phrases courtes que les anglophones utilisent vraiment</span>
+          <span class="article-date">mai 2026</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/comment-penser-en-anglais-au-travail" class="article-item">
+          <span class="article-title-text">Comment penser en anglais au travail : 5 techniques pour les professionnels français</span>
+          <span class="article-date">avr. 2026</span>
+          <span class="article-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- LES VŒUX -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-icon">🎄</span>
+        <h2 class="category-title">Les vœux</h2>
+        <span class="category-count">3 articles</span>
+      </div>
+      <div class="article-list">
+        <a href="/blog/voeux-noel-anglais" class="article-item">
+          <span class="article-title-text">Vœux de Noël en anglais : 6 expressions à connaître</span>
+          <span class="article-date">déc. 2021</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/voeux-nouvel-an-anglais" class="article-item">
+          <span class="article-title-text">Vœux du Nouvel An en anglais : 6 expressions élégantes</span>
+          <span class="article-date">déc. 2021</span>
+          <span class="article-arrow">→</span>
+        </a>
+        <a href="/blog/voeux-fetes-anglais" class="article-item">
+          <span class="article-title-text">5 expressions intemporelles pour souhaiter de joyeuses fêtes en anglais</span>
+          <span class="article-date">déc. 2024</span>
+          <span class="article-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ANGLAIS MÉDICAL -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-icon">🩺</span>
+        <h2 class="category-title">Anglais médical</h2>
+        <span class="category-count">1 article</span>
+      </div>
+      <div class="article-list">
+        <a href="/blog/vocabulaire-medical-en-anglais-symptomes" class="article-item">
+          <span class="article-title-text">Vocabulaire médical en anglais : comment décrire les symptômes pour les soignants</span>
+          <span class="article-date">mars 2026</span>
+          <span class="article-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- L'IA -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-icon">🤖</span>
+        <h2 class="category-title">L'IA</h2>
+        <span class="category-count">1 article</span>
+      </div>
+      <div class="article-list">
+        <a href="/blog/pratiquer-anglais-oral-chatgpt" class="article-item">
+          <span class="article-title-text">Pratiquer l'anglais à l'oral avec ChatGPT : 5 méthodes simples</span>
+          <span class="article-date">mars 2026</span>
+          <span class="article-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- LE VOYAGE -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-icon">✈️</span>
+        <h2 class="category-title">Le voyage</h2>
+        <span class="category-count">1 article</span>
+      </div>
+      <div class="article-list">
+        <a href="/blog/anglais-en-voyage-phrases-essentielles" class="article-item">
+          <span class="article-title-text">Anglais en voyage : les phrases essentielles pour ne plus bloquer</span>
+          <span class="article-date">mai 2026</span>
+          <span class="article-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FORMATION CPF -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-icon">📋</span>
+        <h2 class="category-title">Formation CPF</h2>
+        <span class="category-count">1 article</span>
+      </div>
+      <div class="article-list">
+        <a href="/blog/comment-utiliser-cpf-formation-anglais-distance" class="article-item">
+          <span class="article-title-text">Comment utiliser son CPF pour une formation anglais à distance</span>
+          <span class="article-date">mai 2026</span>
+          <span class="article-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="140" height="32" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="rgba(247,244,239,0.8)" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+            <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#B8975A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+            <text x="34" y="23" font-family="Georgia, serif" font-size="17" font-weight="700" fill="rgba(247,244,239,0.9)">Snap</text>
+            <text x="76" y="23" font-family="Georgia, serif" font-size="17" font-weight="400" fill="#B8975A">English</text>
+          </svg>
+        </div>
+        <p class="footer-tagline">Organisme de formation anglais certifié Qualiopi. Cours particuliers 100% en ligne, spécialisé anglais médical et professionnel.</p>
+        <div class="footer-contact">
+          <a href="mailto:contact@snapenglish.fr">contact@snapenglish.fr</a>
+          <a href="tel:+33680266314">06 80 26 63 14</a>
+          <a href="https://www.linkedin.com/in/caroline-cousin-snapenglish/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div><div class="footer-col-title">Formations</div><ul class="footer-links"><li><a href="/formations/anglais-medical">Anglais médical</a></li><li><a href="/formations/anglais-professionnel">Anglais professionnel</a></li><li><a href="/formations/anglais-deplacements">Anglais déplacements</a></li><li><a href="/cpf">Financement CPF</a></li></ul></div>
+      <div><div class="footer-col-title">SnapEnglish</div><ul class="footer-links"><li><a href="/methode">La méthode</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
+      <div><div class="footer-col-title">Produits</div><ul class="footer-links"><li><a href="/shop/sound-less-french">Sound Less French</a></li><li><a href="/mentions-legales">Mentions légales</a></li><li><a href="/politique-de-confidentialite">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 SnapEnglish · Caroline Cousin · Tous droits réservés</span>
+      <div class="footer-certifs"><span class="footer-certif-badge">Qualiopi</span><span class="footer-certif-badge">CPF</span><span class="footer-certif-badge">CLOE</span><span class="footer-certif-badge">LEVELTEL</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+  function toggleMenu() { const l = document.querySelector('.nav-links'); l.style.display = l.style.display === 'flex' ? 'none' : 'flex'; l.style.flexDirection = 'column'; l.style.position = 'absolute'; l.style.top = '70px'; l.style.left = '0'; l.style.right = '0'; l.style.background = 'var(--cream)'; l.style.padding = '1rem 2rem'; l.style.borderBottom = '1px solid var(--sand)'; }
+</script>
+</body>
+</html>
