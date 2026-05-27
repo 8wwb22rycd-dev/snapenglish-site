@@ -1,3 +1,6 @@
+[build]
+  publish = "."
+
 [[redirects]]
   from = "/"
   to = "/snapenglish-homepage.html"
@@ -32,7 +35,120 @@
   from = "/cpf"
   to = "/snapenglish-cpf.html"
   status = 200
-[[headers]]
+
+[[redirects]]
+  from = "/blog"
+  to = "/snapenglish-blog.html"
+  status = 200
+
+# ── BLOG : Formation CPF ──
+[[redirects]]
+  from = "/blog/comment-utiliser-cpf-formation-anglais-distance"
+  to = "/snapenglish-blog-cpf-formation-anglais-distance.html"
+  status = 200
+
+# ── BLOG : Le voyage ──
+[[redirects]]
+  from = "/blog/anglais-en-voyage-phrases-essentielles"
+  to = "/snapenglish-blog-anglais-voyage-phrases-essentielles.html"
+  status = 200
+
+# ── BLOG : Conversations en anglais ──
+[[redirects]]
+  from = "/blog/expressions-du-quotidien-en-anglais"
+  to = "/snapenglish-blog-expressions-quotidien-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/comment-penser-en-anglais-au-travail"
+  to = "/snapenglish-blog-penser-en-anglais-au-travail.html"
+  status = 200
+
+# ── BLOG : Anglais médical ──
+[[redirects]]
+  from = "/blog/vocabulaire-medical-en-anglais-symptomes"
+  to = "/snapenglish-blog-vocabulaire-medical-anglais-symptomes.html"
+  status = 200
+
+# ── BLOG : L'IA ──
+[[redirects]]
+  from = "/blog/pratiquer-anglais-oral-chatgpt"
+  to = "/snapenglish-blog-pratiquer-anglais-oral-chatgpt.html"
+  status = 200
+
+# ── BLOG : Les réunions en anglais ──
+[[redirects]]
+  from = "/blog/fixer-un-rendez-vous-en-anglais"
+  to = "/snapenglish-blog-fixer-rendez-vous-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/reporter-une-reunion-en-anglais"
+  to = "/snapenglish-blog-reporter-reunion-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/etre-en-reunion-en-anglais"
+  to = "/snapenglish-blog-etre-en-reunion-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/deadlines-en-anglais"
+  to = "/snapenglish-blog-deadlines-en-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/commencer-visioconference-en-anglais"
+  to = "/snapenglish-blog-commencer-visioconference-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/accueillir-participants-reunion-anglais"
+  to = "/snapenglish-blog-accueillir-participants-reunion-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/ne-pas-participer-reunion-anglais"
+  to = "/snapenglish-blog-ne-pas-participer-reunion-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/conclure-une-reunion-en-anglais"
+  to = "/snapenglish-blog-conclure-reunion-anglais.html"
+  status = 200
+
+# ── BLOG : Les e-mails ──
+[[redirects]]
+  from = "/blog/emails-professionnels-anglais"
+  to = "/snapenglish-blog-emails-professionnels-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/recontacter-interlocuteur-anglais"
+  to = "/snapenglish-blog-recontacter-interlocuteur-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/commencer-un-email-en-anglais"
+  to = "/snapenglish-blog-commencer-email-anglais.html"
+  status = 200
+
+# ── BLOG : Les vœux ──
+[[redirects]]
+  from = "/blog/voeux-noel-anglais"
+  to = "/snapenglish-blog-voeux-noel-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/voeux-nouvel-an-anglais"
+  to = "/snapenglish-blog-voeux-nouvel-an-anglais.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/voeux-fetes-anglais"
+  to = "/snapenglish-blog-voeux-fetes-anglais.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -46,28 +162,3 @@
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
     Cache-Control = "public, max-age=86400"
-
-[[redirects]]
-  from = "/blog/comment-utiliser-cpf-formation-anglais-distance"
-  to = "/snapenglish-blog-cpf-formation-anglais-distance.html"
-  status = 200
-
-[[redirects]]
-  from = "/blog/anglais-en-voyage-phrases-essentielles"
-  to = "/snapenglish-blog-anglais-voyage-phrases-essentielles.html"
-  status = 200
-
-[[redirects]]
-  from = "/blog/expressions-du-quotidien-en-anglais"
-  to = "/snapenglish-blog-expressions-quotidien-anglais.html"
-  status = 200
-
-[[redirects]]
-  from = "/blog/comment-penser-en-anglais-au-travail"
-  to = "/snapenglish-blog-penser-en-anglais-au-travail.html"
-  status = 200
-
-[[redirects]]
-  from = "/blog"
-  to = "/snapenglish-blog.html"
-  status = 200
