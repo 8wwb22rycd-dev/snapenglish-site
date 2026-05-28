@@ -382,15 +382,15 @@
       const base = window.location.href.split('?')[0].split('#')[0];
       const longUrl = base + '#ex=' + encoded;
 
-      // Raccourcir via is.gd (gratuit, sans clé API)
+      // Raccourcir via la Netlify Function (proxy is.gd, sans CORS)
       let url = longUrl;
       try {
-        const r = await fetch('https://is.gd/create.php?format=simple&url=' + encodeURIComponent(longUrl));
+        const r = await fetch('/.netlify/functions/shorten?url=' + encodeURIComponent(longUrl));
         if (r.ok) {
           const short = (await r.text()).trim();
           if (short.startsWith('https://is.gd/')) url = short;
         }
-      } catch(_) { /* si is.gd échoue, on garde le lien long */ }
+      } catch(_) { /* fallback lien long */ }
 
       document.getElementById('share-box-title').textContent = url.startsWith('https://is.gd/') ? '🔗 Lien court prêt !' : '🔗 Lien prêt';
       document.getElementById('share-url').textContent = url;
