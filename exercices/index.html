@@ -368,11 +368,12 @@
         const r = await fetch('/.netlify/functions/shorten?url=' + encodeURIComponent(longUrl));
         if (r.ok) {
           const short = (await r.text()).trim();
-          if (short.startsWith('https://is.gd/')) url = short;
+          if (short.startsWith('https://tinyurl.com/') || short.startsWith('https://is.gd/')) url = short;
         }
       } catch(_) { /* fallback lien long */ }
 
-      document.getElementById('share-box-title').textContent = url.startsWith('https://is.gd/') ? '🔗 Lien court prêt !' : '🔗 Lien prêt';
+      const isShort = url.startsWith('https://tinyurl.com/') || url.startsWith('https://is.gd/');
+      document.getElementById('share-box-title').textContent = isShort ? '🔗 Lien court prêt !' : '🔗 Lien prêt';
       document.getElementById('share-url').textContent = url;
       document.getElementById('share-box').style.display = 'block';
       shareBtn.textContent = '✓ Lien créé !';
