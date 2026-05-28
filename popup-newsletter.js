@@ -197,12 +197,13 @@
     btn.textContent = 'Envoi…';
 
     try {
-      const body = new URLSearchParams({ 'form-name': 'newsletter', email });
-      await fetch('/', {
+      const body = new URLSearchParams({ email });
+      const res = await fetch('/.netlify/functions/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: body.toString()
       });
+      if (!res.ok) throw new Error('fail');
       localStorage.setItem('snap_nl_subscribed', '1');
       document.getElementById('snap-popup-form').style.display = 'none';
       document.getElementById('snap-popup-success').style.display = 'block';
