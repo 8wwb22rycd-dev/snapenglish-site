@@ -163,6 +163,14 @@
         <div id="correction-text-teacher" class="exercise-text"></div>
       </div>
 
+      <!-- Saisie clé JSONBin si manquante -->
+      <div id="jsonbin-prompt" style="display:none; margin-top:1rem; background:#FEF3C7; border:1px solid #FCD34D; border-radius:10px; padding:1rem;">
+        <p style="font-size:0.85rem; font-weight:500; color:#78350F; margin-bottom:0.5rem;">🔑 Entre ta clé JSONBin pour créer un lien court</p>
+        <p style="font-size:0.78rem; color:#92400E; margin-bottom:0.75rem;">Compte gratuit sur <a href="https://jsonbin.io" target="_blank" style="color:#78350F;">jsonbin.io</a> → API Keys → copier la Master Key</p>
+        <input type="text" id="jsonbin-inline-key" placeholder="$2a$10$..." style="margin-bottom:0.5rem; font-size:0.85rem;" />
+        <button class="primary" onclick="saveJsonbinKey()" style="margin-top:0;">Créer le lien court →</button>
+      </div>
+
       <div class="share-box" id="share-box" style="display:none;">
         <p id="share-box-title">🔗 Lien élève prêt !</p>
         <div class="share-url" id="share-url"></div>
@@ -357,17 +365,22 @@
   }
 
   // ===== PARTAGE =====
+  function saveJsonbinKey() {
+    const key = document.getElementById('jsonbin-inline-key').value.trim();
+    if (!key) { alert('Colle ta Master Key JSONBin.'); return; }
+    localStorage.setItem('snap_jsonbin', key);
+    document.getElementById('jsonbin-prompt').style.display = 'none';
+    shareExercise();
+  }
+
   async function shareExercise() {
-    let cfg = getConfig();
+    const cfg = getConfig();
     const shareBtn = document.getElementById('share-btn');
 
-    // Si pas de clé JSONBin, demander directement sans passer par les paramètres
+    // Si pas de clé JSONBin, montrer le formulaire inline
     if (!cfg.jsonbin) {
-      const key = prompt('Entre ta Master Key JSONBin pour créer un lien court :\n(commence par $2a$10$... — disponible sur jsonbin.io → API Keys)');
-      if (key && key.trim()) {
-        localStorage.setItem('snap_jsonbin', key.trim());
-        cfg = getConfig();
-      }
+      document.getElementById('jsonbin-prompt').style.display = 'block';
+      return;
     }
 
     shareBtn.disabled = true;
