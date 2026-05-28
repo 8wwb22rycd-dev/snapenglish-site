@@ -343,17 +343,24 @@
     try {
       if (!exercise) throw new Error('Exercice vide');
 
-      const resp = await fetch('/.netlify/functions/save-exercise', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, exercise, correction }),
-      });
-
-      if (!resp.ok) throw new Error('Erreur serveur (' + resp.status + ')');
-      const { id } = await resp.json();
-
       const base = window.location.href.split('?')[0].replace(/\/?$/, '/');
-      const url = base + '?id=' + id;
+
+      // Lien base64 — toujours fonctionnel, aucune dépendance externe
+      const encoded = btoa(unescape(encodeURIComponent(JSON.stringify({ title, exercise, correction }))));
+      let url = base + '?ex=' + encoded;
+
+      // Tentative de lien court via la fonction Netlify (bonus, non bloquant)
+      try {
+        const resp = await fetch('/.netlify/functions/save-exercise', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title, exercise, correction }),
+        });
+        if (resp.ok) {
+          const json = await resp.json();
+          if (json.id) url = base + '?id=' + json.id;
+        }
+      } catch (_) { /* on garde le lien base64 */ }
 
       document.getElementById('share-box-title').textContent = '🔗 Lien élève prêt !';
       document.getElementById('share-url').textContent = url;
