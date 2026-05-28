@@ -365,24 +365,8 @@
   }
 
   // ===== PARTAGE =====
-  function saveJsonbinKey() {
-    const key = document.getElementById('jsonbin-inline-key').value.trim();
-    if (!key) { alert('Colle ta Master Key JSONBin.'); return; }
-    localStorage.setItem('snap_jsonbin', key);
-    document.getElementById('jsonbin-prompt').style.display = 'none';
-    shareExercise();
-  }
-
   async function shareExercise() {
-    const cfg = getConfig();
     const shareBtn = document.getElementById('share-btn');
-
-    // Si pas de clé JSONBin, montrer le formulaire inline
-    if (!cfg.jsonbin) {
-      document.getElementById('jsonbin-prompt').style.display = 'block';
-      return;
-    }
-
     shareBtn.disabled = true;
     shareBtn.textContent = 'Création du lien…';
 
@@ -394,37 +378,21 @@
       if (!exerciseContent) throw new Error('Exercice vide');
 
       const data = { title, exercise: exerciseContent, correction: correctionContent };
-      let url;
+      const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+      const base = window.location.href.split('?')[0].split('#')[0];
+      const longUrl = base + '#ex=' + encoded;
 
-      if (cfg.jsonbin) {
-        // ✨ Lien court via JSONBin
-        // Sanitize title: HTTP headers must be ASCII only
-        const safeName = title.normalize('NFD').replace(/[̀-ͯ·]/g, '').trim().substring(0, 50);
-        const resp = await fetch(JSONBIN_API, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Master-Key': cfg.jsonbin,
-            'X-Bin-Private': 'false',
-            'X-Bin-Name': safeName || 'Exercice'
-          },
-          body: JSON.stringify(data)
-        });
-        if (!resp.ok) {
-          const err = await resp.json().catch(() => ({}));
-          throw new Error(err.message || 'Erreur JSONBin ' + resp.status);
+      // Raccourcir via is.gd (gratuit, sans clé API)
+      let url = longUrl;
+      try {
+        const r = await fetch('https://is.gd/create.php?format=simple&url=' + encodeURIComponent(longUrl));
+        if (r.ok) {
+          const short = (await r.text()).trim();
+          if (short.startsWith('https://is.gd/')) url = short;
         }
-        const result = await resp.json();
-        const id = result.metadata.id;
-        url = window.location.href.split('?')[0].split('#')[0] + '#ex=' + id;
-        document.getElementById('share-box-title').textContent = '🔗 Lien court prêt !';
-      } else {
-        // Fallback base64 (sans clé JSONBin)
-        const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
-        url = window.location.href.split('?')[0].split('#')[0] + '#ex=' + encoded;
-        document.getElementById('share-box-title').innerHTML = '🔗 Lien créé <span class="badge badge-warn">long — ajoute une clé JSONBin pour les raccourcir</span>';
-      }
+      } catch(_) { /* si is.gd échoue, on garde le lien long */ }
 
+      document.getElementById('share-box-title').textContent = url.startsWith('https://is.gd/') ? '🔗 Lien court prêt !' : '🔗 Lien prêt';
       document.getElementById('share-url').textContent = url;
       document.getElementById('share-box').style.display = 'block';
       shareBtn.textContent = '✓ Lien créé !';
