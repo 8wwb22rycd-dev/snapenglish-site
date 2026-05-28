@@ -204,5 +204,11 @@
 
 [[redirects]]
   from = "/exercices"
+  to = "/exercices/"
+  status = 301
+
+[[redirects]]
+  from = "/exercices/"
   to = "/exercices/index.html"
   status = 200
+  force = true

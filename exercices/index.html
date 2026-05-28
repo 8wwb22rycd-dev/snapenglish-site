@@ -169,6 +169,7 @@
         <div class="btn-row">
           <button class="btn-sm" onclick="copyLink()" id="copy-link-btn">📋 Copier le lien</button>
           <button class="btn-sm" onclick="copyEmail()" id="copy-email-btn">✉️ Copier pour email</button>
+          <button class="btn-sm" onclick="testLink()" id="test-link-btn">🔍 Tester le lien</button>
         </div>
       </div>
       <button class="primary secondary-btn" onclick="shareExercise()" id="share-btn" style="display:none;">Envoyer à l'élève →</button>
@@ -429,6 +430,11 @@
       btn.classList.add('success');
       setTimeout(() => { btn.textContent = '📋 Copier le lien'; btn.classList.remove('success'); }, 2000);
     });
+  }
+
+  function testLink() {
+    const url = document.getElementById('share-url').textContent;
+    window.open(url, '_blank');
   }
 
   function copyEmail() {
