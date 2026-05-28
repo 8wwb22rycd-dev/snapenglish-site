@@ -139,6 +139,7 @@
       --gutter: clamp(1.5rem, 5vw, 4rem);
     }
 
+    html, body { overflow-x: hidden; }
     html { scroll-behavior: smooth; }
 
     body {
@@ -1653,7 +1654,7 @@
       <span class="badge" role="listitem">100% en ligne</span>
     </div>
     <div class="hero-actions">
-      <a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener" class="btn-primary" aria-label="Voir les formations CPF SnapEnglish sur Mon Compte Formation">
+      <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/resultats?q=%7B%22ou%22:%7B%22modality%22:%22A_DISTANCE%22,%22type%22:%22CP%22%7D,%22debutPagination%22:1,%22nombreOccurences%22:10,%22contexteFormation%22:%22ACTIVITE_PROFESSIONNELLE%22,%22quoi%22:%22anglais%22,%22quoiReferentiel%22:null,%22nomOrganisme%22:%22SNAPENGLISH%22,%22endDate%22:null,%22startDate%22:null,%22evaluation%22:null,%22niveauSortie%22:null,%22minPrix%22:null,%22maxPrix%22:null,%22rythme%22:null,%22onlyWithAbondementsEligibles%22:null,%22durationHours%22:null,%22certifications%22:null,%22certificationComplete%22:null,%22vae%22:null,%22codesCategorisationOffre%22:null,%22vaeAutocomplete%22:%22%22%7D" target="_blank" rel="noopener" class="btn-primary" aria-label="Voir les formations CPF SnapEnglish sur Mon Compte Formation">
         Voir mes formations CPF
       </a>
       <a href="/methode" class="btn-secondary">Découvrir la méthode</a>
@@ -1864,7 +1865,7 @@
     </div>
 
     <div class="formations-footer">
-      <a href="/tarif-inscription-formation-anglais" class="btn-primary">
+      <a href="/cpf" class="btn-primary">
         Voir toutes les formations & tarifs
       </a>
     </div>
@@ -2297,16 +2298,41 @@
   // Mobile menu
   function toggleMenu() {
     const links = document.querySelector('.nav-links');
-    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-    links.style.flexDirection = 'column';
-    links.style.position = 'absolute';
-    links.style.top = '70px';
-    links.style.left = '0';
-    links.style.right = '0';
-    links.style.background = 'var(--cream)';
-    links.style.padding = '1rem var(--gutter)';
-    links.style.borderBottom = '1px solid var(--sand)';
+    const isOpen = links.style.display === 'flex';
+    links.style.display = isOpen ? 'none' : 'flex';
+    if (!isOpen) {
+      links.style.cssText += ';flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:1rem var(--gutter);border-bottom:1px solid var(--sand);z-index:99;';
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { links.style.display = 'none'; }, { once: true }));
+    }
   }
+
+  // Liens cliquables sur les logos de certification
+  const certifLinks = [
+    'https://www.qualiopi.fr/',
+    'https://www.moncompteformation.gouv.fr/',
+    'https://www.francecompetences.fr/recherche/rs/6435/',
+    'https://www.francecompetences.fr/recherche/rs/7399/',
+    'https://www.moncompteformation.gouv.fr/'
+  ];
+  document.querySelectorAll('.certif-logo-item').forEach((item, i) => {
+    if (certifLinks[i]) {
+      item.style.cursor = 'pointer';
+      item.setAttribute('role', 'link');
+      item.setAttribute('tabindex', '0');
+      item.addEventListener('click', () => window.open(certifLinks[i], '_blank', 'noopener'));
+      item.addEventListener('keypress', e => { if (e.key === 'Enter') window.open(certifLinks[i], '_blank', 'noopener'); });
+    }
+  });
+
+  // Lien avis Google (placeholder — mettre à jour avec l'URL exacte de ta fiche)
+  document.querySelectorAll('.hero-stat, .hero-mobile-stat').forEach(el => {
+    const label = el.querySelector('.hero-stat-label, .hero-mobile-stat-label');
+    if (label && label.textContent.includes('avis')) {
+      el.style.cursor = 'pointer';
+      el.setAttribute('title', 'Voir les avis Google SnapEnglish');
+      el.addEventListener('click', () => window.open('https://www.google.com/search?q=SnapEnglish+Caroline+Cousin+formation+anglais+avis', '_blank', 'noopener'));
+    }
+  });
 </script>
 
 </body>

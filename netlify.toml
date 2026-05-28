@@ -92,13 +92,13 @@
 # ── BLOG : Anglais médical ──
 [[redirects]]
   from = "/blog/vocabulaire-medical-en-anglais-symptomes"
-  to = "/snapenglish-blog-vocabulaire-medical-anglais-symptomes.html"
+  to = "/snapenglishblogvocabulairemedicalanglaissymptomes.html"
   status = 200
 
 # ── BLOG : L'IA ──
 [[redirects]]
   from = "/blog/pratiquer-anglais-oral-chatgpt"
-  to = "/snapenglish-blog-pratiquer-anglais-oral-chatgpt.html"
+  to = "/snapenglishblogpratiqueranglaisoralchatgpt.html"
   status = 200
 
 # ── BLOG : Les réunions en anglais ──
@@ -188,6 +188,47 @@
   from = "/blog/formules-politesse-demander-anglais"
   to = "/snapenglish-blog-formules-politesse-demander-anglais.html"
   status = 200
+# ── NOUVELLES PAGES FORMATIONS ──
+[[redirects]]
+  from = "/formations/anglais-digital-logistique"
+  to = "/snapenglish-anglais-digital-logistique.html"
+  status = 200
+
+[[redirects]]
+  from = "/formations/anglais-digital"
+  to = "/snapenglish-anglais-digital-logistique.html"
+  status = 200
+
+[[redirects]]
+  from = "/formations/anglais-infirmier"
+  to = "/snapenglish-anglais-infirmier.html"
+  status = 200
+
+[[redirects]]
+  from = "/tarif-inscription-formation-anglais"
+  to = "/snapenglish-tarifs.html"
+  status = 200
+
+[[redirects]]
+  from = "/tarifs"
+  to = "/snapenglish-tarifs.html"
+  status = 200
+
+[[redirects]]
+  from = "/a-propos"
+  to = "/snapenglish-a-propos.html"
+  status = 200
+
+[[redirects]]
+  from = "/temoignages"
+  to = "/snapenglish-temoignages.html"
+  status = 200
+
+[[redirects]]
+  from = "/faq"
+  to = "/snapenglish-faq.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]

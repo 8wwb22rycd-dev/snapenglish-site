@@ -67,6 +67,7 @@
       --font-body: 'DM Sans', system-ui, sans-serif;
       --max: 1200px; --gutter: clamp(1.5rem, 5vw, 4rem);
     }
+    html, body { overflow-x: hidden; }
     html { scroll-behavior: smooth; }
     body { background: var(--cream); color: var(--charcoal); font-family: var(--font-body); font-size: 1rem; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
@@ -352,17 +353,13 @@
       gap: 1.5rem;
     }
     .caroline-avatar {
-      width: 80px;
-      height: 80px;
-      background: var(--navy);
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--gold);
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--gold);
+      display: block;
     }
     .caroline-name {
       font-family: var(--font-display);
@@ -741,7 +738,7 @@
   <div class="section-inner">
     <div class="caroline-grid">
       <div class="caroline-identity">
-        <div class="caroline-avatar" aria-hidden="true">CC</div>
+        <img class="caroline-avatar" src="/images/caroline-cousin.jpg" alt="Caroline Cousin, fondatrice SnapEnglish" />
         <div>
           <div class="caroline-name" id="caroline-title">Caroline Cousin</div>
           <div class="caroline-role">Fondatrice &amp; formatrice, SnapEnglish</div>

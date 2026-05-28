@@ -65,6 +65,7 @@
       --font-body: 'DM Sans', system-ui, sans-serif;
       --max: 1200px; --gutter: clamp(1.5rem, 5vw, 4rem);
     }
+    html, body { overflow-x: hidden; }
     html { scroll-behavior: smooth; }
     body { background: var(--cream); color: var(--charcoal); font-family: var(--font-body); font-size: 1rem; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
@@ -521,13 +522,8 @@
       Prêt à voyager en anglais<br>
       <em>sans vous bloquer ?</em>
     </h2>
-    <p class="cta-sub">
-      Un premier échange gratuit pour construire le parcours adapté 
-      à vos destinations et vos situations réelles.
-    </p>
     <div class="cta-actions">
-      <a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener" class="btn-gold">S'inscrire via CPF</a>
-      <a href="mailto:contact@snapenglish.fr?subject=Formation anglais déplacements CPF" class="btn-secondary" style="color:rgba(247,244,239,0.7);">Échange gratuit →</a>
+      <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/resultats?q=%7B%22ou%22:%7B%22modality%22:%22A_DISTANCE%22,%22type%22:%22CP%22%7D,%22debutPagination%22:1,%22nombreOccurences%22:10,%22contexteFormation%22:%22ACTIVITE_PROFESSIONNELLE%22,%22quoi%22:%22anglais%22,%22quoiReferentiel%22:null,%22nomOrganisme%22:%22SNAPENGLISH%22,%22endDate%22:null,%22startDate%22:null,%22evaluation%22:null,%22niveauSortie%22:null,%22minPrix%22:null,%22maxPrix%22:null,%22rythme%22:null,%22onlyWithAbondementsEligibles%22:null,%22durationHours%22:null,%22certifications%22:null,%22certificationComplete%22:null,%22vae%22:null,%22codesCategorisationOffre%22:null,%22vaeAutocomplete%22:%22%22%7D" target="_blank" rel="noopener" class="btn-gold">S'inscrire via CPF</a>
     </div>
   </div>
 </section>
@@ -620,8 +616,12 @@
   }
   function toggleMenu() {
     const links = document.querySelector('.nav-links');
-    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-    links.style.cssText += ';flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:1rem 2rem;border-bottom:1px solid var(--sand);';
+    const isOpen = links.style.display === 'flex';
+    links.style.display = isOpen ? 'none' : 'flex';
+    if (!isOpen) {
+      links.style.cssText += ';flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:1rem 2rem;border-bottom:1px solid var(--sand);z-index:99;';
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { links.style.display = 'none'; }, { once: true }));
+    }
   }
 </script>
 </body>
