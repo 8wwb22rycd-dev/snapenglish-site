@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ebook gratuit — How to Sound Like a Native | SnapEnglish</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F4EF; --warm: #EDE8DF; --sand: #D4C9B4;
+      --navy: #1B2A4A; --charcoal: #2C2C2C; --gold: #B8975A; --white: #FDFCFA;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+    html, body { overflow-x: hidden; }
+    body { background: var(--cream); color: var(--charcoal); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+
+    /* ── DOWNLOAD BAR ── */
+    .dl-bar {
+      background: var(--navy); padding: 0.75rem 2rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .dl-bar-text { font-size: 0.82rem; font-weight: 300; color: rgba(247,244,239,0.7); }
+    .dl-bar-text strong { color: var(--gold); font-weight: 500; }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); color: var(--navy);
+      padding: 0.55rem 1.25rem; border-radius: 2px;
+      font-family: var(--font-body); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+      border: none; cursor: pointer; transition: background 0.2s;
+    }
+    .dl-btn:hover { background: #c9a96a; }
+
+    /* ── COVER ── */
+    .cover {
+      background: var(--navy); min-height: 92vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 4rem 2rem;
+      position: relative; overflow: hidden;
+    }
+    .cover::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(184,151,90,0.12) 0%, transparent 60%);
+    }
+    .cover-logo { margin-bottom: 3rem; opacity: 0.9; }
+    .cover-eyebrow {
+      font-family: var(--font-body); font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+    }
+    .cover-eyebrow::before, .cover-eyebrow::after {
+      content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); opacity: 0.5;
+    }
+    .cover-book { font-family: var(--font-body); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,244,239,0.35); margin-bottom: 1.25rem; }
+    .cover-title {
+      font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 400; color: var(--cream); line-height: 1.1; letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .cover-title em { font-style: italic; color: var(--gold); display: block; }
+    .cover-subtitle {
+      font-family: var(--font-body); font-size: 1rem; font-weight: 300;
+      color: rgba(247,244,239,0.55); letter-spacing: 0.06em; text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+    .cover-divider { width: 3rem; height: 1px; background: var(--gold); opacity: 0.4; margin: 0 auto 3rem; }
+    .cover-author {
+      font-family: var(--font-display); font-style: italic; font-size: 1.1rem;
+      color: rgba(247,244,239,0.6); margin-bottom: 0.35rem;
+    }
+    .cover-role { font-size: 0.75rem; font-weight: 300; color: rgba(247,244,239,0.35); letter-spacing: 0.08em; text-transform: uppercase; }
+    .cover-deco {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      font-size: 0.65rem; font-weight: 300; color: rgba(247,244,239,0.2);
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+
+    /* ── INTRO ── */
+    .intro-section {
+      max-width: 680px; margin: 0 auto; padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+    .intro-label {
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); display: flex; align-items: center; gap: 0.6rem;
+      justify-content: center; margin-bottom: 1.25rem;
+    }
+    .intro-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
+    .intro-title {
+      font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400; color: var(--navy); line-height: 1.2; letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .intro-title em { font-style: italic; color: var(--gold); }
+    .intro-text {
+      font-size: 1rem; font-weight: 300; color: var(--charcoal); line-height: 1.85;
+      opacity: 0.85; margin-bottom: 1.25rem;
+    }
+    .intro-tips {
+      background: var(--white); border-left: 3px solid var(--gold);
+      padding: 1.5rem 2rem; margin: 2rem 0; text-align: left;
+    }
+    .intro-tips-title {
+      font-family: var(--font-display); font-size: 1rem; color: var(--navy);
+      margin-bottom: 0.75rem; font-weight: 500;
+    }
+    .intro-tips ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .intro-tips li {
+      font-size: 0.92rem; font-weight: 300; color: var(--charcoal);
+      display: flex; align-items: flex-start; gap: 0.65rem; line-height: 1.6;
+    }
+    .intro-tips li::before {
+      content: '→'; color: var(--gold); font-size: 0.8rem; flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .intro-results {
+      background: var(--navy); padding: 1.5rem 2rem; text-align: left; margin: 1.5rem 0;
+    }
+    .intro-results-title {
+      font-family: var(--font-display); font-size: 1rem; color: var(--gold);
+      margin-bottom: 0.75rem; font-weight: 400;
+    }
+    .intro-results ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .intro-results li {
+      font-size: 0.9rem; font-weight: 300; color: rgba(247,244,239,0.75);
+      display: flex; align-items: center; gap: 0.65rem;
+    }
+    .intro-results li::before { content: '✓'; color: var(--gold); font-weight: 600; font-size: 0.8rem; }
+
+    /* ── EXPRESSIONS GRID ── */
+    .expressions-section {
+      max-width: 1000px; margin: 0 auto; padding: 2rem 2rem 5rem;
+    }
+    .expressions-header {
+      text-align: center; margin-bottom: 3rem; padding-bottom: 2rem;
+      border-bottom: 1px solid var(--sand);
+    }
+    .expressions-header h2 {
+      font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 400; color: var(--navy); letter-spacing: -0.02em;
+    }
+    .expressions-header h2 em { font-style: italic; color: var(--gold); }
+    .expressions-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+      background: var(--sand); border: 1px solid var(--sand);
+    }
+    .expr-card {
+      background: var(--white); padding: 1.75rem 2rem;
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .expr-num {
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em;
+      color: var(--gold); text-transform: uppercase;
+    }
+    .expr-en {
+      font-family: var(--font-display); font-size: 1.15rem; font-weight: 400;
+      color: var(--navy); line-height: 1.3; letter-spacing: -0.01em;
+    }
+    .expr-divider { width: 1.5rem; height: 1px; background: var(--gold); opacity: 0.5; }
+    .expr-fr {
+      font-size: 0.88rem; font-weight: 300; color: var(--charcoal);
+      opacity: 0.75; font-style: italic; line-height: 1.5;
+    }
+    .expr-note {
+      font-size: 0.78rem; font-weight: 300; color: var(--charcoal);
+      opacity: 0.5; line-height: 1.5; margin-top: 0.15rem;
+    }
+
+    /* ── FOOTER CTA ── */
+    .ebook-footer {
+      background: var(--navy); padding: 4rem 2rem; text-align: center;
+    }
+    .ebook-footer h2 {
+      font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 400; color: var(--cream); margin-bottom: 0.75rem; line-height: 1.3;
+    }
+    .ebook-footer h2 em { font-style: italic; color: var(--gold); }
+    .ebook-footer p {
+      font-size: 0.92rem; font-weight: 300; color: rgba(247,244,239,0.55);
+      margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto;
+      line-height: 1.75;
+    }
+    .footer-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); color: var(--navy);
+      padding: 0.9rem 2.25rem; border-radius: 2px;
+      font-family: var(--font-body); font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .footer-btn:hover { background: #c9a96a; }
+    .ebook-footer-copy {
+      margin-top: 2.5rem; font-size: 0.72rem; font-weight: 300;
+      color: rgba(247,244,239,0.25);
+    }
+
+    @media (max-width: 680px) {
+      .expressions-grid { grid-template-columns: 1fr; }
+      .cover-title { font-size: 2rem; }
+      .dl-bar { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    }
+
+    @media print {
+      .dl-bar { display: none; }
+      .cover { min-height: 100vh; page-break-after: always; }
+      .expr-card { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- BARRE DE TÉLÉCHARGEMENT -->
+<div class="dl-bar">
+  <span class="dl-bar-text">Votre ebook gratuit SnapEnglish — <strong>How to Sound Like a Native English Speaker</strong></span>
+  <a href="/documents/ebook-expressions-anglophones.pdf" download class="dl-btn">
+    ↓ Télécharger le PDF
+  </a>
+</div>
+
+<!-- COUVERTURE -->
+<section class="cover">
+  <div class="cover-logo">
+    <svg width="160" height="36" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="rgba(247,244,239,0.7)" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+      <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#B8975A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.8"/>
+      <text x="34" y="23" font-family="Georgia, serif" font-size="17" font-weight="700" fill="rgba(247,244,239,0.85)">Snap</text>
+      <text x="76" y="23" font-family="Georgia, serif" font-size="17" font-weight="400" fill="#B8975A">English</text>
+    </svg>
+  </div>
+  <div class="cover-eyebrow">Ebook gratuit</div>
+  <div class="cover-book">Book 1 · English tips for French speakers</div>
+  <h1 class="cover-title">
+    How to Sound<br>
+    <em>Like a Native</em><br>
+    English Speaker
+  </h1>
+  <p class="cover-subtitle">32 expressions indispensables des anglophones</p>
+  <div class="cover-divider"></div>
+  <p class="cover-author">Caroline Cousin</p>
+  <p class="cover-role">Formatrice SnapEnglish</p>
+  <div class="cover-deco">snapenglish.fr</div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="intro-section">
+  <div class="intro-label">Avant de commencer</div>
+  <h2 class="intro-title">S'exprimer en anglais<br>avec <em>confiance</em></h2>
+  <p class="intro-text">
+    S'exprimer de manière fluide en anglais, ne plus chercher à traduire à partir de votre langue maternelle.
+    Un objectif que vous pouvez facilement atteindre en appliquant les conseils suivants.
+  </p>
+  <p class="intro-text">
+    Une étape essentielle pour atteindre l'aisance à l'oral est de maîtriser les expressions les plus utilisées par les anglophones.
+    J'ai sélectionné pour vous ces expressions lors de conversations avec des natifs.
+  </p>
+
+  <div class="intro-tips">
+    <div class="intro-tips-title">Mes conseils</div>
+    <ul>
+      <li>Amusez-vous à mémoriser ces expressions idiomatiques</li>
+      <li>Utilisez-les dès que l'occasion se présente</li>
+      <li>Constatez vous-même les premiers résultats</li>
+    </ul>
+  </div>
+
+  <div class="intro-results">
+    <div class="intro-results-title">Les premiers résultats</div>
+    <ul>
+      <li>Votre anglais est plus authentique</li>
+      <li>Vous n'avez plus besoin de traduire depuis votre langue maternelle</li>
+      <li>Vous êtes désormais plus confiant(e)</li>
+      <li>Votre anglais devient plus fluide</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EXPRESSIONS -->
+<section class="expressions-section">
+  <div class="expressions-header">
+    <h2>32 expressions <em>essentielles</em></h2>
+  </div>
+
+  <div class="expressions-grid">
+
+    <div class="expr-card">
+      <div class="expr-num">01</div>
+      <div class="expr-en">Don't beat around the bush</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Ne tournez pas autour du pot</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">02</div>
+      <div class="expr-en">Think outside the box</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Soyez créatif</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">03</div>
+      <div class="expr-en">I have a lot on my plate</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Je suis débordé(e)</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">04</div>
+      <div class="expr-en">In a nutshell</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">En résumé</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">05</div>
+      <div class="expr-en">At the end of the day</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Au bout du compte</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">06</div>
+      <div class="expr-en">It's my two cents</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">C'est ce que j'en pense</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">07</div>
+      <div class="expr-en">Go the extra mile</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Faire un effort supplémentaire</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">08</div>
+      <div class="expr-en">I'm getting a project off the ground</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Je démarre un projet</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">09</div>
+      <div class="expr-en">It's a no-win situation</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">C'est une impasse, une voie sans issue</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">10</div>
+      <div class="expr-en">It's a win-win situation</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">C'est gagnant-gagnant, profitable à tous</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">11</div>
+      <div class="expr-en">I turned down the offer</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">J'ai refusé l'offre</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">12</div>
+      <div class="expr-en">Let's get started</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Commençons, allons-y, c'est parti !</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">13</div>
+      <div class="expr-en">In the long run</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">À long terme</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">14</div>
+      <div class="expr-en">I can't make it to the meeting</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Je ne peux pas assister à la réunion</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">15</div>
+      <div class="expr-en">A top-of-mind issue</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Un enjeu majeur, une préoccupation de premier plan</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">16</div>
+      <div class="expr-en">On top of your game</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Être performant, au top de ses capacités</div>
+      <div class="expr-note">You need to sharpen your skills to stay on top of your game.</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">17</div>
+      <div class="expr-en">It's a no-brainer</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">C'est une évidence</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">18</div>
+      <div class="expr-en">We need to hone our skills</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Nous devons perfectionner nos compétences</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">19</div>
+      <div class="expr-en">Let's keep in touch</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Restons en contact</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">20</div>
+      <div class="expr-en">I can't figure it out</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Je ne comprends pas, je n'arrive pas à y voir clair</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">21</div>
+      <div class="expr-en">You can make it</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Tu peux le faire, tu vas y arriver</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">22</div>
+      <div class="expr-en">The ball is in your court</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">La balle est dans ton camp</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">23</div>
+      <div class="expr-en">It's up to you</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">C'est vous qui voyez, c'est comme vous voulez</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">24</div>
+      <div class="expr-en">When it comes to…</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">En ce qui concerne…</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">25</div>
+      <div class="expr-en">I've been working since 7.00 am</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Je travaille depuis 7h ce matin</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">26</div>
+      <div class="expr-en">I've been working in the company for 5 years</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Je travaille dans l'entreprise depuis 5 ans</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">27</div>
+      <div class="expr-en">Just bear with me for a moment</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">Je vous demande un petit instant</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">28</div>
+      <div class="expr-en">I was asked</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">On m'a demandé</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">29</div>
+      <div class="expr-en">I was told</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">On m'a dit</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">30</div>
+      <div class="expr-en">They were given extra time</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">On leur a donné un délai supplémentaire</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">31</div>
+      <div class="expr-en">I'll be through in a minute</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">J'en ai pour une minute, j'ai presque fini</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-num">32</div>
+      <div class="expr-en">I lost my train of thought</div>
+      <div class="expr-divider"></div>
+      <div class="expr-fr">J'ai perdu le fil de mes pensées</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="ebook-footer">
+  <h2>Envie d'aller plus loin ?<br><em>Formez-vous avec Caroline</em></h2>
+  <p>Cours particuliers 100% en ligne, finançables CPF. Anglais professionnel, médical, ou pour vos déplacements — adapté à votre niveau et vos objectifs.</p>
+  <a href="https://www.snapenglish.fr/formations" class="footer-btn">Découvrir les formations →</a>
+  <div class="ebook-footer-copy">© 2025 SnapEnglish · Caroline Cousin · snapenglish.fr</div>
+</section>
+
+</body>
+</html>

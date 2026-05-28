@@ -164,7 +164,10 @@
       <div id="snap-popup-success" style="display:none">
         <div class="snap-check">✓</div>
         <div class="snap-success-title">Bienvenue !</div>
-        <p>Vous êtes inscrit(e) à la newsletter SnapEnglish.<br>À très bientôt dans votre boîte mail !</p>
+        <p>Vous êtes inscrit(e) à la newsletter SnapEnglish.</p>
+        <a id="snap-ebook-btn" href="/ebook-expressions-anglophones.html" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.25rem;background:#B8975A;color:#1B2A4A;padding:0.8rem 1.75rem;font-family:'DM Sans',system-ui,sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;border-radius:2px;">
+          📖 Accéder à mon ebook gratuit
+        </a>
       </div>
     </div>
   `;
@@ -203,7 +206,6 @@
       localStorage.setItem('snap_nl_subscribed', '1');
       document.getElementById('snap-popup-form').style.display = 'none';
       document.getElementById('snap-popup-success').style.display = 'block';
-      setTimeout(closePopup, 3500);
     } catch {
       btn.disabled = false;
       btn.textContent = "Je m'abonne gratuitement";
