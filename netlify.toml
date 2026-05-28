@@ -259,6 +259,16 @@
     Cache-Control = "public, max-age=86400"
 
 [[redirects]]
+  from = "/ebook"
+  to = "/ebook-expressions-anglophones.html"
+  status = 200
+
+[[redirects]]
+  from = "/ebook-expressions-anglophones"
+  to = "/ebook-expressions-anglophones.html"
+  status = 200
+
+[[redirects]]
   from = "/exercices"
   to = "/exercices/"
   status = 301
