@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certification CLOE RS6435 | SnapEnglish</title>
+  <meta name="description" content="La certification CLOE (RS6435) valide vos compétences en anglais professionnel. Incluse dans les formations SnapEnglish, finançable CPF." />
+  <link rel="canonical" href="https://www.snapenglish.fr/certification-cloe" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F4EF; --warm: #EDE8DF; --sand: #D4C9B4;
+      --navy: #1B2A4A; --navy-light: #2A3F6F; --charcoal: #2C2C2C;
+      --gold: #B8975A; --white: #FDFCFA;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max: 1200px; --gutter: clamp(1.5rem, 5vw, 4rem);
+    }
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--charcoal); font-family: var(--font-body); font-size: 1rem; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+    .reveal { opacity:0; transform:translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.25rem var(--gutter); display:flex; align-items:center; justify-content:space-between; background:rgba(247,244,239,0.92); backdrop-filter:blur(12px); border-bottom:1px solid rgba(180,160,120,0.15); transition:box-shadow 0.3s; }
+    nav.scrolled { box-shadow:0 2px 24px rgba(27,42,74,0.08); }
+    .nav-logo { text-decoration:none; }
+    .nav-links { display:flex; align-items:center; gap:2rem; list-style:none; }
+    .nav-links a { font-size:0.85rem; font-weight:500; letter-spacing:0.04em; text-transform:uppercase; color:var(--navy); text-decoration:none; opacity:0.75; transition:opacity 0.2s; }
+    .nav-links a:hover { opacity:1; }
+    .nav-cta { background:var(--navy) !important; color:var(--cream) !important; opacity:1 !important; padding:0.55rem 1.25rem; border-radius:2px; font-size:0.8rem !important; }
+    .nav-mobile-btn { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .nav-mobile-btn span { display:block; width:24px; height:2px; background:var(--navy); }
+
+    .breadcrumb { padding: 6rem var(--gutter) 0; max-width: var(--max); margin: 0 auto; }
+    .breadcrumb-inner { display:flex; align-items:center; gap:0.5rem; font-size:0.75rem; font-weight:500; color:var(--navy); opacity:0.5; }
+    .breadcrumb-inner a { color:inherit; text-decoration:none; }
+    .breadcrumb-inner span { opacity:0.4; }
+
+    section { padding: clamp(3rem,6vw,6rem) var(--gutter); }
+    .section-inner { max-width:var(--max); margin:0 auto; }
+    .section-label { display:inline-flex; align-items:center; gap:0.6rem; font-size:0.72rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; }
+    .section-label::before { content:''; display:block; width:1.5rem; height:1px; background:var(--gold); }
+    .section-title { font-family:var(--font-display); font-size:clamp(1.8rem,2.8vw,2.6rem); font-weight:400; color:var(--navy); line-height:1.2; letter-spacing:-0.02em; margin-bottom:1rem; }
+    .section-title em { font-style:italic; color:var(--gold); }
+    .section-intro { font-size:1rem; font-weight:300; color:var(--charcoal); opacity:0.8; max-width:620px; line-height:1.85; margin-bottom:2.5rem; }
+
+    /* HERO */
+    .page-hero { padding: 2rem var(--gutter) 4rem; max-width: var(--max); margin: 0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; animation: fadeUp 0.8s ease both; }
+    .page-hero-content { display:flex; flex-direction:column; gap:1.5rem; }
+    .page-title { font-family:var(--font-display); font-size:clamp(2rem,3.5vw,3rem); font-weight:400; color:var(--navy); line-height:1.15; letter-spacing:-0.02em; }
+    .page-title em { font-style:italic; color:var(--gold); }
+    .page-intro { font-size:1.05rem; font-weight:300; color:var(--charcoal); opacity:0.8; line-height:1.85; }
+    .page-hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
+    .btn-primary { display:inline-flex; align-items:center; background:var(--navy); color:var(--cream); padding:0.9rem 2rem; font-family:var(--font-body); font-size:0.88rem; font-weight:500; letter-spacing:0.04em; text-transform:uppercase; text-decoration:none; border:2px solid var(--navy); border-radius:2px; transition:background 0.25s, color 0.25s; }
+    .btn-primary:hover { background:transparent; color:var(--navy); }
+    .btn-secondary { font-size:0.88rem; font-weight:500; color:var(--navy); text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; opacity:0.7; transition:opacity 0.2s; }
+    .btn-secondary:hover { opacity:1; }
+
+    .page-hero-sidebar { background:var(--navy); padding:2.5rem; display:flex; flex-direction:column; gap:1.5rem; }
+    .sidebar-title { font-size:0.7rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); }
+    .sidebar-facts { display:flex; flex-direction:column; gap:0.6rem; }
+    .sidebar-fact { display:flex; align-items:flex-start; gap:0.75rem; font-size:0.88rem; font-weight:300; color:rgba(247,244,239,0.8); padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.07); }
+    .sidebar-fact:last-child { border-bottom:none; }
+    .sidebar-fact::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:0.45rem; }
+
+    /* INFO GRID */
+    .info-section { background:var(--white); }
+    .info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--sand); border:1px solid var(--sand); margin-top:2.5rem; }
+    .info-card { background:var(--white); padding:2rem; display:flex; flex-direction:column; gap:0.75rem; }
+    .info-icon { font-size:1.5rem; }
+    .info-card-title { font-family:var(--font-display); font-size:1rem; font-weight:500; color:var(--navy); }
+    .info-card-desc { font-size:0.85rem; font-weight:300; color:var(--charcoal); opacity:0.75; line-height:1.6; }
+
+    /* DETAIL SECTION */
+    .detail-section { background:var(--cream); }
+    .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; }
+    .detail-list { display:flex; flex-direction:column; }
+    .detail-item { display:grid; grid-template-columns:2.5rem 1fr; gap:1rem; padding:1.5rem 0; border-bottom:1px solid var(--sand); }
+    .detail-item:last-child { border-bottom:none; }
+    .detail-num { font-family:var(--font-display); font-size:0.9rem; color:var(--gold); }
+    .detail-item-title { font-size:0.92rem; font-weight:600; color:var(--navy); margin-bottom:0.3rem; }
+    .detail-item-desc { font-size:0.85rem; font-weight:300; color:var(--charcoal); opacity:0.75; line-height:1.6; }
+    .aside-card { background:var(--white); padding:2rem; border-left:3px solid var(--gold); margin-bottom:1.5rem; }
+    .aside-card-title { font-family:var(--font-display); font-size:1rem; font-weight:500; color:var(--navy); margin-bottom:0.75rem; }
+    .aside-card-list { list-style:none; display:flex; flex-direction:column; gap:0.5rem; margin-top:0.75rem; }
+    .aside-card-list li { font-size:0.85rem; font-weight:300; color:var(--charcoal); opacity:0.8; display:flex; align-items:flex-start; gap:0.6rem; }
+    .aside-card-list li::before { content:'✓'; color:var(--gold); font-weight:600; font-size:0.75rem; margin-top:0.15rem; flex-shrink:0; }
+
+    /* DARK SECTION */
+    .dark-section { background:var(--navy); }
+    .dark-section .section-title { color:var(--cream); }
+    .dark-section .section-label { color:var(--gold); }
+    .dark-section .section-intro { color:rgba(247,244,239,0.65); opacity:1; }
+    .how-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.08); margin-top:2.5rem; }
+    .how-card { background:rgba(27,42,74,0.5); padding:2rem; display:flex; flex-direction:column; gap:1rem; }
+    .how-step { font-size:0.7rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); }
+    .how-title { font-family:var(--font-display); font-size:1rem; font-weight:500; color:var(--cream); }
+    .how-desc { font-size:0.85rem; font-weight:300; color:rgba(247,244,239,0.6); line-height:1.65; }
+
+    /* CTA */
+    .cta-section { background:var(--navy); padding:clamp(3rem,6vw,5rem) var(--gutter); text-align:center; }
+    .cta-inner { max-width:640px; margin:0 auto; }
+    .cta-title { font-family:var(--font-display); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:400; color:var(--cream); line-height:1.3; margin-bottom:1rem; }
+    .cta-title em { font-style:italic; color:var(--gold); }
+    .cta-sub { font-size:0.9rem; font-weight:300; color:rgba(247,244,239,0.6); margin-bottom:2rem; line-height:1.7; }
+    .cta-actions { display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap; }
+    .btn-gold { background:var(--gold); color:var(--navy); padding:0.9rem 2rem; font-family:var(--font-body); font-size:0.88rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; text-decoration:none; border:2px solid var(--gold); border-radius:2px; transition:background 0.25s; }
+    .btn-gold:hover { background:#c9a96a; }
+
+    /* FOOTER */
+    footer { background:#111827; padding:3rem var(--gutter) 2rem; }
+    .footer-inner { max-width:var(--max); margin:0 auto; }
+    .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:3rem; padding-bottom:2.5rem; border-bottom:1px solid rgba(255,255,255,0.07); }
+    .footer-logo { margin-bottom:0.75rem; }
+    .footer-tagline { font-size:0.82rem; font-weight:300; color:rgba(247,244,239,0.45); line-height:1.6; max-width:220px; }
+    .footer-contact { margin-top:1.25rem; display:flex; flex-direction:column; gap:0.35rem; }
+    .footer-contact a { font-size:0.8rem; font-weight:300; color:rgba(247,244,239,0.55); text-decoration:none; transition:color 0.2s; }
+    .footer-contact a:hover { color:var(--gold); }
+    .footer-col-title { font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(247,244,239,0.4); margin-bottom:1rem; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
+    .footer-links a { font-size:0.82rem; font-weight:300; color:rgba(247,244,239,0.55); text-decoration:none; transition:color 0.2s; }
+    .footer-links a:hover { color:var(--cream); }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; padding-top:1.5rem; flex-wrap:wrap; gap:1rem; }
+    .footer-copy { font-size:0.75rem; color:rgba(247,244,239,0.25); }
+    .footer-certifs { display:flex; align-items:center; gap:1rem; }
+    .footer-certif-badge { font-size:0.7rem; font-weight:500; letter-spacing:0.06em; color:rgba(247,244,239,0.35); border:1px solid rgba(255,255,255,0.1); padding:0.25rem 0.6rem; }
+
+    @media (max-width:900px) {
+      .page-hero { grid-template-columns:1fr; gap:2rem; }
+      .info-grid { grid-template-columns:1fr 1fr; }
+      .how-grid { grid-template-columns:1fr; }
+      .detail-grid { grid-template-columns:1fr; gap:2rem; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+      .nav-links { display:none; }
+      .nav-mobile-btn { display:flex; }
+    }
+    @media (max-width:600px) {
+      .info-grid { grid-template-columns:1fr; }
+      .footer-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav" role="navigation" aria-label="Navigation principale">
+  <a href="/" class="nav-logo" aria-label="SnapEnglish - Accueil">
+    <svg width="148" height="34" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#1B2A4A" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+      <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#B8975A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <text x="34" y="23" font-family="Georgia, serif" font-size="17" font-weight="700" fill="#1B2A4A">Snap</text>
+      <text x="76" y="23" font-family="Georgia, serif" font-size="17" font-weight="400" fill="#B8975A">English</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/formations">Formations CPF</a></li>
+    <li><a href="/methode">Méthode</a></li>
+    <li><a href="/shop">Produits</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-mobile-btn" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb">
+  <nav class="breadcrumb-inner" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a>
+    <span>›</span>
+    <a href="/formations">Formations CPF</a>
+    <span>›</span>
+    <span aria-current="page">Certification CLOE RS6435</span>
+  </nav>
+</div>
+
+<main>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <span class="section-label">Certification officielle · RS6435</span>
+    <h1 class="page-title">
+      La certification CLOE<br>
+      <em>— RS6435</em>
+    </h1>
+    <p class="page-intro">
+      La CLOE — Certification de Compétences en Langue des Organisations Européennes —
+      est la certification en anglais professionnel incluse dans les formations SnapEnglish.
+      Enregistrée au Répertoire Spécifique (RS6435) par France Compétences, elle valide
+      officiellement vos compétences orales et écrites en contexte professionnel.
+    </p>
+    <div class="page-hero-actions">
+      <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/resultats?q=%7B%22ou%22:%7B%22modality%22:%22A_DISTANCE%22,%22type%22:%22CP%22%7D,%22debutPagination%22:1,%22nombreOccurences%22:10,%22contexteFormation%22:%22ACTIVITE_PROFESSIONNELLE%22,%22quoi%22:%22anglais%22,%22quoiReferentiel%22:null,%22nomOrganisme%22:%22SNAPENGLISH%22,%22endDate%22:null,%22startDate%22:null,%22evaluation%22:null,%22niveauSortie%22:null,%22minPrix%22:null,%22maxPrix%22:null,%22rythme%22:null,%22onlyWithAbondementsEligibles%22:null,%22durationHours%22:null,%22certifications%22:null,%22certificationComplete%22:null,%22vae%22:null,%22codesCategorisationOffre%22:null,%22vaeAutocomplete%22:%22%22%7D" target="_blank" rel="noopener" class="btn-primary">
+        Accès direct au catalogue formations dans CPF
+      </a>
+      <a href="mailto:contact@snapenglish.fr" class="btn-secondary">Une question ? →</a>
+    </div>
+  </div>
+
+  <div class="page-hero-sidebar" role="complementary" aria-label="Infos certification CLOE">
+    <div class="sidebar-title">En résumé</div>
+    <div class="sidebar-facts">
+      <div class="sidebar-fact">Certification de Compétences en Langue des Organisations Européennes</div>
+      <div class="sidebar-fact">Enregistrée au Répertoire Spécifique — RS6435</div>
+      <div class="sidebar-fact">Niveaux A1 à C2 (cadre CECRL)</div>
+      <div class="sidebar-fact">Validité : 2 ans</div>
+      <div class="sidebar-fact">Passable à distance</div>
+      <div class="sidebar-fact">Reconnue par les employeurs</div>
+      <div class="sidebar-fact">Incluse dans les formations SnapEnglish — sans surcoût CPF</div>
+    </div>
+  </div>
+</div>
+
+<!-- INFO CARDS -->
+<section class="info-section reveal" aria-labelledby="info-title">
+  <div class="section-inner">
+    <span class="section-label">Ce que valide la CLOE</span>
+    <h2 id="info-title" class="section-title">
+      Une certification <em>reconnue</em> par les employeurs
+    </h2>
+    <p class="section-intro">
+      La CLOE évalue les compétences réelles en anglais dans un contexte professionnel et organisationnel.
+      Elle couvre à la fois la compréhension et l'expression, à l'oral comme à l'écrit.
+    </p>
+    <div class="info-grid" role="list">
+      <div class="info-card" role="listitem">
+        <div class="info-icon" aria-hidden="true">🎧</div>
+        <div class="info-card-title">Compréhension orale</div>
+        <p class="info-card-desc">Comprendre des discours, présentations et échanges professionnels en anglais, dans des contextes organisationnels européens.</p>
+      </div>
+      <div class="info-card" role="listitem">
+        <div class="info-icon" aria-hidden="true">🗣️</div>
+        <div class="info-card-title">Expression orale</div>
+        <p class="info-card-desc">Prendre la parole avec aisance lors de réunions, négociations, appels et présentations en anglais professionnel.</p>
+      </div>
+      <div class="info-card" role="listitem">
+        <div class="info-icon" aria-hidden="true">📖</div>
+        <div class="info-card-title">Compréhension écrite</div>
+        <p class="info-card-desc">Lire et comprendre des documents professionnels, rapports, emails et correspondances en anglais.</p>
+      </div>
+      <div class="info-card" role="listitem">
+        <div class="info-icon" aria-hidden="true">✍️</div>
+        <div class="info-card-title">Expression écrite</div>
+        <p class="info-card-desc">Rédiger des écrits professionnels clairs et adaptés — emails, comptes rendus, synthèses — en anglais.</p>
+      </div>
+      <div class="info-card" role="listitem">
+        <div class="info-icon" aria-hidden="true">📋</div>
+        <div class="info-card-title">Cadre CECRL A1–C2</div>
+        <p class="info-card-desc">Le résultat est positionné sur l'échelle commune européenne, reconnaissable par tous les employeurs et organismes RH.</p>
+      </div>
+      <div class="info-card" role="listitem">
+        <div class="info-icon" aria-hidden="true">🏛️</div>
+        <div class="info-card-title">Répertoire Spécifique</div>
+        <p class="info-card-desc">Enregistrée par France Compétences (RS6435), la CLOE est éligible CPF et reconnue dans les dossiers de formation professionnelle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL + ASIDE -->
+<section class="detail-section reveal" aria-labelledby="detail-title">
+  <div class="section-inner">
+    <span class="section-label">Déroulement</span>
+    <h2 id="detail-title" class="section-title">
+      Comment se passe <em>l'évaluation CLOE</em> ?
+    </h2>
+    <div class="detail-grid">
+      <div class="detail-list" role="list">
+        <div class="detail-item" role="listitem">
+          <div class="detail-num">01</div>
+          <div>
+            <div class="detail-item-title">En fin de parcours de formation</div>
+            <p class="detail-item-desc">L'évaluation CLOE se tient à l'issue de la formation SnapEnglish, une fois le programme de cours complété.</p>
+          </div>
+        </div>
+        <div class="detail-item" role="listitem">
+          <div class="detail-num">02</div>
+          <div>
+            <div class="detail-item-title">100% à distance</div>
+            <p class="detail-item-desc">La certification est passée en ligne, depuis votre domicile ou votre lieu de travail. Aucun déplacement nécessaire.</p>
+          </div>
+        </div>
+        <div class="detail-item" role="listitem">
+          <div class="detail-num">03</div>
+          <div>
+            <div class="detail-item-title">Durée : 45 à 60 minutes</div>
+            <p class="detail-item-desc">L'évaluation complète prend environ 45 à 60 minutes, réparties entre les différentes compétences évaluées.</p>
+          </div>
+        </div>
+        <div class="detail-item" role="listitem">
+          <div class="detail-num">04</div>
+          <div>
+            <div class="detail-item-title">Compréhension et expression</div>
+            <p class="detail-item-desc">L'évaluation couvre la compréhension orale et écrite ainsi que l'expression orale et écrite en contexte professionnel.</p>
+          </div>
+        </div>
+        <div class="detail-item" role="listitem">
+          <div class="detail-num">05</div>
+          <div>
+            <div class="detail-item-title">Résultat et attestation</div>
+            <p class="detail-item-desc">Le résultat est exprimé en niveau CECRL (A1 à C2). Une attestation officielle vous est remise à l'issue de l'évaluation.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="aside-card">
+          <div class="aside-card-title">Pourquoi la CLOE est incluse chez SnapEnglish</div>
+          <ul class="aside-card-list">
+            <li>Valide officiellement les compétences acquises pendant la formation</li>
+            <li>Reconnue par les employeurs et les services RH</li>
+            <li>Inscrite dans le dossier CPF — sans surcoût pour vous</li>
+            <li>Démarche simplifiée : SnapEnglish s'occupe de tout</li>
+            <li>Résultat valorisable sur votre CV et profil LinkedIn</li>
+          </ul>
+        </div>
+        <div class="aside-card">
+          <div class="aside-card-title">CLOE ou LEVELTEL ?</div>
+          <p style="font-size:0.88rem;font-weight:300;color:var(--charcoal);opacity:0.8;line-height:1.7;">
+            SnapEnglish propose la certification CLOE (RS6435) ou LEVELTEL (RS7399) selon la formation choisie.
+            Les deux certifications sont enregistrées par France Compétences et éligibles CPF.
+            Caroline vous indique au démarrage laquelle correspond à votre parcours.
+          </p>
+          <a href="/certification-leveltel" style="display:inline-block;margin-top:0.75rem;font-size:0.82rem;font-weight:500;color:var(--navy);text-decoration:none;opacity:0.7;">En savoir plus sur LEVELTEL →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="dark-section reveal" aria-labelledby="how-title">
+  <div class="section-inner">
+    <span class="section-label" style="color:var(--gold);">RS6435 · France Compétences</span>
+    <h2 id="how-title" class="section-title" style="color:var(--cream);">
+      La CLOE dans votre <em style="color:var(--gold);">dossier CPF</em>
+    </h2>
+    <p class="section-intro">
+      Incluse dans votre formation SnapEnglish, la certification CLOE fait partie intégrante
+      du dossier CPF déposé sur moncompteformation.gouv.fr. Vous ne payez rien de plus.
+    </p>
+    <div class="how-grid" role="list">
+      <div class="how-card" role="listitem">
+        <div class="how-step">Étape 1</div>
+        <div class="how-title">Vous choisissez votre formation SnapEnglish sur Mon Compte Formation</div>
+        <p class="how-desc">La certification CLOE RS6435 est déjà intégrée dans le dossier de formation. Elle apparaît dans la fiche CPF dès la demande d'inscription.</p>
+      </div>
+      <div class="how-card" role="listitem">
+        <div class="how-step">Étape 2</div>
+        <div class="how-title">Vous suivez votre parcours de formation personnalisé avec Caroline</div>
+        <p class="how-desc">Cours particuliers en ligne via Zoom, programme sur mesure selon vos situations professionnelles. La certification est préparée tout au long du parcours.</p>
+      </div>
+      <div class="how-card" role="listitem">
+        <div class="how-step">Étape 3</div>
+        <div class="how-title">Vous passez l'évaluation CLOE à distance, en fin de formation</div>
+        <p class="how-desc">45 à 60 minutes, 100% en ligne. L'évaluation porte sur vos compétences réelles en anglais professionnel — compréhension et expression.</p>
+      </div>
+      <div class="how-card" role="listitem">
+        <div class="how-step">Étape 4</div>
+        <div class="how-title">Vous recevez votre attestation de niveau CECRL</div>
+        <p class="how-desc">Le résultat est exprimé sur l'échelle A1–C2. L'attestation est officielle, valorisable auprès de votre employeur, dans vos candidatures ou sur LinkedIn. Validité 2 ans.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" aria-labelledby="cta-title">
+  <div class="cta-inner">
+    <h2 id="cta-title" class="cta-title">
+      Prêt à obtenir votre<br>
+      <em>certification CLOE RS6435 ?</em>
+    </h2>
+    <p class="cta-sub">
+      La certification CLOE est incluse dans toutes les formations SnapEnglish éligibles CPF.
+      Accédez directement au catalogue sur Mon Compte Formation.
+    </p>
+    <div class="cta-actions">
+      <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/resultats?q=%7B%22ou%22:%7B%22modality%22:%22A_DISTANCE%22,%22type%22:%22CP%22%7D,%22debutPagination%22:1,%22nombreOccurences%22:10,%22contexteFormation%22:%22ACTIVITE_PROFESSIONNELLE%22,%22quoi%22:%22anglais%22,%22quoiReferentiel%22:null,%22nomOrganisme%22:%22SNAPENGLISH%22,%22endDate%22:null,%22startDate%22:null,%22evaluation%22:null,%22niveauSortie%22:null,%22minPrix%22:null,%22maxPrix%22:null,%22rythme%22:null,%22onlyWithAbondementsEligibles%22:null,%22durationHours%22:null,%22certifications%22:null,%22certificationComplete%22:null,%22vae%22:null,%22codesCategorisationOffre%22:null,%22vaeAutocomplete%22:%22%22%7D" target="_blank" rel="noopener" class="btn-gold">Accès direct au catalogue formations dans CPF</a>
+      <a href="mailto:contact@snapenglish.fr?subject=Certification CLOE RS6435" class="btn-secondary" style="color:rgba(247,244,239,0.7);">Échange gratuit →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="140" height="32" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="rgba(247,244,239,0.8)" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+            <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#B8975A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+            <text x="34" y="23" font-family="Georgia, serif" font-size="17" font-weight="700" fill="rgba(247,244,239,0.9)">Snap</text>
+            <text x="76" y="23" font-family="Georgia, serif" font-size="17" font-weight="400" fill="#B8975A">English</text>
+          </svg>
+        </div>
+        <p class="footer-tagline">
+          Organisme de formation anglais certifié Qualiopi.
+          Cours particuliers 100% en ligne, spécialisé anglais médical et professionnel.
+        </p>
+        <div class="footer-contact">
+          <a href="mailto:contact@snapenglish.fr">contact@snapenglish.fr</a>
+          <a href="tel:+33680266314">06 80 26 63 14</a>
+          <a href="https://www.linkedin.com/in/caroline-cousin-snapenglish/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Formations</div>
+        <ul class="footer-links">
+          <li><a href="/formations/anglais-medical">Anglais médical</a></li>
+          <li><a href="/formations/anglais-infirmier">Anglais infirmier</a></li>
+          <li><a href="/formations/anglais-professionnel">Anglais professionnel</a></li>
+          <li><a href="/formations/anglais-digital">Anglais digital</a></li>
+          <li><a href="/tarif-inscription-formation-anglais">Tous les tarifs CPF</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">SnapEnglish</div>
+        <ul class="footer-links">
+          <li><a href="/methode">La méthode</a></li>
+          <li><a href="/a-propos">À propos</a></li>
+          <li><a href="/temoignages">Témoignages</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Produits</div>
+        <ul class="footer-links">
+          <li><a href="/shop">Boutique</a></li>
+          <li><a href="/shop/sound-less-french">Sound Less French</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/mentions-legales">Mentions légales</a></li>
+          <li><a href="/politique-de-confidentialite">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 SnapEnglish · Caroline Cousin · Tous droits réservés</span>
+      <div class="footer-certifs" role="list" aria-label="Certifications">
+        <span class="footer-certif-badge" role="listitem">Qualiopi</span>
+        <span class="footer-certif-badge" role="listitem">CPF</span>
+        <span class="footer-certif-badge" role="listitem">CLOE</span>
+        <span class="footer-certif-badge" role="listitem">LEVELTEL</span>
+        <span class="footer-certif-badge" role="listitem">100% personnalisé</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(r => observer.observe(r));
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    links.style.cssText += ';flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:1rem 2rem;border-bottom:1px solid var(--sand);';
+  }
+</script>
+</body>
+</html>

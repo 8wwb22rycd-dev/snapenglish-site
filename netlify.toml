@@ -229,6 +229,21 @@
   to = "/snapenglish-faq.html"
   status = 200
 
+[[redirects]]
+  from = "/certification-cloe"
+  to = "/snapenglish-certification-cloe.html"
+  status = 200
+
+[[redirects]]
+  from = "/certification-leveltel"
+  to = "/snapenglish-certification-leveltel.html"
+  status = 200
+
+[[redirects]]
+  from = "/certification-qualiopi"
+  to = "/snapenglish-certification-qualiopi.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
