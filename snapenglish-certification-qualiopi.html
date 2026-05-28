@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certification Qualiopi | SnapEnglish organisme certifié</title>
-  <meta name="description" content="SnapEnglish est certifié Qualiopi, gage de qualité des formations professionnelles. Numéro de déclaration d'activité 32591181359 (DREETS Hauts-de-France)." />
+  <title>Certification Qualiopi SnapEnglish | Organisme certifié CPF</title>
+  <meta name="description" content="SnapEnglish est certifié Qualiopi, basé à Cambrai. Cette certification délivrée par l'État français garantit la qualité des formations et permet le financement CPF." />
   <link rel="canonical" href="https://www.snapenglish.fr/certification-qualiopi" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,10 +17,9 @@
       --cream: #F7F4EF; --warm: #EDE8DF; --sand: #D4C9B4;
       --navy: #1B2A4A; --navy-light: #2A3F6F; --charcoal: #2C2C2C;
       --gold: #B8975A; --white: #FDFCFA;
-      --border: #e0dbd3;
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body: 'DM Sans', system-ui, sans-serif;
-      --max: 1200px; --gutter: clamp(1.5rem, 5vw, 4rem);
+      --max: 860px; --gutter: clamp(1.5rem, 5vw, 4rem);
     }
     html, body { overflow-x: hidden; }
     html { scroll-behavior: smooth; }
@@ -39,122 +38,94 @@
     .nav-cta { background:var(--navy) !important; color:var(--cream) !important; opacity:1 !important; padding:0.55rem 1.25rem; border-radius:2px; font-size:0.8rem !important; }
     .nav-mobile-btn { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
     .nav-mobile-btn span { display:block; width:24px; height:2px; background:var(--navy); }
+    @media (max-width:900px) { .nav-links { display:none; } .nav-mobile-btn { display:flex; } }
 
-    .breadcrumb { padding: 6rem var(--gutter) 0; max-width: var(--max); margin: 0 auto; }
-    .breadcrumb-inner { display:flex; align-items:center; gap:0.5rem; font-size:0.75rem; font-weight:500; color:var(--navy); opacity:0.5; }
-    .breadcrumb-inner a { color:inherit; text-decoration:none; }
-    .breadcrumb-inner span { opacity:0.4; }
-
-    section { padding: clamp(3rem,6vw,6rem) var(--gutter); }
-    .section-inner { max-width:var(--max); margin:0 auto; }
-    .section-label { display:inline-flex; align-items:center; gap:0.6rem; font-size:0.72rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; }
-    .section-label::before { content:''; display:block; width:1.5rem; height:1px; background:var(--gold); }
-    .section-title { font-family:var(--font-display); font-size:clamp(1.8rem,2.8vw,2.6rem); font-weight:400; color:var(--navy); line-height:1.2; letter-spacing:-0.02em; margin-bottom:1rem; }
-    .section-title em { font-style:italic; color:var(--gold); }
-    .section-intro { font-size:1rem; font-weight:300; color:var(--charcoal); opacity:0.8; max-width:620px; line-height:1.85; margin-bottom:2.5rem; }
+    /* MAIN LAYOUT */
+    main { padding-top: 5rem; }
 
     /* HERO */
-    .page-hero { padding: 2rem var(--gutter) 4rem; max-width: var(--max); margin: 0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; animation: fadeUp 0.8s ease both; }
-    .page-hero-content { display:flex; flex-direction:column; gap:1.5rem; }
-    .page-title { font-family:var(--font-display); font-size:clamp(2rem,3.5vw,3rem); font-weight:400; color:var(--navy); line-height:1.15; letter-spacing:-0.02em; }
-    .page-title em { font-style:italic; color:var(--gold); }
-    .page-intro { font-size:1.05rem; font-weight:300; color:var(--charcoal); opacity:0.8; line-height:1.85; }
-    .page-hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
-    .btn-primary { display:inline-flex; align-items:center; background:var(--navy); color:var(--cream); padding:0.9rem 2rem; font-family:var(--font-body); font-size:0.88rem; font-weight:500; letter-spacing:0.04em; text-transform:uppercase; text-decoration:none; border:2px solid var(--navy); border-radius:2px; transition:background 0.25s, color 0.25s; }
-    .btn-primary:hover { background:transparent; color:var(--navy); }
-    .btn-secondary { font-size:0.88rem; font-weight:500; color:var(--navy); text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; opacity:0.7; transition:opacity 0.2s; }
-    .btn-secondary:hover { opacity:1; }
+    .hero-qualiopi { text-align: center; padding: clamp(3rem,6vw,5rem) var(--gutter) 2rem; animation: fadeUp 0.8s ease both; }
+    .hero-qualiopi h1 { font-family: var(--font-display); font-size: clamp(1.7rem,3vw,2.5rem); font-weight: 400; color: var(--navy); line-height: 1.25; letter-spacing: -0.02em; max-width: 700px; margin: 0 auto 1.5rem; }
+    .hero-qualiopi .intro { font-size: 1rem; font-weight: 300; color: var(--charcoal); opacity: 0.85; max-width: 640px; margin: 0 auto 2.5rem; line-height: 1.85; }
 
-    .page-hero-sidebar { background:var(--navy); padding:2.5rem; display:flex; flex-direction:column; gap:1.5rem; }
-    .sidebar-title { font-size:0.7rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); }
-    .sidebar-facts { display:flex; flex-direction:column; gap:0.6rem; }
-    .sidebar-fact { display:flex; align-items:flex-start; gap:0.75rem; font-size:0.88rem; font-weight:300; color:rgba(247,244,239,0.8); padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.07); }
-    .sidebar-fact:last-child { border-bottom:none; }
-    .sidebar-fact::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:0.45rem; }
-    .sidebar-detail-row { display:flex; flex-direction:column; gap:0.2rem; padding:0.75rem 0; border-bottom:1px solid rgba(255,255,255,0.07); }
-    .sidebar-detail-row:last-child { border-bottom:none; }
-    .sidebar-detail-label { font-size:0.65rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:rgba(247,244,239,0.35); }
-    .sidebar-detail-value { font-size:0.88rem; font-weight:300; color:rgba(247,244,239,0.85); }
+    /* SECTIONS */
+    .content-section { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) clamp(2.5rem,5vw,4rem); }
+    .content-section h2 { font-family: var(--font-display); font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 400; color: var(--navy); margin-bottom: 1rem; line-height: 1.3; }
+    .content-section p { font-size: 1rem; font-weight: 300; color: var(--charcoal); opacity: 0.9; line-height: 1.85; margin-bottom: 1rem; }
 
-    /* INFO GRID */
-    .info-section { background:var(--white); }
-    .info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--sand); border:1px solid var(--sand); margin-top:2.5rem; }
-    .info-card { background:var(--white); padding:2rem; display:flex; flex-direction:column; gap:0.75rem; }
-    .info-icon { font-size:1.5rem; }
-    .info-card-title { font-family:var(--font-display); font-size:1rem; font-weight:500; color:var(--navy); }
-    .info-card-desc { font-size:0.85rem; font-weight:300; color:var(--charcoal); opacity:0.75; line-height:1.6; }
+    /* LISTE */
+    .qualiopi-list { list-style: none; margin: 1rem 0 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .qualiopi-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 1rem; font-weight: 300; color: var(--charcoal); }
+    .qualiopi-list li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
-    /* CRITERIA SECTION */
-    .criteria-section { background:var(--cream); }
-    .criteria-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; }
-    .criteria-list { display:flex; flex-direction:column; }
-    .criteria-item { display:grid; grid-template-columns:2.5rem 1fr; gap:1rem; padding:1.5rem 0; border-bottom:1px solid var(--sand); }
-    .criteria-item:last-child { border-bottom:none; }
-    .criteria-num { font-family:var(--font-display); font-size:0.9rem; color:var(--gold); }
-    .criteria-item-title { font-size:0.92rem; font-weight:600; color:var(--navy); margin-bottom:0.3rem; }
-    .criteria-item-desc { font-size:0.85rem; font-weight:300; color:var(--charcoal); opacity:0.75; line-height:1.6; }
-    .aside-card { background:var(--white); padding:2rem; border-left:3px solid var(--gold); margin-bottom:1.5rem; }
-    .aside-card-title { font-family:var(--font-display); font-size:1rem; font-weight:500; color:var(--navy); margin-bottom:0.75rem; }
-    .aside-card-list { list-style:none; display:flex; flex-direction:column; gap:0.5rem; margin-top:0.75rem; }
-    .aside-card-list li { font-size:0.85rem; font-weight:300; color:var(--charcoal); opacity:0.8; display:flex; align-items:flex-start; gap:0.6rem; }
-    .aside-card-list li::before { content:'✓'; color:var(--gold); font-weight:600; font-size:0.75rem; margin-top:0.15rem; flex-shrink:0; }
+    /* LOGOS QUALIOPI */
+    .logos-section { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) clamp(2.5rem,5vw,4rem); }
+    .logos-wrap { display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; margin: 1rem 0 2rem; }
+    .logo-bv-link { display: inline-flex; text-decoration: none; border: 2px solid var(--sand); border-radius: 4px; background: var(--white); transition: border-color 0.2s; overflow: hidden; }
+    .logo-bv-link:hover { border-color: var(--gold); }
 
-    /* CERTIFICATE SECTION */
-    .certificate-section { background:var(--warm); }
-    #qualiopi-certificate { margin-top:1rem; }
-    #qualiopi-certificate p { font-size:0.85rem; font-weight:300; color:var(--charcoal); opacity:0.6; font-style:italic; }
+    /* Bureau Veritas CSS logo */
+    .bv-logo { display: flex; align-items: stretch; width: 280px; }
+    .bv-red { background: #C41230; color: white; padding: 1rem 1.2rem; display: flex; flex-direction: column; justify-content: center; gap: 0.2rem; flex: 1; }
+    .bv-rnq { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: white; opacity: 0.9; }
+    .bv-audite { font-size: 0.65rem; font-weight: 400; color: white; opacity: 0.85; }
+    .bv-name { font-size: 0.95rem; font-weight: 900; color: white; line-height: 1.1; }
+    .bv-cert { font-size: 0.65rem; font-weight: 500; color: white; opacity: 0.9; }
+    .bv-actions { font-size: 0.52rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: white; opacity: 0.75; margin-top: 0.2rem; }
+    .bv-seal { background: #F5F0E8; display: flex; align-items: center; justify-content: center; width: 70px; flex-shrink: 0; border-left: 1px solid #ddd; }
+    .bv-seal-inner { width: 52px; height: 52px; border-radius: 50%; border: 3px solid #8B7355; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; }
+    .bv-seal-text { font-size: 0.42rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #8B7355; text-align: center; }
+    .bv-seal-year { font-size: 0.7rem; font-weight: 700; color: #8B7355; }
 
-    /* DARK SECTION */
-    .dark-section { background:var(--navy); }
-    .dark-section .section-title { color:var(--cream); }
-    .dark-section .section-label { color:var(--gold); }
-    .dark-section .section-intro { color:rgba(247,244,239,0.65); opacity:1; }
-    .why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.08); margin-top:2.5rem; }
-    .why-card { background:rgba(27,42,74,0.5); padding:2rem; display:flex; flex-direction:column; gap:1rem; }
-    .why-icon { font-size:1.5rem; }
-    .why-title { font-family:var(--font-display); font-size:1rem; font-weight:500; color:var(--cream); }
-    .why-desc { font-size:0.85rem; font-weight:300; color:rgba(247,244,239,0.6); line-height:1.65; }
+    /* Qualiopi CSS logo */
+    .qualiopi-logo-box { padding: 1.25rem 1.75rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.4rem; border: 2px solid var(--sand); border-radius: 4px; background: var(--white); }
+    .qualiopi-name-row { display: flex; align-items: center; gap: 0.5rem; }
+    .qualiopi-q { font-size: 1.7rem; font-weight: 900; color: #1B2A4A; letter-spacing: -0.02em; }
+    .qualiopi-arrows { display: flex; flex-direction: column; gap: 2px; }
+    .qualiopi-arrow { width: 0; height: 0; }
+    .qualiopi-arrow-1 { border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 9px solid #C41230; }
+    .qualiopi-arrow-2 { border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 9px solid #E8837A; }
+    .qualiopi-rest { font-size: 1.4rem; font-weight: 700; color: #1B2A4A; }
+    .qualiopi-sub { font-size: 0.72rem; font-weight: 400; color: #1B2A4A; opacity: 0.7; letter-spacing: 0.02em; }
+    .qualiopi-rf { font-size: 0.68rem; font-weight: 600; color: #1B2A4A; display: flex; align-items: center; gap: 0.3rem; }
+    .rf-flag { display: inline-flex; width: 18px; height: 12px; }
+
+    /* Lien PDF */
+    .cert-download { text-align: center; margin-top: 0.5rem; }
+    .cert-download a { font-size: 0.85rem; font-weight: 500; color: var(--navy); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; border-bottom: 1px solid var(--gold); padding-bottom: 1px; transition: color 0.2s; }
+    .cert-download a:hover { color: var(--gold); }
+
+    /* FAQ */
+    .faq-section { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) clamp(2.5rem,5vw,4rem); }
+    .faq-title { font-family: var(--font-display); font-size: clamp(1.6rem,2.5vw,2.2rem); font-weight: 400; color: var(--navy); margin-bottom: 1.5rem; }
+    .faq-item { border-bottom: 1px solid var(--sand); }
+    .faq-question { width:100%; background:none; border:none; text-align:left; padding:1.25rem 0; font-family:var(--font-body); font-size:0.97rem; font-weight:500; color:var(--navy); cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .faq-icon { font-size:1.2rem; color:var(--gold); flex-shrink:0; transition:transform 0.3s; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); }
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s; }
+    .faq-item.open .faq-answer { max-height:400px; }
+    .faq-answer p { font-size:0.93rem; font-weight:300; color:var(--charcoal); line-height:1.8; padding-bottom:1.25rem; }
 
     /* CTA */
-    .cta-section { background:var(--navy); padding:clamp(3rem,6vw,5rem) var(--gutter); text-align:center; }
-    .cta-inner { max-width:640px; margin:0 auto; }
-    .cta-title { font-family:var(--font-display); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:400; color:var(--cream); line-height:1.3; margin-bottom:1rem; }
-    .cta-title em { font-style:italic; color:var(--gold); }
-    .cta-sub { font-size:0.9rem; font-weight:300; color:rgba(247,244,239,0.6); margin-bottom:2rem; line-height:1.7; }
-    .cta-actions { display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap; }
-    .btn-gold { background:var(--gold); color:var(--navy); padding:0.9rem 2rem; font-family:var(--font-body); font-size:0.88rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; text-decoration:none; border:2px solid var(--gold); border-radius:2px; transition:background 0.25s; }
+    .cta-section { background: var(--navy); padding: clamp(3rem,6vw,5rem) var(--gutter); text-align: center; }
+    .cta-title { font-family: var(--font-display); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 400; color: var(--cream); margin-bottom: 2rem; line-height: 1.35; }
+    .btn-gold { background:var(--gold); color:var(--navy); padding:1rem 2.5rem; font-family:var(--font-body); font-size:0.95rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; text-decoration:none; border:2px solid var(--gold); border-radius:2px; transition:background 0.25s; display:inline-flex; align-items:center; }
     .btn-gold:hover { background:#c9a96a; }
 
-    /* FOOTER */
-    footer { background:#111827; padding:3rem var(--gutter) 2rem; }
-    .footer-inner { max-width:var(--max); margin:0 auto; }
-    .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:3rem; padding-bottom:2.5rem; border-bottom:1px solid rgba(255,255,255,0.07); }
-    .footer-logo { margin-bottom:0.75rem; }
-    .footer-tagline { font-size:0.82rem; font-weight:300; color:rgba(247,244,239,0.45); line-height:1.6; max-width:220px; }
-    .footer-contact { margin-top:1.25rem; display:flex; flex-direction:column; gap:0.35rem; }
-    .footer-contact a { font-size:0.8rem; font-weight:300; color:rgba(247,244,239,0.55); text-decoration:none; transition:color 0.2s; }
-    .footer-contact a:hover { color:var(--gold); }
-    .footer-col-title { font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(247,244,239,0.4); margin-bottom:1rem; }
-    .footer-links { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
-    .footer-links a { font-size:0.82rem; font-weight:300; color:rgba(247,244,239,0.55); text-decoration:none; transition:color 0.2s; }
-    .footer-links a:hover { color:var(--cream); }
-    .footer-bottom { display:flex; align-items:center; justify-content:space-between; padding-top:1.5rem; flex-wrap:wrap; gap:1rem; }
-    .footer-copy { font-size:0.75rem; color:rgba(247,244,239,0.25); }
-    .footer-certifs { display:flex; align-items:center; gap:1rem; }
-    .footer-certif-badge { font-size:0.7rem; font-weight:500; letter-spacing:0.06em; color:rgba(247,244,239,0.35); border:1px solid rgba(255,255,255,0.1); padding:0.25rem 0.6rem; }
+    /* DATE MAJ */
+    .page-date { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 1rem; font-size:0.78rem; color:var(--charcoal); opacity:0.45; }
 
-    @media (max-width:900px) {
-      .page-hero { grid-template-columns:1fr; gap:2rem; }
-      .info-grid { grid-template-columns:1fr 1fr; }
-      .why-grid { grid-template-columns:1fr; }
-      .criteria-grid { grid-template-columns:1fr; gap:2rem; }
-      .footer-grid { grid-template-columns:1fr 1fr; }
-      .nav-links { display:none; }
-      .nav-mobile-btn { display:flex; }
-    }
+    /* FOOTER */
+    footer { background:var(--navy); color:rgba(247,244,239,0.7); padding:3rem var(--gutter) 2rem; margin-top:0; }
+    .footer-inner { max-width:var(--max); margin:0 auto; }
+    .footer-bottom { display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.08); font-size:0.78rem; }
+    .footer-links-bottom { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .footer-links-bottom a { color:rgba(247,244,239,0.5); text-decoration:none; font-size:0.78rem; }
+    .footer-links-bottom a:hover { color:var(--gold); }
+
     @media (max-width:600px) {
-      .info-grid { grid-template-columns:1fr; }
-      .footer-grid { grid-template-columns:1fr; }
+      .logos-wrap { gap: 1.5rem; }
+      .bv-logo { width: 240px; }
     }
   </style>
 </head>
@@ -172,7 +143,7 @@
   <ul class="nav-links">
     <li><a href="/formations">Formations CPF</a></li>
     <li><a href="/methode">Méthode</a></li>
-    <li><a href="/shop">Produits</a></li>
+    <li><a href="/shop/sound-less-french">Shop</a></li>
     <li><a href="/blog">Blog</a></li>
     <li><a href="/contact" class="nav-cta">Contact</a></li>
   </ul>
@@ -181,348 +152,165 @@
   </button>
 </nav>
 
-<div class="breadcrumb">
-  <nav class="breadcrumb-inner" aria-label="Fil d'Ariane">
-    <a href="/">Accueil</a>
-    <span>›</span>
-    <span aria-current="page">Certification Qualiopi</span>
-  </nav>
-</div>
-
 <main>
 
-<!-- HERO -->
-<div class="page-hero">
-  <div class="page-hero-content">
-    <span class="section-label">Qualité · Certification nationale</span>
-    <h1 class="page-title">
-      SnapEnglish<br>
-      <em>certifié Qualiopi</em>
-    </h1>
-    <p class="page-intro">
-      Qualiopi est la certification qualité nationale des organismes de formation professionnelle,
-      instaurée par la loi du 5 septembre 2018. Elle est obligatoire pour proposer des formations
-      finançables par le CPF. SnapEnglish est certifié Qualiopi depuis 2023 — gage de qualité
-      de notre ingénierie de formation, de notre accompagnement et de nos résultats.
-    </p>
-    <div class="page-hero-actions">
-      <a href="/formations" class="btn-primary">
-        Voir nos formations CPF
+  <!-- HERO -->
+  <section class="hero-qualiopi">
+    <h1>SnapEnglish est certifié Qualiopi : ce que cela signifie pour votre formation CPF</h1>
+    <p class="intro">SnapEnglish est un organisme de formation anglais certifié Qualiopi, basé à Cambrai (Hauts-de-France). Cette certification, délivrée par l'État français, garantit la qualité pédagogique des formations et permet le financement via le CPF (Compte Personnel de Formation).</p>
+  </section>
+
+  <!-- QU'EST-CE QUE QUALIOPI -->
+  <div class="content-section reveal">
+    <h2>Qu'est-ce que la certification Qualiopi ?</h2>
+    <p>La certification Qualiopi est le label qualité national obligatoire pour tous les organismes de formation financés par des fonds publics en France. Elle est délivrée après audit par un certificateur indépendant accrédité par le Comité Français d'Accréditation (COFRAC). Sans Qualiopi, aucun financement CPF n'est possible.</p>
+  </div>
+
+  <!-- CE QUE QUALIOPI GARANTIT -->
+  <div class="content-section reveal">
+    <h2>Ce que la certification Qualiopi garantit concrètement</h2>
+    <ul class="qualiopi-list">
+      <li>Des méthodes pédagogiques vérifiées par un auditeur externe</li>
+      <li>Un suivi individualisé de la progression de chaque stagiaire</li>
+      <li>Des objectifs de formation clairs et mesurables</li>
+      <li>Un organisme audité régulièrement pour maintenir sa certification</li>
+    </ul>
+  </div>
+
+  <!-- QUALIOPI ET LE CPF -->
+  <div class="content-section reveal">
+    <h2>Qualiopi et le CPF : le lien direct</h2>
+    <p>Pour qu'une formation soit finançable via le CPF sur la plateforme Mon Compte Formation, l'organisme doit obligatoirement être certifié Qualiopi. SnapEnglish remplit cette condition. Votre dossier CPF peut donc être accepté sans démarche supplémentaire de votre part.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section reveal">
+    <h2 class="faq-title">FAQ</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        SnapEnglish est-il certifié Qualiopi ?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui. SnapEnglish est certifié Qualiopi et référencé sur la plateforme Mon Compte Formation (MCF).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        Puis-je financer ma formation anglais SnapEnglish avec mon CPF ?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui. La certification Qualiopi de SnapEnglish permet un financement intégral ou partiel via votre CPF, sans avance de frais.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        Où vérifier la certification Qualiopi de SnapEnglish ?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>La certification est vérifiable sur le site officiel du Registre National des Certifications Professionnelles (RNCP) ou directement sur Mon Compte Formation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGOS + CERTIFICAT -->
+  <div class="logos-section reveal">
+    <div class="logos-wrap">
+      <a href="/documents/certificat-qualiopi-snapenglish.pdf" target="_blank" rel="noopener" class="logo-bv-link" aria-label="Télécharger le certificat Qualiopi Bureau Veritas de SnapEnglish">
+        <div class="bv-logo">
+          <div class="bv-red">
+            <div class="bv-rnq">Référentiel National Qualité</div>
+            <div class="bv-audite">Audité par</div>
+            <div class="bv-name">BUREAU VERITAS<br>Certification</div>
+            <div class="bv-actions">Actions de formation</div>
+          </div>
+          <div class="bv-seal">
+            <div class="bv-seal-inner">
+              <div class="bv-seal-text">BUREAU<br>VERITAS</div>
+              <div class="bv-seal-year">1828</div>
+            </div>
+          </div>
+        </div>
       </a>
-      <a href="mailto:contact@snapenglish.fr" class="btn-secondary">Une question ? →</a>
-    </div>
-  </div>
 
-  <div class="page-hero-sidebar" role="complementary" aria-label="Données administratives SnapEnglish">
-    <div class="sidebar-title">SnapEnglish — données officielles</div>
-    <div>
-      <div class="sidebar-detail-row">
-        <div class="sidebar-detail-label">Organisme</div>
-        <div class="sidebar-detail-value">SnapEnglish — Caroline Cousin</div>
-      </div>
-      <div class="sidebar-detail-row">
-        <div class="sidebar-detail-label">NDA (Numéro de déclaration d'activité)</div>
-        <div class="sidebar-detail-value">32591181359</div>
-      </div>
-      <div class="sidebar-detail-row">
-        <div class="sidebar-detail-label">Délivré par</div>
-        <div class="sidebar-detail-value">DREETS Hauts-de-France</div>
-      </div>
-      <div class="sidebar-detail-row">
-        <div class="sidebar-detail-label">Date d'obtention Qualiopi</div>
-        <div class="sidebar-detail-value">26 juillet 2023</div>
-      </div>
-      <div class="sidebar-detail-row">
-        <div class="sidebar-detail-label">SIRET</div>
-        <div class="sidebar-detail-value">804 600 013 00028</div>
-      </div>
-      <div class="sidebar-detail-row">
-        <div class="sidebar-detail-label">Code NAF</div>
-        <div class="sidebar-detail-value">8559B</div>
-      </div>
-      <div class="sidebar-detail-row">
-        <div class="sidebar-detail-label">Siège social</div>
-        <div class="sidebar-detail-value">Cambrai (59400)</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- WHAT IS QUALIOPI -->
-<section class="info-section reveal" aria-labelledby="info-title">
-  <div class="section-inner">
-    <span class="section-label">Qu'est-ce que Qualiopi ?</span>
-    <h2 id="info-title" class="section-title">
-      La certification qui <em>garantit la qualité</em> des formations
-    </h2>
-    <p class="section-intro">
-      Qualiopi certifie que les processus mis en œuvre par les organismes de formation
-      répondent à des exigences qualité strictes, définies par le Référentiel National Qualité (RNQ).
-      Elle est délivrée après un audit indépendant portant sur 32 critères.
-    </p>
-    <div class="info-grid" role="list">
-      <div class="info-card" role="listitem">
-        <div class="info-icon" aria-hidden="true">📐</div>
-        <div class="info-card-title">Ingénierie de formation</div>
-        <p class="info-card-desc">Les formations sont conçues avec des objectifs pédagogiques clairs, des contenus adaptés aux publics et des modalités d'évaluation définies.</p>
-      </div>
-      <div class="info-card" role="listitem">
-        <div class="info-icon" aria-hidden="true">🎓</div>
-        <div class="info-card-title">Qualifications des formateurs</div>
-        <p class="info-card-desc">Les intervenants justifient des compétences pédagogiques et professionnelles nécessaires pour assurer les formations dispensées.</p>
-      </div>
-      <div class="info-card" role="listitem">
-        <div class="info-icon" aria-hidden="true">🤝</div>
-        <div class="info-card-title">Accompagnement des apprenants</div>
-        <p class="info-card-desc">Un suivi individualisé est mis en place pour chaque stagiaire : positionnement, accompagnement pendant la formation, évaluation des acquis.</p>
-      </div>
-      <div class="info-card" role="listitem">
-        <div class="info-icon" aria-hidden="true">📊</div>
-        <div class="info-card-title">Mesure des résultats</div>
-        <p class="info-card-desc">Les organismes certifiés mesurent l'atteinte des objectifs et l'insertion ou la progression professionnelle des stagiaires.</p>
-      </div>
-      <div class="info-card" role="listitem">
-        <div class="info-icon" aria-hidden="true">🔍</div>
-        <div class="info-card-title">Audit indépendant</div>
-        <p class="info-card-desc">La certification est obtenue après un audit rigoureux portant sur 32 critères qualité, réalisé par un organisme certificateur accrédité.</p>
-      </div>
-      <div class="info-card" role="listitem">
-        <div class="info-icon" aria-hidden="true">💶</div>
-        <div class="info-card-title">Condition pour le CPF</div>
-        <p class="info-card-desc">Depuis le 1er janvier 2022, la certification Qualiopi est obligatoire pour que les formations soient éligibles au Compte Personnel de Formation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CRITERIA -->
-<section class="criteria-section reveal" aria-labelledby="criteria-title">
-  <div class="section-inner">
-    <span class="section-label">Les 32 critères</span>
-    <h2 id="criteria-title" class="section-title">
-      Ce que Qualiopi <em>vérifie chez SnapEnglish</em>
-    </h2>
-    <div class="criteria-grid">
-      <div class="criteria-list" role="list">
-        <div class="criteria-item" role="listitem">
-          <div class="criteria-num">01</div>
-          <div>
-            <div class="criteria-item-title">Information claire des publics</div>
-            <p class="criteria-item-desc">Les informations sur les formations, les prérequis, les modalités et les certifications sont accessibles et transparentes pour tous les candidats.</p>
+      <div class="qualiopi-logo-box">
+        <div class="qualiopi-name-row">
+          <span class="qualiopi-q">Qualiopi</span>
+          <div class="qualiopi-arrows">
+            <div class="qualiopi-arrow qualiopi-arrow-1"></div>
+            <div class="qualiopi-arrow qualiopi-arrow-2"></div>
           </div>
         </div>
-        <div class="criteria-item" role="listitem">
-          <div class="criteria-num">02</div>
-          <div>
-            <div class="criteria-item-title">Identification et analyse des besoins</div>
-            <p class="criteria-item-desc">Les besoins spécifiques de chaque stagiaire sont identifiés avant le démarrage pour construire un parcours adapté.</p>
-          </div>
-        </div>
-        <div class="criteria-item" role="listitem">
-          <div class="criteria-num">03</div>
-          <div>
-            <div class="criteria-item-title">Adaptation aux publics</div>
-            <p class="criteria-item-desc">Les contenus, méthodes et rythmes sont adaptés aux profils, niveaux et situations professionnelles de chaque apprenant.</p>
-          </div>
-        </div>
-        <div class="criteria-item" role="listitem">
-          <div class="criteria-num">04</div>
-          <div>
-            <div class="criteria-item-title">Évaluation des acquis</div>
-            <p class="criteria-item-desc">Des évaluations sont réalisées en cours et en fin de formation pour mesurer la progression et l'atteinte des objectifs.</p>
-          </div>
-        </div>
-        <div class="criteria-item" role="listitem">
-          <div class="criteria-num">05</div>
-          <div>
-            <div class="criteria-item-title">Amélioration continue</div>
-            <p class="criteria-item-desc">L'organisme recueille les retours des stagiaires et des parties prenantes pour améliorer continuellement ses prestations.</p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="aside-card">
-          <div class="aside-card-title">Ce que Qualiopi change pour vous</div>
-          <ul class="aside-card-list">
-            <li>Garantie d'une formation sérieuse et structurée</li>
-            <li>Condition nécessaire pour financer via le CPF</li>
-            <li>Programme pédagogique documenté et transparent</li>
-            <li>Suivi individualisé formellement organisé</li>
-            <li>Formateur qualifié et expérimenté</li>
-            <li>Évaluation des acquis rigoureuse</li>
-            <li>Certification CLOE ou LEVELTEL incluse dans le dossier</li>
-          </ul>
-        </div>
-        <div class="aside-card">
-          <div class="aside-card-title">Une démarche de fond, pas un tampon</div>
-          <p style="font-size:0.88rem;font-weight:300;color:var(--charcoal);opacity:0.8;line-height:1.7;">
-            La certification Qualiopi ne se délivre pas sur dossier. Elle s'obtient après un audit
-            en bonne et due forme. Elle impose une rigueur dans l'organisation, la documentation
-            et l'accompagnement — ce qui profite directement aux stagiaires.
-          </p>
-          <p style="font-size:0.78rem;font-style:italic;color:var(--navy);opacity:0.5;margin-top:0.75rem;">— Caroline Cousin, fondatrice SnapEnglish</p>
+        <div class="qualiopi-sub">processus certifié</div>
+        <div class="qualiopi-rf">
+          <svg class="rf-flag" viewBox="0 0 18 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="6" height="12" fill="#002395"/>
+            <rect x="6" width="6" height="12" fill="white"/>
+            <rect x="12" width="6" height="12" fill="#ED2939"/>
+          </svg>
+          République française
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- CERTIFICATE -->
-<section class="certificate-section reveal" aria-labelledby="certif-title">
-  <div class="section-inner">
-    <span class="section-label">Certificat officiel</span>
-    <h2 id="certif-title" class="section-title">
-      Notre <em>certificat Qualiopi</em>
-    </h2>
-    <p class="section-intro">
-      Certificat délivré par DREETS Hauts-de-France le 26 juillet 2023. NDA 32591181359.
-    </p>
-    <div id="qualiopi-certificate">
-      <p>Le certificat Qualiopi SnapEnglish sera affiché ici.</p>
-      <img src="/images/qualiopi-certificat.jpg" alt="Certificat Qualiopi SnapEnglish" style="max-width:600px; width:100%; border:1px solid var(--border, #e0dbd3); border-radius:8px; margin-top:1.5rem;" onerror="this.style.display='none'" />
+    <div class="cert-download">
+      <a href="/documents/certificat-qualiopi-snapenglish.pdf" target="_blank" rel="noopener">
+        📄 Télécharger le certificat Qualiopi SnapEnglish (PDF)
+      </a>
     </div>
   </div>
-</section>
 
-<!-- WHY IT MATTERS -->
-<section class="dark-section reveal" aria-labelledby="why-title">
-  <div class="section-inner">
-    <span class="section-label" style="color:var(--gold);">Qualiopi · CPF · Qualité</span>
-    <h2 id="why-title" class="section-title" style="color:var(--cream);">
-      Pourquoi choisir un organisme <em style="color:var(--gold);">certifié Qualiopi</em> ?
-    </h2>
-    <p class="section-intro">
-      La certification Qualiopi est un signal fort. Elle différencie les organismes sérieux
-      de ceux qui n'ont pas fait l'effort de structurer leur démarche qualité.
-    </p>
-    <div class="why-grid" role="list">
-      <div class="why-card" role="listitem">
-        <div class="why-icon" aria-hidden="true">💶</div>
-        <div class="why-title">Financement CPF garanti</div>
-        <p class="why-desc">Sans certification Qualiopi, aucune formation ne peut être financée via le CPF. C'est une condition légale, pas un label optionnel.</p>
-      </div>
-      <div class="why-card" role="listitem">
-        <div class="why-icon" aria-hidden="true">📋</div>
-        <div class="why-title">Programme pédagogique documenté</div>
-        <p class="why-desc">Les objectifs, les méthodes, le contenu et les modalités d'évaluation sont formalisés, contrôlés et disponibles avant votre inscription.</p>
-      </div>
-      <div class="why-card" role="listitem">
-        <div class="why-icon" aria-hidden="true">🎯</div>
-        <div class="why-title">Résultats mesurés et tracés</div>
-        <p class="why-desc">La progression et les acquis de chaque apprenant sont évalués et documentés. Vous repartez avec une attestation de formation et une certification officielle.</p>
-      </div>
-      <div class="why-card" role="listitem">
-        <div class="why-icon" aria-hidden="true">🔄</div>
-        <div class="why-title">Amélioration continue obligatoire</div>
-        <p class="why-desc">Les organismes Qualiopi s'engagent dans une démarche d'amélioration continue. Les retours des stagiaires sont pris en compte pour faire évoluer les formations.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <p class="page-date">Page mise à jour : mai 2026</p>
 
-<!-- CTA -->
-<section class="cta-section" aria-labelledby="cta-title">
-  <div class="cta-inner">
-    <h2 id="cta-title" class="cta-title">
-      Formez-vous avec un organisme<br>
-      <em>certifié Qualiopi</em>
-    </h2>
-    <p class="cta-sub">
-      Toutes les formations SnapEnglish sont finançables CPF grâce à notre certification Qualiopi.
-      Accédez directement au catalogue sur Mon Compte Formation.
-    </p>
-    <div class="cta-actions">
-      <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/resultats?q=%7B%22ou%22:%7B%22modality%22:%22A_DISTANCE%22,%22type%22:%22CP%22%7D,%22debutPagination%22:1,%22nombreOccurences%22:10,%22contexteFormation%22:%22ACTIVITE_PROFESSIONNELLE%22,%22quoi%22:%22anglais%22,%22quoiReferentiel%22:null,%22nomOrganisme%22:%22SNAPENGLISH%22,%22endDate%22:null,%22startDate%22:null,%22evaluation%22:null,%22niveauSortie%22:null,%22minPrix%22:null,%22maxPrix%22:null,%22rythme%22:null,%22onlyWithAbondementsEligibles%22:null,%22durationHours%22:null,%22certifications%22:null,%22certificationComplete%22:null,%22vae%22:null,%22codesCategorisationOffre%22:null,%22vaeAutocomplete%22:%22%22%7D" target="_blank" rel="noopener" class="btn-gold">Voir nos formations CPF</a>
-      <a href="mailto:contact@snapenglish.fr?subject=Formations SnapEnglish Qualiopi CPF" class="btn-secondary" style="color:rgba(247,244,239,0.7);">Échange gratuit →</a>
-    </div>
-  </div>
-</section>
+  <!-- CTA -->
+  <section class="cta-section">
+    <p class="cta-title">Voir mes formations CPF disponibles</p>
+    <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/resultats?q=%7B%22ou%22:%7B%22modality%22:%22A_DISTANCE%22,%22type%22:%22CP%22%7D,%22debutPagination%22:1,%22nombreOccurences%22:10,%22contexteFormation%22:%22ACTIVITE_PROFESSIONNELLE%22,%22quoi%22:%22anglais%22,%22quoiReferentiel%22:null,%22nomOrganisme%22:%22SNAPENGLISH%22,%22endDate%22:null,%22startDate%22:null,%22evaluation%22:null,%22niveauSortie%22:null,%22minPrix%22:null,%22maxPrix%22:null,%22rythme%22:null,%22onlyWithAbondementsEligibles%22:null,%22durationHours%22:null,%22certifications%22:null,%22certificationComplete%22:null,%22vae%22:null,%22codesCategorisationOffre%22:null,%22vaeAutocomplete%22:%22%22%7D" target="_blank" rel="noopener" class="btn-gold">Voir mes formations CPF disponibles</a>
+  </section>
 
 </main>
 
 <footer role="contentinfo">
   <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <svg width="140" height="32" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="rgba(247,244,239,0.8)" stroke-width="3.8" stroke-linecap="round" fill="none"/>
-            <path d="M27 17C27 9.8 21.3 4 14.5 4C7.7 4 2 9.8 2 17C2 24.2 7.7 30 14.5 30C19.5 30 23.8 27.1 26 22.8" stroke="#B8975A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
-            <text x="34" y="23" font-family="Georgia, serif" font-size="17" font-weight="700" fill="rgba(247,244,239,0.9)">Snap</text>
-            <text x="76" y="23" font-family="Georgia, serif" font-size="17" font-weight="400" fill="#B8975A">English</text>
-          </svg>
-        </div>
-        <p class="footer-tagline">
-          Organisme de formation anglais certifié Qualiopi.
-          Cours particuliers 100% en ligne, spécialisé anglais médical et professionnel.
-        </p>
-        <div class="footer-contact">
-          <a href="mailto:contact@snapenglish.fr">contact@snapenglish.fr</a>
-          <a href="tel:+33680266314">06 80 26 63 14</a>
-          <a href="https://www.linkedin.com/in/caroline-cousin-snapenglish/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Formations</div>
-        <ul class="footer-links">
-          <li><a href="/formations/anglais-medical">Anglais médical</a></li>
-          <li><a href="/formations/anglais-infirmier">Anglais infirmier</a></li>
-          <li><a href="/formations/anglais-professionnel">Anglais professionnel</a></li>
-          <li><a href="/formations/anglais-digital">Anglais digital</a></li>
-          <li><a href="/tarif-inscription-formation-anglais">Tous les tarifs CPF</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer-col-title">SnapEnglish</div>
-        <ul class="footer-links">
-          <li><a href="/methode">La méthode</a></li>
-          <li><a href="/a-propos">À propos</a></li>
-          <li><a href="/temoignages">Témoignages</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/faq">FAQ</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Produits</div>
-        <ul class="footer-links">
-          <li><a href="/shop">Boutique</a></li>
-          <li><a href="/shop/sound-less-french">Sound Less French</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/mentions-legales">Mentions légales</a></li>
-          <li><a href="/politique-de-confidentialite">Confidentialité</a></li>
-        </ul>
-      </div>
-    </div>
-
     <div class="footer-bottom">
-      <span class="footer-copy">© 2025 SnapEnglish · Caroline Cousin · Tous droits réservés</span>
-      <div class="footer-certifs" role="list" aria-label="Certifications">
-        <span class="footer-certif-badge" role="listitem">Qualiopi</span>
-        <span class="footer-certif-badge" role="listitem">CPF</span>
-        <span class="footer-certif-badge" role="listitem">CLOE</span>
-        <span class="footer-certif-badge" role="listitem">LEVELTEL</span>
-        <span class="footer-certif-badge" role="listitem">100% personnalisé</span>
+      <span>© 2025 SnapEnglish · Caroline Cousin · Tous droits réservés</span>
+      <div class="footer-links-bottom">
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/politique-de-confidentialite">Confidentialité</a>
+        <a href="/contact">Contact</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  reveals.forEach(r => observer.observe(r));
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-question').setAttribute('aria-expanded','false'); });
+    if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  }
+
   function toggleMenu() {
     const links = document.querySelector('.nav-links');
-    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-    links.style.cssText += ';flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:1rem 2rem;border-bottom:1px solid var(--sand);';
+    const isOpen = links.style.display === 'flex';
+    links.style.display = isOpen ? 'none' : 'flex';
+    if (!isOpen) {
+      links.style.cssText += ';flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:1rem 2rem;border-bottom:1px solid var(--sand);z-index:99;';
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { links.style.display = 'none'; }, { once: true }));
+    }
   }
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
