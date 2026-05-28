@@ -108,11 +108,6 @@ function welcomeEmail() {
             </tr>
           </table>
 
-          <p style="font-size:12px;color:#2C2C2C;opacity:0.4;margin:12px 0 0;">
-            Ou téléchargez directement le PDF :
-            <a href="https://www.snapenglish.fr/documents/ebook-expressions-anglophones.pdf"
-               style="color:#B8975A;text-decoration:none;">cliquez ici</a>
-          </p>
         </td>
       </tr>
 
