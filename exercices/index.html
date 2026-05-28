@@ -4,96 +4,126 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Snapenglish — Exercices</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #F7F4EF;
-    --surface: #FFFFFF;
+    --card: #FFFFFF;
     --accent: #2D6A4F;
     --accent-light: #E8F4EF;
     --text: #1A1A1A;
     --muted: #6B6B6B;
     --border: #E0DBD3;
+    --red: #C0392B;
+    --shadow: 0 2px 16px rgba(0,0,0,0.06);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 2rem 1rem; }
-  header { text-align: center; margin-bottom: 2rem; }
-  header h1 { font-family: 'DM Serif Display', serif; font-size: 2.2rem; font-weight: 400; color: var(--accent); }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  .page { max-width: 640px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  header { text-align: center; margin-bottom: 2.5rem; }
+  header h1 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; font-weight: 400; color: var(--accent); }
   header p { font-size: 0.9rem; color: var(--muted); margin-top: 0.3rem; }
-  .container { max-width: 640px; margin: 0 auto; }
-  .card { background: var(--surface); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border); margin-bottom: 1.25rem; }
-  .card-title { font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: 1.25rem; }
-  label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-bottom: 0.4rem; }
-  .field-hint { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
-  .field-hint a { color: var(--accent); }
-  textarea, select, input { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.7rem 1rem; outline: none; transition: border-color 0.2s; appearance: none; }
+
+  .card { background: var(--card); border-radius: 16px; padding: 1.75rem; border: 1px solid var(--border); margin-bottom: 1.25rem; box-shadow: var(--shadow); }
+  .card-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: 1.25rem; }
+
+  .field { margin-bottom: 1.1rem; }
+  label { display: block; font-size: 0.84rem; font-weight: 500; color: var(--muted); margin-bottom: 0.4rem; }
+  textarea, select, input[type="password"] {
+    width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--text);
+    background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 0.75rem 1rem; outline: none; transition: border-color 0.18s; appearance: none;
+  }
+  textarea { resize: vertical; min-height: 110px; line-height: 1.65; }
   textarea:focus, select:focus, input:focus { border-color: var(--accent); }
-  textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
-  .field { margin-bottom: 1rem; }
-  .type-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-top: 0.4rem; }
-  .type-btn { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.7rem 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; color: var(--muted); cursor: pointer; text-align: center; transition: all 0.15s; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .field-hint { font-size: 0.78rem; color: var(--muted); margin-top: 0.35rem; }
+  .field-hint a { color: var(--accent); }
+
+  .type-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.6rem; margin-top: 0.4rem; }
+  .type-btn { background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 0.8rem 0.4rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; color: var(--muted);
+    cursor: pointer; text-align: center; transition: all 0.15s; }
   .type-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .type-btn.active { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
-  .type-btn .icon { font-size: 1.2rem; display: block; margin-bottom: 0.3rem; }
-  button.primary { width: 100%; background: var(--accent); color: white; border: none; border-radius: 10px; padding: 0.9rem; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer; transition: opacity 0.2s; margin-top: 1rem; }
-  button.primary:hover { opacity: 0.9; }
-  button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
-  button.primary.secondary-btn { background: white; color: var(--accent); border: 1.5px solid var(--accent); margin-top: 0.75rem; }
-  .btn-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-  .btn-sm { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.4rem 0.9rem; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; color: var(--muted); cursor: pointer; transition: all 0.15s; }
+  .type-btn.active { background: var(--accent-light); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .type-btn .icon { font-size: 1.3rem; display: block; margin-bottom: 0.3rem; }
+
+  .btn-primary { width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 12px;
+    padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500;
+    cursor: pointer; transition: opacity 0.18s; margin-top: 0.75rem; }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn-outline { width: 100%; background: white; color: var(--accent); border: 1.5px solid var(--accent);
+    border-radius: 12px; padding: 0.85rem; font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+    font-weight: 500; cursor: pointer; transition: all 0.18s; margin-top: 0.75rem; }
+  .btn-outline:hover { background: var(--accent-light); }
+  .btn-sm { background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.4rem 0.85rem; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500;
+    color: var(--muted); cursor: pointer; transition: all 0.15s; white-space: nowrap; }
   .btn-sm:hover { border-color: var(--accent); color: var(--accent); }
   .btn-sm.success { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
-  .exercise-text { font-size: 0.97rem; line-height: 1.9; color: var(--text); white-space: pre-wrap; }
-  .correction-block { display: none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px dashed var(--border); }
-  .correction-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; color: var(--accent); margin-bottom: 0.75rem; }
-  .loading { text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.95rem; }
-  .error-msg { color: #C0392B; font-size: 0.88rem; margin-top: 0.5rem; }
-  .share-box { background: var(--accent-light); border: 1px solid var(--accent); border-radius: 10px; padding: 1rem; margin-top: 1rem; }
-  .share-box-title { font-size: 0.85rem; color: var(--accent); font-weight: 500; margin-bottom: 0.5rem; }
-  .share-url { font-size: 0.85rem; color: var(--muted); word-break: break-all; background: white; border-radius: 6px; padding: 0.5rem 0.75rem; border: 1px solid var(--border); margin-bottom: 0.75rem; font-family: monospace; }
-  .badge { display: inline-block; background: var(--accent-light); color: var(--accent); font-size: 0.72rem; font-weight: 500; padding: 0.15rem 0.5rem; border-radius: 20px; margin-left: 0.4rem; vertical-align: middle; }
-  #student-view { display: none; }
-  @media (max-width: 500px) { .grid-2 { grid-template-columns: 1fr; } .type-grid { grid-template-columns: 1fr 1fr; } }
+  .btn-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+  .exercise-body { font-size: 0.97rem; line-height: 2; color: var(--text); white-space: pre-wrap; }
+  .corr-block { display: none; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px dashed var(--border); }
+  .corr-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; color: var(--accent); margin-bottom: 0.75rem; }
+
+  .share-box { background: var(--accent-light); border: 1.5px solid var(--accent); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; }
+  .share-box-title { font-size: 0.9rem; font-weight: 600; color: var(--accent); margin-bottom: 0.75rem; }
+  .share-link { font-size: 0.78rem; color: var(--muted); word-break: break-all; background: white;
+    border-radius: 8px; padding: 0.6rem 0.85rem; border: 1px solid var(--border); margin-bottom: 0.75rem;
+    font-family: monospace; line-height: 1.6; }
+
+  .loading-spin { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1.5rem; color: var(--muted); font-size: 0.95rem; }
+  .loading-spin::before { content: ''; width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; flex-shrink: 0; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error-msg { color: var(--red); font-size: 0.88rem; margin-top: 0.6rem; }
+  .badge { display: inline-block; background: var(--accent-light); color: var(--accent); font-size: 0.7rem; font-weight: 600; padding: 0.1rem 0.5rem; border-radius: 20px; margin-left: 0.4rem; vertical-align: middle; }
+
+  /* Vue élève */
+  .q-block { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+  .q-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .q-text { font-size: 0.97rem; line-height: 1.75; white-space: pre-wrap; margin-bottom: 0.75rem; }
+  .q-answer { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text);
+    background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.85rem;
+    outline: none; resize: vertical; min-height: 52px; transition: border-color 0.18s; }
+  .q-answer:focus { border-color: var(--accent); }
+  .q-corr { display: none; margin-top: 0.6rem; padding: 0.6rem 0.9rem; background: var(--accent-light); border-radius: 8px; font-size: 0.9rem; color: var(--accent); line-height: 1.5; }
+
+  #student-view, #config-panel { display: none; }
+  @media (max-width: 500px) { .grid-2 { grid-template-columns: 1fr; } .type-row { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
 <body>
 
-<!-- ========== CONFIG ========== -->
-<div id="config-panel" style="display:none;">
-  <div class="container">
-    <header>
-      <h1>Snapenglish</h1>
-      <p>Configuration — à faire une seule fois</p>
-    </header>
+<!-- ===== CONFIG ===== -->
+<div id="config-panel">
+  <div class="page">
+    <header><h1>Snapenglish</h1><p>Configuration</p></header>
     <div class="card">
-      <p class="card-title">Configuration <span class="badge">à faire une seule fois</span></p>
+      <p class="card-label">Clé API <span class="badge">une seule fois</span></p>
       <div class="field">
-        <label>Clé API Anthropic (Claude)</label>
-        <input type="password" id="anthropic-key" placeholder="sk-ant-api03-..." />
+        <label>Clé Anthropic (Claude)</label>
+        <input type="password" id="anthropic-key" placeholder="sk-ant-api03-…" />
         <p class="field-hint">Disponible sur <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a></p>
       </div>
-      <button class="primary" onclick="saveConfig()">Enregistrer et continuer →</button>
+      <button class="btn-primary" onclick="saveConfig()">Enregistrer →</button>
     </div>
   </div>
 </div>
 
-<!-- ========== VUE PROF ========== -->
+<!-- ===== PROF ===== -->
 <div id="teacher-view">
-  <div class="container">
-    <header>
-      <h1>Snapenglish</h1>
-      <p>Crée un exercice · envoie le lien à ton élève</p>
-    </header>
+  <div class="page">
+    <header><h1>Snapenglish</h1><p>Génère un exercice · envoie le lien</p></header>
 
     <div class="card">
-      <p class="card-title">Paramètres de l'exercice</p>
-
+      <p class="card-label">Paramètres</p>
       <div class="field">
-        <label>Mots, verbes ou expressions <span style="font-weight:300;">(un par ligne)</span></label>
-        <textarea id="words" placeholder="to feel a pinch&#10;to sit up&#10;to raise your arm&#10;to take your blood pressure"></textarea>
+        <label>Mots / expressions <span style="font-weight:300">(un par ligne)</span></label>
+        <textarea id="words" placeholder="to schedule a meeting&#10;to follow up&#10;to reach out&#10;to postpone"></textarea>
       </div>
-
       <div class="grid-2">
         <div class="field">
           <label>Niveau</label>
@@ -115,294 +145,237 @@
           </select>
         </div>
       </div>
-
       <div class="field">
         <label>Type d'exercice</label>
-        <div class="type-grid">
-          <button class="type-btn active" onclick="selectType(this,'fill-in-the-blanks')">
-            <span class="icon">✏️</span>Texte à trous
-          </button>
-          <button class="type-btn" onclick="selectType(this,'multiple-choice')">
-            <span class="icon">☑️</span>QCM
-          </button>
-          <button class="type-btn" onclick="selectType(this,'translation')">
-            <span class="icon">🔄</span>Traduction
-          </button>
+        <div class="type-row">
+          <button class="type-btn active" onclick="setType(this,'fill')"><span class="icon">✏️</span>Texte à trous</button>
+          <button class="type-btn" onclick="setType(this,'qcm')"><span class="icon">☑️</span>QCM</button>
+          <button class="type-btn" onclick="setType(this,'translate')"><span class="icon">🔄</span>Traduction</button>
         </div>
       </div>
-
-      <button class="primary" onclick="generate()" id="gen-btn">Générer l'exercice →</button>
-      <p id="error-msg" class="error-msg"></p>
+      <button class="btn-primary" id="gen-btn" onclick="generate()">Générer l'exercice →</button>
+      <p class="error-msg" id="error-msg"></p>
     </div>
 
     <div class="card" id="result-card" style="display:none;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
-        <span style="font-family:'DM Serif Display',serif; font-size:1.1rem; color:var(--accent);" id="result-title">Exercice</span>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem;">
+        <span id="result-title" style="font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--accent);"></span>
         <div class="btn-row">
-          <button class="btn-sm" onclick="printExercise()">🖨️ Imprimer</button>
-          <button class="btn-sm" onclick="toggleCorrectionTeacher()" id="corr-btn-teacher">👁 Correction</button>
+          <button class="btn-sm" onclick="printExercise()">🖨 Imprimer</button>
+          <button class="btn-sm" id="corr-toggle-btn" onclick="toggleCorr()">👁 Correction</button>
         </div>
       </div>
-      <div id="loading-msg" class="loading" style="display:none;">Génération en cours...</div>
-      <div id="exercise-text" class="exercise-text"></div>
-      <div class="correction-block" id="correction-teacher">
-        <p class="correction-label">Correction</p>
-        <div id="correction-text-teacher" class="exercise-text"></div>
+      <div id="gen-loading" class="loading-spin" style="display:none;">Génération en cours</div>
+      <div id="exercise-body" class="exercise-body"></div>
+      <div class="corr-block" id="corr-block">
+        <p class="corr-label">Correction</p>
+        <div id="corr-body" class="exercise-body"></div>
       </div>
 
       <div class="share-box" id="share-box" style="display:none;">
-        <p class="share-box-title" id="share-box-title">🔗 Lien élève prêt !</p>
-        <div class="share-url" id="share-url"></div>
+        <p class="share-box-title">🔗 Lien élève prêt !</p>
+        <div class="share-link" id="share-link"></div>
         <div class="btn-row">
-          <button class="btn-sm" onclick="copyLink()" id="copy-link-btn">📋 Copier le lien</button>
-          <button class="btn-sm" onclick="copyEmail()" id="copy-email-btn">✉️ Copier pour email</button>
-          <button class="btn-sm" onclick="testLink()">🔍 Tester le lien</button>
+          <button class="btn-sm" id="copy-btn" onclick="copyLink()">📋 Copier le lien</button>
+          <button class="btn-sm" id="email-btn" onclick="copyEmail()">✉️ Copier pour email</button>
+          <button class="btn-sm" onclick="testLink()">🔍 Tester</button>
         </div>
       </div>
-      <button class="primary secondary-btn" onclick="shareExercise()" id="share-btn" style="display:none;">Envoyer à l'élève →</button>
+      <button class="btn-outline" id="share-btn" style="display:none;" onclick="shareExercise()">Envoyer à l'élève →</button>
     </div>
 
-    <div style="text-align:center; margin-top:0.5rem;">
+    <div style="text-align:center;margin-top:0.5rem;">
       <button class="btn-sm" onclick="showConfig()">⚙️ Paramètres</button>
     </div>
   </div>
 </div>
 
-<!-- ========== VUE ÉLÈVE ========== -->
+<!-- ===== ÉLÈVE ===== -->
 <div id="student-view">
-  <div class="container">
-    <header>
-      <h1>Snapenglish</h1>
-      <p id="student-subtitle">Exercice d'anglais</p>
-    </header>
+  <div class="page">
+    <header><h1>Snapenglish</h1><p id="student-subtitle">Exercice d'anglais</p></header>
     <div class="card">
-      <span style="font-family:'DM Serif Display',serif; font-size:1.1rem; color:var(--accent);" id="student-title">Exercice</span>
-      <div id="student-loading" class="loading" style="margin-top:1rem;">Chargement de ton exercice…</div>
-      <div id="student-questions" style="display:none; margin-top:1rem;"></div>
+      <div id="student-title" style="font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--accent);margin-bottom:1.25rem;"></div>
+      <div id="student-loading" class="loading-spin">Chargement</div>
+      <div id="student-questions" style="display:none;"></div>
     </div>
   </div>
 </div>
 
 <script>
-  let selectedType = 'fill-in-the-blanks';
-  let correctionTeacherVisible = false;
+  let selectedType = 'fill';
+  let corrVisible = false;
   let currentExercise = '';
   let currentCorrection = '';
 
-  function getConfig() {
-    return { anthropic: localStorage.getItem('snap_anthropic') || '' };
-  }
+  // ── Config ──────────────────────────────────────────────────────────
+  const getKey = () => localStorage.getItem('snap_anthropic') || '';
 
   function saveConfig() {
-    const a = document.getElementById('anthropic-key').value.trim();
-    if (!a) { alert('Ajoute ta clé API Anthropic.'); return; }
-    localStorage.setItem('snap_anthropic', a);
+    const k = document.getElementById('anthropic-key').value.trim();
+    if (!k) { alert('Entre ta clé API.'); return; }
+    localStorage.setItem('snap_anthropic', k);
     document.getElementById('config-panel').style.display = 'none';
     document.getElementById('teacher-view').style.display = 'block';
   }
 
   function showConfig() {
-    document.getElementById('anthropic-key').value = getConfig().anthropic;
+    document.getElementById('anthropic-key').value = getKey();
     document.getElementById('config-panel').style.display = 'block';
     document.getElementById('teacher-view').style.display = 'none';
   }
 
-  // ===== INIT =====
-  window.onload = function() {
-    const params = new URLSearchParams(window.location.search);
-    const exId = params.get('id');
-    const exBase64 = params.get('ex');
+  // ── Init ─────────────────────────────────────────────────────────────
+  window.onload = () => {
+    const p  = new URLSearchParams(window.location.search);
+    const ex = p.get('ex');
 
-    if (exId || exBase64) {
+    if (ex) {
+      // Vue élève
       document.getElementById('teacher-view').style.display = 'none';
-      document.getElementById('student-view').style.display = 'block';
-      loadExercise(exId, exBase64);
+      document.getElementById('student-view').style.display  = 'block';
+      loadExercise(ex);
     } else {
-      const cfg = getConfig();
-      if (!cfg.anthropic) {
+      // Vue prof
+      if (!getKey()) {
         document.getElementById('config-panel').style.display = 'block';
         document.getElementById('teacher-view').style.display = 'none';
-      } else {
-        document.getElementById('teacher-view').style.display = 'block';
       }
     }
   };
 
-  // ===== FONCTIONS PROF =====
-  function selectType(el, type) {
+  // ── Prof ─────────────────────────────────────────────────────────────
+  function setType(el, type) {
     document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
     el.classList.add('active');
     selectedType = type;
   }
 
-  function toggleCorrectionTeacher() {
-    correctionTeacherVisible = !correctionTeacherVisible;
-    document.getElementById('correction-teacher').style.display = correctionTeacherVisible ? 'block' : 'none';
-    document.getElementById('corr-btn-teacher').textContent = correctionTeacherVisible ? '🙈 Masquer' : '👁 Correction';
+  function toggleCorr() {
+    corrVisible = !corrVisible;
+    document.getElementById('corr-block').style.display = corrVisible ? 'block' : 'none';
+    document.getElementById('corr-toggle-btn').textContent = corrVisible ? '🙈 Masquer' : '👁 Correction';
   }
 
   function printExercise() {
-    const title = document.getElementById('result-title').innerText;
-    const exercise = document.getElementById('exercise-text').innerText;
-    const win = window.open('', '_blank');
-    win.document.write(`<html><head><title>${title}</title>
-      <style>body{font-family:Georgia,serif;max-width:700px;margin:2rem auto;padding:1rem;line-height:1.8;font-size:15px;}
-      h2{font-size:1.1rem;margin-bottom:1.5rem;color:#2D6A4F;}pre{white-space:pre-wrap;font-family:inherit;}</style></head>
-      <body><h2>${title}</h2><pre>${exercise}</pre></body></html>`);
-    win.document.close();
-    win.print();
+    const title = document.getElementById('result-title').textContent;
+    const body  = document.getElementById('exercise-body').textContent;
+    const w = window.open('', '_blank');
+    w.document.write(`<!DOCTYPE html><html><head><title>${title}</title>
+      <style>body{font-family:Georgia,serif;max-width:680px;margin:2.5rem auto;padding:1rem;line-height:1.9;font-size:15px;}
+      h2{color:#2D6A4F;margin-bottom:1.5rem;}pre{white-space:pre-wrap;font-family:inherit;}</style>
+      </head><body><h2>${title}</h2><pre>${body}</pre></body></html>`);
+    w.document.close(); w.print();
   }
 
   async function generate() {
-    const cfg = getConfig();
+    const key = getKey();
+    if (!key) { showConfig(); return; }
+
     const words = document.getElementById('words').value.trim();
     const level = document.getElementById('level').value;
-    const qty = document.getElementById('qty').value;
-    const errorEl = document.getElementById('error-msg');
-    errorEl.textContent = '';
+    const qty   = parseInt(document.getElementById('qty').value, 10);
+    const err   = document.getElementById('error-msg');
+    err.textContent = '';
 
-    if (!cfg.anthropic) { errorEl.textContent = 'Configure ta clé API d\'abord.'; showConfig(); return; }
-    if (!words) { errorEl.textContent = 'Ajoute au moins un mot.'; return; }
+    if (!words) { err.textContent = 'Ajoute au moins un mot ou une expression.'; return; }
 
-    const wordList = words.split('\n').filter(w => w.trim()).map(w => '- ' + w.trim()).join('\n');
-    const typeLabels = { 'fill-in-the-blanks': 'Texte à trous', 'multiple-choice': 'QCM', 'translation': 'Traduction' };
-    const levelNames = { A1: 'Débutant', A2: 'Élémentaire', B1: 'Intermédiaire', B2: 'Avancé', C1: 'Courant' };
+    const wordList = words.split('\n').filter(w => w.trim()).map(w => '– ' + w.trim()).join('\n');
 
-    const typePrompts = {
-      'fill-in-the-blanks': `You are an English teacher. FILL-IN-THE-BLANKS exercise ONLY for ${level} level. Words:\n${wordList}\nFORMAT: French instructions, word bank, exactly ${qty} numbered sentences each with one blank (_______). Use each word once. NO translation, NO QCM. Then write ---CORRECTION--- and the answer key.`,
-      'multiple-choice': `You are an English teacher. MULTIPLE CHOICE exercise ONLY for ${level} level. Words:\n${wordList}\nFORMAT: French instructions, exactly ${qty} numbered questions each with options a) b) c). Only one option correct per question. NO translation, NO fill-in-blanks. Then write ---CORRECTION--- and the answer key with explanations.`,
-      'translation': `You are an English teacher. TRANSLATION exercise ONLY for ${level} level. Words:\n${wordList}\nFORMAT: French instructions saying to translate into English, exactly ${qty} numbered French sentences. Each sentence needs one target word in its English answer. NO multiple choice, NO blanks, NO word bank. Then write ---CORRECTION--- and the ${qty} English translations.`
+    const prompts = {
+      fill:
+        `You are a French English teacher. Create a FILL-IN-THE-BLANKS exercise for ${level} level.\n` +
+        `Vocabulary to use:\n${wordList}\n` +
+        `STRICT FORMAT (in French for instructions):\n` +
+        `1. Short instruction line in French\n` +
+        `2. Word bank line listing all the words\n` +
+        `3. Exactly ${qty} numbered sentences, each with exactly one blank written as _______\n` +
+        `4. Use each word exactly once\n` +
+        `5. Write exactly: ---CORRECTION---\n` +
+        `6. Numbered answer key`,
+
+      qcm:
+        `You are a French English teacher. Create a MULTIPLE CHOICE (QCM) exercise for ${level} level.\n` +
+        `Vocabulary to use:\n${wordList}\n` +
+        `STRICT FORMAT (in French for instructions):\n` +
+        `1. Short instruction line in French\n` +
+        `2. Exactly ${qty} numbered questions, each with three choices: a) b) c)\n` +
+        `3. Only one correct answer per question\n` +
+        `4. Write exactly: ---CORRECTION---\n` +
+        `5. Numbered answers with a short explanation`,
+
+      translate:
+        `You are a French English teacher. Create a FRENCH-TO-ENGLISH TRANSLATION exercise for ${level} level.\n` +
+        `Vocabulary to use:\n${wordList}\n` +
+        `STRICT FORMAT:\n` +
+        `1. Short instruction in French (ask to translate into English)\n` +
+        `2. Exactly ${qty} numbered French sentences — each naturally requires one target word in the English answer\n` +
+        `3. NO word bank, NO blanks\n` +
+        `4. Write exactly: ---CORRECTION---\n` +
+        `5. The ${qty} numbered English translations`,
     };
 
-    const btn = document.getElementById('gen-btn');
+    const typeLabels  = { fill: 'Texte à trous', qcm: 'QCM', translate: 'Traduction' };
+    const levelNames  = { A1:'Débutant', A2:'Élémentaire', B1:'Intermédiaire', B2:'Avancé', C1:'Courant' };
+
+    const btn     = document.getElementById('gen-btn');
+    const card    = document.getElementById('result-card');
+    const loader  = document.getElementById('gen-loading');
+    const bodyEl  = document.getElementById('exercise-body');
+
     btn.disabled = true;
-    btn.textContent = 'Génération...';
-
-    const resultCard = document.getElementById('result-card');
-    const loadingMsg = document.getElementById('loading-msg');
-    const exerciseTextEl = document.getElementById('exercise-text');
-
-    resultCard.style.display = 'block';
-    loadingMsg.style.display = 'block';
-    exerciseTextEl.textContent = '';
-    document.getElementById('correction-teacher').style.display = 'none';
+    btn.textContent = 'Génération…';
+    card.style.display = 'block';
+    loader.style.display = 'flex';
+    bodyEl.textContent = '';
+    document.getElementById('corr-block').style.display = 'none';
     document.getElementById('share-box').style.display = 'none';
     document.getElementById('share-btn').style.display = 'none';
-    correctionTeacherVisible = false;
-    document.getElementById('corr-btn-teacher').textContent = '👁 Correction';
+    corrVisible = false;
+    document.getElementById('corr-toggle-btn').textContent = '👁 Correction';
     document.getElementById('result-title').textContent = `${typeLabels[selectedType]} · ${level} ${levelNames[level]}`;
-    resultCard.scrollIntoView({ behavior: 'smooth' });
+    card.scrollIntoView({ behavior: 'smooth' });
 
     try {
-      const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': cfg.anthropic,
+          'x-api-key': key,
           'anthropic-version': '2023-06-01',
           'anthropic-dangerous-direct-browser-access': 'true',
         },
         body: JSON.stringify({
           model: 'claude-haiku-4-5-20251001',
-          max_tokens: 1200,
-          messages: [{ role: 'user', content: typePrompts[selectedType] }],
+          max_tokens: 1500,
+          messages: [{ role: 'user', content: prompts[selectedType] }],
         }),
       });
 
-      const data = await resp.json();
+      const data = await res.json();
       if (data.error) throw new Error(data.error.message);
 
-      const fullText = data.content?.find(b => b.type === 'text')?.text || '';
-      const parts = fullText.split('---CORRECTION---');
+      const full  = data.content?.find(b => b.type === 'text')?.text || '';
+      const parts = full.split('---CORRECTION---');
 
-      loadingMsg.style.display = 'none';
-      currentExercise = parts[0].trim();
-      currentCorrection = parts[1] ? parts[1].trim() : '';
-      exerciseTextEl.textContent = currentExercise;
-      document.getElementById('correction-text-teacher').textContent = currentCorrection;
+      loader.style.display = 'none';
+      currentExercise   = stripMd(parts[0].trim());
+      currentCorrection = parts[1] ? stripMd(parts[1].trim()) : '';
+      bodyEl.textContent = currentExercise;
+      document.getElementById('corr-body').textContent = currentCorrection;
       document.getElementById('share-btn').style.display = 'block';
+
     } catch (e) {
-      loadingMsg.style.display = 'none';
-      exerciseTextEl.textContent = 'Erreur : ' + (e.message || 'Vérifie ta clé API.');
+      loader.style.display = 'none';
+      bodyEl.textContent = '⚠️ Erreur : ' + (e.message || 'Vérifie ta clé API.');
     }
 
     btn.disabled = false;
-    btn.textContent = 'Générer l\'exercice →';
+    btn.textContent = "Générer l'exercice →";
   }
 
-  // ===== PARTAGE =====
-  async function shareExercise() {
-    const shareBtn = document.getElementById('share-btn');
-    shareBtn.disabled = true;
-    shareBtn.textContent = 'Création du lien…';
-
-    const title = document.getElementById('result-title').innerText;
-    const exercise = document.getElementById('exercise-text').innerText || currentExercise;
-    const correction = document.getElementById('correction-text-teacher').innerText || currentCorrection;
-
-    try {
-      if (!exercise) throw new Error('Exercice vide');
-
-      const base = window.location.href.split('?')[0].replace(/\/?$/, '/');
-
-      // Lien base64 — toujours fonctionnel, aucune dépendance externe
-      const encoded = btoa(unescape(encodeURIComponent(JSON.stringify({ title, exercise, correction }))));
-      // encodeURIComponent évite que + et = de la base64 soient mal décodés par URLSearchParams
-      let url = base + '?ex=' + encodeURIComponent(encoded);
-
-      // Tentative de lien court via la fonction Netlify (bonus, non bloquant)
-      try {
-        const resp = await fetch('/.netlify/functions/save-exercise', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ title, exercise, correction }),
-        });
-        if (resp.ok) {
-          const json = await resp.json();
-          if (json.id) url = base + '?id=' + json.id;
-        }
-      } catch (_) { /* on garde le lien base64 */ }
-
-      document.getElementById('share-box-title').textContent = '🔗 Lien élève prêt !';
-      document.getElementById('share-url').textContent = url;
-      document.getElementById('share-box').style.display = 'block';
-      shareBtn.textContent = '✓ Lien créé !';
-    } catch (e) {
-      console.error(e);
-      shareBtn.disabled = false;
-      shareBtn.textContent = 'Erreur — réessaie';
-      document.getElementById('error-msg').textContent = 'Erreur : ' + e.message;
-    }
-  }
-
-  function copyLink() {
-    const url = document.getElementById('share-url').textContent;
-    navigator.clipboard.writeText(url).then(() => {
-      const btn = document.getElementById('copy-link-btn');
-      btn.textContent = '✓ Copié !';
-      btn.classList.add('success');
-      setTimeout(() => { btn.textContent = '📋 Copier le lien'; btn.classList.remove('success'); }, 2000);
-    });
-  }
-
-  function copyEmail() {
-    const url = document.getElementById('share-url').textContent;
-    const text = `Voici ton exercice SnapEnglish :\n👉 ${url}\n\nBonne chance !`;
-    navigator.clipboard.writeText(text).then(() => {
-      const btn = document.getElementById('copy-email-btn');
-      btn.textContent = '✓ Copié !';
-      btn.classList.add('success');
-      setTimeout(() => { btn.textContent = '✉️ Copier pour email'; btn.classList.remove('success'); }, 2000);
-    });
-  }
-
-  function testLink() {
-    window.open(document.getElementById('share-url').textContent, '_blank');
-  }
-
-  // ===== FONCTIONS ÉLÈVE =====
-  function cleanText(text) {
-    return text
+  function stripMd(t) {
+    return t
       .replace(/#{1,6}\s*/g, '')
       .replace(/\*\*(.+?)\*\*/g, '$1')
       .replace(/\*(.+?)\*/g, '$1')
@@ -411,87 +384,157 @@
       .trim();
   }
 
-  function parseQuestions(exerciseText, correctionText) {
-    const clean = cleanText(exerciseText);
-    const lines = clean.split('\n');
-    const corrLines = cleanText(correctionText).split('\n');
+  // ── Partage ──────────────────────────────────────────────────────────
+  async function shareExercise() {
+    const btn = document.getElementById('share-btn');
+    btn.disabled = true;
+    btn.textContent = 'Création du lien…';
 
-    const questions = [];
-    let intro = '';
-    let currentQ = null;
+    const title      = document.getElementById('result-title').textContent;
+    const exercise   = document.getElementById('exercise-body').textContent || currentExercise;
+    const correction = document.getElementById('corr-body').textContent    || currentCorrection;
 
-    for (const line of lines) {
-      const match = line.match(/^(\d+)[.)\s]/);
-      if (match) {
-        if (currentQ) questions.push(currentQ);
-        currentQ = { num: match[1], text: line };
-      } else if (!currentQ) {
-        intro += line + '\n';
-      } else {
-        currentQ.text += '\n' + line;
+    if (!exercise) {
+      btn.disabled = false;
+      btn.textContent = "Envoyer à l'élève →";
+      return;
+    }
+
+    // Encodage base64 — encodeURIComponent garantit que + / = restent intacts dans l'URL
+    const b64     = btoa(unescape(encodeURIComponent(JSON.stringify({ title, exercise, correction }))));
+    const base    = window.location.href.split('?')[0].replace(/\/?$/, '/');
+    const longUrl = base + '?ex=' + encodeURIComponent(b64);
+
+    let url = longUrl;
+
+    // Tentative de lien court via TinyURL (proxy Netlify, sans CORS)
+    try {
+      const r = await fetch('/.netlify/functions/shorten?url=' + encodeURIComponent(longUrl));
+      if (r.ok) {
+        const short = (await r.text()).trim();
+        if (short.startsWith('https://tinyurl.com/') || short.startsWith('https://is.gd/')) {
+          url = short;
+        }
       }
-    }
-    if (currentQ) questions.push(currentQ);
+    } catch (_) { /* garder le lien long si TinyURL indisponible */ }
 
-    const corrAnswers = {};
-    for (const line of corrLines) {
-      const m = line.match(/^(\d+)[.)\s]+(.+)/);
-      if (m) corrAnswers[m[1]] = m[2].trim();
-    }
-
-    return { intro: intro.trim(), questions, corrAnswers };
+    document.getElementById('share-link').textContent = url;
+    document.getElementById('share-box').style.display = 'block';
+    btn.textContent = '✓ Lien créé !';
   }
 
-  async function loadExercise(exId, exBase64) {
-    try {
-      let data;
+  function copyLink() {
+    const url = document.getElementById('share-link').textContent;
+    navigator.clipboard.writeText(url).then(() => {
+      const b = document.getElementById('copy-btn');
+      b.textContent = '✓ Copié !';
+      b.classList.add('success');
+      setTimeout(() => { b.textContent = '📋 Copier le lien'; b.classList.remove('success'); }, 2000);
+    });
+  }
 
-      if (exId) {
-        const resp = await fetch('/.netlify/functions/load-exercise?id=' + encodeURIComponent(exId));
-        if (!resp.ok) throw new Error('Exercice introuvable');
-        data = await resp.json();
-      } else {
-        // Décoder le lien base64 — les anciens liens peuvent avoir + non encodés (= espace)
-        const fixedBase64 = exBase64.replace(/ /g, '+');
-        data = JSON.parse(decodeURIComponent(escape(atob(fixedBase64))));
-      }
+  function copyEmail() {
+    const url   = document.getElementById('share-link').textContent;
+    const title = document.getElementById('result-title').textContent;
+    navigator.clipboard.writeText(`Voici ton exercice SnapEnglish :\n👉 ${url}\n\nBonne chance !`).then(() => {
+      const b = document.getElementById('email-btn');
+      b.textContent = '✓ Copié !';
+      b.classList.add('success');
+      setTimeout(() => { b.textContent = '✉️ Copier pour email'; b.classList.remove('success'); }, 2000);
+    });
+  }
+
+  function testLink() {
+    window.open(document.getElementById('share-link').textContent, '_blank');
+  }
+
+  // ── Élève ─────────────────────────────────────────────────────────────
+  function loadExercise(raw) {
+    try {
+      // Anciens liens : + peut avoir été décodé en espace par URLSearchParams
+      const b64  = raw.replace(/ /g, '+');
+      const data = JSON.parse(decodeURIComponent(escape(atob(b64))));
 
       document.getElementById('student-loading').style.display = 'none';
-      document.getElementById('student-title').textContent = data.title || 'Exercice';
-      document.getElementById('student-subtitle').textContent = data.title || 'Exercice d\'anglais';
+      document.getElementById('student-title').textContent     = data.title || 'Exercice';
+      document.getElementById('student-subtitle').textContent  = data.title || "Exercice d'anglais";
 
-      const { intro, questions, corrAnswers } = parseQuestions(data.exercise || '', data.correction || '');
+      const { intro, questions, answers } = parseQuestions(
+        stripMd(data.exercise   || ''),
+        stripMd(data.correction || '')
+      );
+
       const container = document.getElementById('student-questions');
       container.style.display = 'block';
 
       let html = '';
-      if (intro) html += `<p style="font-size:0.95rem; color:var(--muted); margin-bottom:1.25rem; line-height:1.6;">${intro.replace(/\n/g, '<br>')}</p>`;
+      if (intro) {
+        html += `<p style="font-size:0.92rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.65;">${h(intro).replace(/\n/g,'<br>')}</p>`;
+      }
 
       questions.forEach((q, i) => {
-        const corrHTML = corrAnswers[q.num]
-          ? `<div id="corr-${i}" style="display:none; margin-top:0.5rem; padding:0.6rem 0.9rem; background:var(--accent-light); border-radius:8px; font-size:0.9rem; color:var(--accent);">${corrAnswers[q.num]}</div>`
-          : '';
+        const corrHTML = answers[q.num]
+          ? `<div class="q-corr" id="qc-${i}">${h(answers[q.num])}</div>` : '';
         html += `
-          <div style="margin-bottom:1.5rem; padding-bottom:1.5rem; border-bottom:0.5px solid var(--border);">
-            <p style="font-size:0.97rem; line-height:1.7; white-space:pre-wrap; margin-bottom:0.75rem;">${q.text.replace(/</g, '&lt;')}</p>
-            <textarea placeholder="Ta réponse…" rows="2" style="width:100%; font-size:0.9rem; resize:vertical; margin-bottom:0.5rem;"></textarea>
-            <button class="btn-sm" onclick="toggleCorr(${i})" id="btn-${i}">👁 Voir la correction</button>
+          <div class="q-block">
+            <p class="q-text">${h(q.text)}</p>
+            <textarea class="q-answer" placeholder="Ta réponse…" rows="2"></textarea>
+            <div style="margin-top:0.6rem;">
+              <button class="btn-sm" onclick="toggleAnswer(${i},this)">👁 Voir la correction</button>
+            </div>
             ${corrHTML}
           </div>`;
       });
 
       container.innerHTML = html;
+
     } catch (e) {
-      document.getElementById('student-loading').textContent = 'Exercice introuvable. Vérifie le lien.';
+      document.getElementById('student-loading').style.display = 'none';
+      document.getElementById('student-questions').style.display = 'block';
+      document.getElementById('student-questions').innerHTML =
+        '<p style="color:var(--red);font-size:0.9rem;">Ce lien est invalide ou expiré. Demande un nouveau lien à ton professeur.</p>';
     }
   }
 
-  function toggleCorr(i) {
-    const el = document.getElementById(`corr-${i}`);
-    const btn = document.getElementById(`btn-${i}`);
-    const visible = el.style.display !== 'none';
-    el.style.display = visible ? 'none' : 'block';
-    btn.textContent = visible ? '👁 Voir la correction' : '🙈 Masquer';
+  function parseQuestions(exText, corrText) {
+    const lines     = exText.split('\n');
+    const corrLines = corrText.split('\n');
+    let intro = '', currentQ = null;
+    const questions = [];
+
+    for (const l of lines) {
+      const m = l.match(/^(\d+)[.)]\s/);
+      if (m) {
+        if (currentQ) questions.push(currentQ);
+        currentQ = { num: m[1], text: l };
+      } else if (!currentQ) {
+        intro += l + '\n';
+      } else {
+        currentQ.text += '\n' + l;
+      }
+    }
+    if (currentQ) questions.push(currentQ);
+
+    const answers = {};
+    for (const l of corrLines) {
+      const m = l.match(/^(\d+)[.)]\s+(.+)/);
+      if (m) answers[m[1]] = m[2].trim();
+    }
+
+    return { intro: intro.trim(), questions, answers };
+  }
+
+  function toggleAnswer(i, btn) {
+    const el = document.getElementById(`qc-${i}`);
+    if (!el) return;
+    const showing = el.style.display === 'block';
+    el.style.display = showing ? 'none' : 'block';
+    btn.textContent   = showing ? '👁 Voir la correction' : '🙈 Masquer';
+  }
+
+  // Échappe les caractères HTML dangereux
+  function h(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 </script>
 </body>
