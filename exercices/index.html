@@ -355,8 +355,18 @@
 
   // ===== PARTAGE =====
   async function shareExercise() {
-    const cfg = getConfig();
+    let cfg = getConfig();
     const shareBtn = document.getElementById('share-btn');
+
+    // Si pas de clé JSONBin, demander directement sans passer par les paramètres
+    if (!cfg.jsonbin) {
+      const key = prompt('Entre ta Master Key JSONBin pour créer un lien court :\n(commence par $2a$10$... — disponible sur jsonbin.io → API Keys)');
+      if (key && key.trim()) {
+        localStorage.setItem('snap_jsonbin', key.trim());
+        cfg = getConfig();
+      }
+    }
+
     shareBtn.disabled = true;
     shareBtn.textContent = 'Création du lien…';
 
