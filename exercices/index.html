@@ -69,21 +69,12 @@
       <p>Configuration — à faire une seule fois</p>
     </header>
     <div class="card">
-      <p class="card-title">Clés API</p>
+      <p class="card-title">Configuration <span class="badge">à faire une seule fois</span></p>
 
       <div class="field">
         <label>Clé API Anthropic (Claude)</label>
         <input type="password" id="anthropic-key" placeholder="sk-ant-api03-..." />
         <p class="field-hint">Disponible sur <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a></p>
-      </div>
-
-      <div class="field">
-        <label>Clé API JSONBin <span style="font-weight:300">(pour les liens courts ✨)</span></label>
-        <input type="password" id="jsonbin-key" placeholder="$2a$10$..." />
-        <p class="field-hint">
-          Compte gratuit sur <a href="https://jsonbin.io" target="_blank">jsonbin.io</a> → onglet "API Keys" → copier la Master Key.
-          Sans cette clé, les liens seront longs.
-        </p>
       </div>
 
       <button class="primary" onclick="saveConfig()">Enregistrer et continuer →</button>
