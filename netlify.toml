@@ -16,6 +16,11 @@
   to = "/snapenglish-contact.html"
   status = 200
   
+  [[redirects]]
+  from = "/exercices"
+  to = "https://snapenglishnetlify.netlify.app"
+  status = 302
+  
 [[redirects]]
   from = "/methode"
   to = "/snapenglish-methode.html"
