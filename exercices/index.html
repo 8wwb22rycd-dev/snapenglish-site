@@ -154,14 +154,6 @@
         <div id="correction-text-teacher" class="exercise-text"></div>
       </div>
 
-      <!-- Saisie clé JSONBin si manquante -->
-      <div id="jsonbin-prompt" style="display:none; margin-top:1rem; background:#FEF3C7; border:1px solid #FCD34D; border-radius:10px; padding:1rem;">
-        <p style="font-size:0.85rem; font-weight:500; color:#78350F; margin-bottom:0.5rem;">🔑 Entre ta clé JSONBin pour créer un lien court</p>
-        <p style="font-size:0.78rem; color:#92400E; margin-bottom:0.75rem;">Compte gratuit sur <a href="https://jsonbin.io" target="_blank" style="color:#78350F;">jsonbin.io</a> → API Keys → copier la Master Key</p>
-        <input type="text" id="jsonbin-inline-key" placeholder="$2a$10$..." style="margin-bottom:0.5rem; font-size:0.85rem;" />
-        <button class="primary" onclick="saveJsonbinKey()" style="margin-top:0;">Créer le lien court →</button>
-      </div>
-
       <div class="share-box" id="share-box" style="display:none;">
         <p id="share-box-title">🔗 Lien élève prêt !</p>
         <div class="share-url" id="share-url"></div>
@@ -205,17 +197,14 @@
 
   function getConfig() {
     return {
-      anthropic: localStorage.getItem('snap_anthropic') || '',
-      jsonbin:   localStorage.getItem('snap_jsonbin')   || ''
+      anthropic: localStorage.getItem('snap_anthropic') || ''
     };
   }
 
   function saveConfig() {
     const a = document.getElementById('anthropic-key').value.trim();
-    const j = document.getElementById('jsonbin-key').value.trim();
     if (!a) { alert('Ajoute ta clé API Anthropic.'); return; }
     localStorage.setItem('snap_anthropic', a);
-    if (j) localStorage.setItem('snap_jsonbin', j);
     document.getElementById('config-panel').style.display = 'none';
     document.getElementById('teacher-view').style.display = 'block';
   }
@@ -223,7 +212,6 @@
   function showConfig() {
     const cfg = getConfig();
     document.getElementById('anthropic-key').value = cfg.anthropic;
-    document.getElementById('jsonbin-key').value = cfg.jsonbin;
     document.getElementById('config-panel').style.display = 'block';
     document.getElementById('teacher-view').style.display = 'none';
   }
@@ -370,8 +358,9 @@
 
       const data = { title, exercise: exerciseContent, correction: correctionContent };
       const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
-      const base = window.location.href.split('?')[0].split('#')[0];
-      const longUrl = base + '#ex=' + encoded;
+      // Ensure trailing slash so Netlify serves directly without 301 redirect (which strips query strings)
+      const base = (window.location.href.split('?')[0].split('#')[0]).replace(/\/?$/, '/');
+      const longUrl = base + '?ex=' + encoded;
 
       // Raccourcir via la Netlify Function (proxy is.gd, sans CORS)
       let url = longUrl;
