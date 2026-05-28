@@ -372,13 +372,15 @@
 
       if (cfg.jsonbin) {
         // ✨ Lien court via JSONBin
+        // Sanitize title: HTTP headers must be ASCII only
+        const safeName = title.normalize('NFD').replace(/[̀-ͯ·]/g, '').trim().substring(0, 50);
         const resp = await fetch(JSONBIN_API, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'X-Master-Key': cfg.jsonbin,
             'X-Bin-Private': 'false',
-            'X-Bin-Name': title.substring(0, 50)
+            'X-Bin-Name': safeName || 'Exercice'
           },
           body: JSON.stringify(data)
         });
