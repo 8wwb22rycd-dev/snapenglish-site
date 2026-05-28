@@ -1,3 +1,5 @@
+const { getStore } = require('@netlify/blobs');
+
 exports.handler = async (event) => {
   const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
 
@@ -16,9 +18,7 @@ exports.handler = async (event) => {
     const data = JSON.parse(event.body || '{}');
     if (!data.exercise) return { statusCode: 400, headers, body: JSON.stringify({ error: 'Missing exercise' }) };
 
-    const { getStore } = await import('@netlify/blobs');
     const store = getStore('exercises');
-
     const id = Math.random().toString(36).slice(2, 9);
     await store.setJSON(id, {
       title: data.title || '',

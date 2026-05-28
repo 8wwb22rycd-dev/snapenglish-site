@@ -418,10 +418,11 @@
       }
     } catch (_) {}
 
-    // Fallback : base64 dans l'URL (toujours fonctionnel, lien plus long)
+    // Fallback : base64url dans l'URL (base64 sans +/= → aucun problème de décodage)
     if (!url) {
-      const b64 = btoa(unescape(encodeURIComponent(JSON.stringify({ title, exercise, correction }))));
-      url = base + '?ex=' + encodeURIComponent(b64);
+      const b64url = btoa(unescape(encodeURIComponent(JSON.stringify({ title, exercise, correction }))))
+        .replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+      url = base + '?ex=' + b64url;
     }
 
     document.getElementById('share-link').textContent = url;
@@ -499,9 +500,10 @@
 
   function loadExercise(raw) {
     try {
-      // + peut avoir été décodé en espace par URLSearchParams
-      const b64  = raw.replace(/ /g, '+');
-      const data = JSON.parse(decodeURIComponent(escape(atob(b64))));
+      // Accepte base64url (- _) et base64 classique (+ /)
+      const b64    = raw.replace(/-/g, '+').replace(/_/g, '/').replace(/ /g, '+');
+      const padded = b64 + '=='.slice(0, (4 - b64.length % 4) % 4);
+      const data   = JSON.parse(decodeURIComponent(escape(atob(padded))));
       renderExercise(data);
     } catch (e) {
       showStudentError();
