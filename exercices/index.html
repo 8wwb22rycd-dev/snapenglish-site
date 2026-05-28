@@ -412,7 +412,7 @@
       const r = await fetch('/.netlify/functions/shorten?url=' + encodeURIComponent(longUrl));
       if (r.ok) {
         const short = (await r.text()).trim();
-        if (short.startsWith('https://tinyurl.com/') || short.startsWith('https://is.gd/')) {
+        if (short.startsWith('https://is.gd/') || short.startsWith('https://v.gd/')) {
           url = short;
         }
       }

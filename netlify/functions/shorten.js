@@ -16,18 +16,18 @@ exports.handler = async (event) => {
 
   const headers = { 'Content-Type': 'text/plain', 'Access-Control-Allow-Origin': '*' };
 
-  // Try TinyURL first
+  // is.gd : redirige instantanément sans publicité
   try {
-    const short = await tryShorten(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`);
-    if (short.startsWith('https://tinyurl.com/')) {
+    const short = await tryShorten(`https://is.gd/create.php?format=simple&url=${encodeURIComponent(url)}`);
+    if (short.startsWith('https://is.gd/')) {
       return { statusCode: 200, headers, body: short };
     }
   } catch (_) {}
 
-  // Fallback: is.gd
+  // v.gd : service sœur de is.gd, même comportement sans pub
   try {
-    const short = await tryShorten(`https://is.gd/create.php?format=simple&url=${encodeURIComponent(url)}`);
-    if (short.startsWith('https://is.gd/')) {
+    const short = await tryShorten(`https://v.gd/create.php?format=simple&url=${encodeURIComponent(url)}`);
+    if (short.startsWith('https://v.gd/')) {
       return { statusCode: 200, headers, body: short };
     }
   } catch (_) {}
