@@ -347,7 +347,8 @@
 
       // Lien base64 — toujours fonctionnel, aucune dépendance externe
       const encoded = btoa(unescape(encodeURIComponent(JSON.stringify({ title, exercise, correction }))));
-      let url = base + '?ex=' + encoded;
+      // encodeURIComponent évite que + et = de la base64 soient mal décodés par URLSearchParams
+      let url = base + '?ex=' + encodeURIComponent(encoded);
 
       // Tentative de lien court via la fonction Netlify (bonus, non bloquant)
       try {
@@ -450,8 +451,9 @@
         if (!resp.ok) throw new Error('Exercice introuvable');
         data = await resp.json();
       } else {
-        // Compatibilité avec les anciens liens base64 (?ex=...)
-        data = JSON.parse(decodeURIComponent(escape(atob(exBase64))));
+        // Décoder le lien base64 — les anciens liens peuvent avoir + non encodés (= espace)
+        const fixedBase64 = exBase64.replace(/ /g, '+');
+        data = JSON.parse(decodeURIComponent(escape(atob(fixedBase64))));
       }
 
       document.getElementById('student-loading').style.display = 'none';
