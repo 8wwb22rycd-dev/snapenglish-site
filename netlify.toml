@@ -142,6 +142,11 @@
   to = "/snapenglish-blog-conclure-reunion-anglais.html"
   status = 200
 
+[[redirects]]
+  from = "/blog/donner-son-avis-en-reunion-anglais"
+  to = "/snapenglish-blog-donner-son-avis-reunion-anglais.html"
+  status = 200
+
 # ── BLOG : Les e-mails ──
 [[redirects]]
   from = "/blog/emails-professionnels-anglais"
