@@ -57,6 +57,17 @@
     .nav-links a:hover { opacity: 1; }
     .nav-cta { background: var(--navy); color: var(--cream) !important; opacity: 1 !important; padding: 0.55rem 1.25rem; border-radius: 2px; font-size: 0.8rem !important; }
     .nav-cta:hover { background: var(--navy-light) !important; }
+
+    .nav-inscr {
+      background: var(--gold);
+      color: var(--white) !important;
+      opacity: 1 !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: 2px;
+      font-size: 0.8rem !important;
+      transition: background 0.2s !important;
+    }
+    .nav-inscr:hover { background: #a0813d !important; }
     .nav-mobile-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .nav-mobile-btn span { display: block; width: 24px; height: 2px; background: var(--navy); }
 
@@ -187,6 +198,7 @@
     <li><a href="/methode">Méthode</a></li>
     <li><a href="/shop">Produits</a></li>
     <li><a href="/blog">Blog</a></li>
+    <li><a href="/tarifs" class="nav-inscr">S'inscrire</a></li>
     <li><a href="/contact" class="nav-cta">Contact</a></li>
   </ul>
   <button class="nav-mobile-btn" aria-label="Menu" onclick="toggleMenu()">
