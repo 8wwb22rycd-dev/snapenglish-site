@@ -100,7 +100,7 @@ function welcomeEmail() {
           <table cellpadding="0" cellspacing="0" style="margin:0 auto;">
             <tr>
               <td style="background:#B8975A;border-radius:2px;">
-                <a href="https://www.snapenglish.fr/ebook"
+                <a href="https://www.snapenglish.fr/ebook-expressions-anglophones"
                    style="display:inline-block;padding:14px 36px;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1B2A4A;text-decoration:none;">
                   📖 Accéder à mon ebook gratuit
                 </a>
@@ -144,7 +144,7 @@ function welcomeEmail() {
             </tr>
           </table>
           <div style="text-align:center;margin-top:20px;">
-            <a href="https://www.snapenglish.fr/ebook"
+            <a href="https://www.snapenglish.fr/ebook-expressions-anglophones"
                style="font-size:12px;font-weight:600;color:#1B2A4A;text-decoration:none;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid #B8975A;padding-bottom:2px;">
               Voir les 32 expressions →
             </a>
