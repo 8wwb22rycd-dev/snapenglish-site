@@ -90,7 +90,7 @@
 
     /* BREADCRUMB */
     .breadcrumb { padding: 0 var(--gutter); margin-top: 6rem; max-width: var(--max); margin-left: auto; margin-right: auto; position: relative; z-index: 0; }
-    .breadcrumb-inner { display:flex; align-items:center; gap:0.5rem; font-size:0.75rem; font-weight:500; color:var(--navy); opacity:0.5; }
+    .breadcrumb-inner { position:static; background:none; backdrop-filter:none; border-bottom:none; padding:0; justify-content:flex-start; z-index:auto; transition:none; display:flex; align-items:center; gap:0.5rem; font-size:0.75rem; font-weight:500; color:var(--navy); opacity:0.5; }
     .breadcrumb-inner a { color:inherit; text-decoration:none; }
     .breadcrumb-inner span { opacity:0.4; }
 
