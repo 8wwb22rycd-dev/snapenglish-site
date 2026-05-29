@@ -15,31 +15,95 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Formation Anglais Médical CPF",
-    "description": "Formation d'anglais médical 100% en ligne pour professionnels de santé : infirmiers, médecins, pharmaciens, paramédicaux. Cours particuliers personnalisés via Zoom, finançable CPF.",
-    "provider": {
-      "@type": "EducationalOrganization",
-      "name": "SnapEnglish",
-      "url": "https://www.snapenglish.fr",
-      "founder": {"@type": "Person", "name": "Caroline Cousin"},
-      "hasCredential": [{"@type": "EducationalOccupationalCredential", "name": "Qualiopi"}]
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Formation Anglais Médical CPF",
+  "description": "Formation anglais médical individuelle 100% en ligne via Zoom, finançable CPF. Spécialisée infirmiers, médecins, pharmaciens et paramédicaux. Cours particuliers personnalisés avec Caroline Cousin. Certification CLOE ou LEVELTEL incluse.",
+  "url": "https://www.snapenglish.fr/formations/anglais-medical",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "SnapEnglish",
+    "url": "https://www.snapenglish.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12B Place du 9 octobre",
+      "addressLocality": "Cambrai",
+      "postalCode": "59400",
+      "addressCountry": "FR"
     },
-    "educationalLevel": "Tous niveaux",
-    "teaches": ["Anglais médical", "Communication patient anglophone", "Vocabulaire médical", "Anglais infirmier", "Anglais médecin"],
-    "availableLanguage": "fr",
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certification Qualiopi"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certification CLOE RS6435"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certification LEVELTEL RS7399"
+      }
+    ]
+  },
+  "instructor": {
+    "@type": "Person",
+    "name": "Caroline Cousin",
+    "jobTitle": "Fondatrice et formatrice",
+    "url": "https://www.snapenglish.fr/a-propos",
+    "alumniOf": "Université Polytechnique Hauts-de-France"
+  },
+  "teaches": [
+    "Anglais médical",
+    "Communication patient anglophone",
+    "Vocabulaire médical",
+    "Anglais infirmier",
+    "Anglais médecin",
+    "Préparation OET"
+  ],
+  "educationalLevel": "A2-C1",
+  "courseMode": [
+    "online",
+    "synchronous"
+  ],
+  "inLanguage": "fr",
+  "availableLanguage": "French",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
     "courseMode": "online",
+    "instructor": {
+      "@type": "Person",
+      "name": "Caroline Cousin"
+    },
     "offers": [
-      {"@type": "Offer", "name": "Formule 10h", "price": "750", "priceCurrency": "EUR"},
-      {"@type": "Offer", "name": "Formule 20h", "price": "1500", "priceCurrency": "EUR"}
-    ],
-    "hasCourseInstance": {
-      "@type": "CourseInstance",
-      "courseMode": "online",
-      "instructor": {"@type": "Person", "name": "Caroline Cousin"}
-    }
+      {
+        "@type": "Offer",
+        "name": "Formule 10 heures",
+        "price": "750",
+        "priceCurrency": "EUR",
+        "description": "10h de cours particuliers en ligne. Reste à charge 150€ CPF."
+      },
+      {
+        "@type": "Offer",
+        "name": "Formule 20 heures",
+        "price": "1500",
+        "priceCurrency": "EUR",
+        "description": "20h de cours particuliers en ligne. Reste à charge 150€ CPF."
+      }
+    ]
+  },
+  "educationalCredentialAwarded": [
+    "Certification CLOE RS6435",
+    "Certification LEVELTEL RS7399"
+  ],
+  "financialAidEligible": "Finançable CPF — Compte Personnel de Formation",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "16",
+    "bestRating": "5"
   }
+}
   </script>
 
   <script type="application/ld+json">
