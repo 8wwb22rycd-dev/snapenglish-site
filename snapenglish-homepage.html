@@ -19,32 +19,43 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
+    "@type": ["EducationalOrganization", "LocalBusiness"],
     "name": "SnapEnglish",
     "url": "https://www.snapenglish.fr",
-    "logo": "https://www.snapenglish.fr/logo.png",
+    "logo": "https://www.snapenglish.fr/images/og-default.jpg",
+    "image": "https://www.snapenglish.fr/images/og-default.jpg",
     "description": "Organisme de formation anglais certifié Qualiopi, spécialisé dans l'anglais médical et professionnel pour francophones. 100% en ligne via Zoom, finançable CPF.",
+    "taxID": "80460013000028",
     "founder": {
       "@type": "Person",
       "name": "Caroline Cousin",
       "jobTitle": "Fondatrice et formatrice",
       "alumniOf": "Université Polytechnique Hauts-de-France",
-      "knowsAbout": ["Anglais médical", "Anglais professionnel", "Formation CPF", "Expression orale anglais"]
+      "knowsAbout": ["Anglais médical", "Anglais professionnel", "Formation CPF", "Expression orale anglais"],
+      "sameAs": "https://www.snapenglish.fr/a-propos"
     },
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Lille",
+      "streetAddress": "12B Place du 9 octobre",
+      "addressLocality": "Cambrai",
+      "postalCode": "59400",
+      "addressRegion": "Hauts-de-France",
       "addressCountry": "FR"
     },
+    "telephone": "+33-6-80-26-63-14",
+    "email": "contact@snapenglish.fr",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+33-6-80-26-63-14",
       "email": "contact@snapenglish.fr",
-      "contactType": "customer service"
+      "contactType": "customer service",
+      "availableLanguage": ["French", "English"]
     },
     "hasCredential": [
       { "@type": "EducationalOccupationalCredential", "name": "Certification Qualiopi" },
-      { "@type": "EducationalOccupationalCredential", "name": "Certification CPF" }
+      { "@type": "EducationalOccupationalCredential", "name": "Certification CPF" },
+      { "@type": "EducationalOccupationalCredential", "name": "Certification CLOE RS6435" },
+      { "@type": "EducationalOccupationalCredential", "name": "Certification LEVELTEL RS7399" }
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
