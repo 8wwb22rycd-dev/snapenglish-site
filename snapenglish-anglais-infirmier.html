@@ -722,8 +722,12 @@
   }
   function toggleMenu() {
     const links = document.querySelector('.nav-links');
-    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-    links.style.cssText += ';flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:1rem 2rem;border-bottom:1px solid var(--sand);';
+    const isOpen = links.style.display === 'flex';
+    links.style.display = isOpen ? 'none' : 'flex';
+    if (!isOpen) {
+      links.style.cssText += ';flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:1rem var(--gutter);border-bottom:1px solid var(--sand);z-index:99;';
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { links.style.display = 'none'; }, { once: true }));
+    }
   }
 </script>
 <script>setTimeout(function(){var s=document.createElement("script");s.src="/popup-newsletter.js";document.body.appendChild(s);},4000);</script>
