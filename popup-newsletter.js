@@ -179,11 +179,14 @@
     setTimeout(() => overlay.remove(), 320);
   }
 
-  document.body.appendChild(overlay);
+  function showPopup() {
+    document.body.appendChild(overlay);
+    document.getElementById('snap-popup-close').addEventListener('click', closePopup);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) closePopup(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
+  }
 
-  document.getElementById('snap-popup-close').addEventListener('click', closePopup);
-  overlay.addEventListener('click', function (e) { if (e.target === overlay) closePopup(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
+  setTimeout(showPopup, 10000);
 
   document.getElementById('snap-popup-form').addEventListener('submit', async function (e) {
     e.preventDefault();

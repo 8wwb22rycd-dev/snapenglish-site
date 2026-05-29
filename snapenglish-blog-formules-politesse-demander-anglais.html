@@ -125,6 +125,11 @@
     .footer-certifs { display: flex; gap: 0.75rem; flex-wrap: wrap; }
     .footer-certif-badge { font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid rgba(184,151,90,0.35); color: var(--gold); padding: 0.2rem 0.6rem; border-radius: 2px; opacity: 0.7; }
 
+    
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .nav-links { gap: 1.2rem; }
+      .nav-links a { font-size: 0.78rem; }
+    }
     @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } .nav-links { display: none; } .nav-mobile-btn { display: flex; } }
     @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } .article-wrap { padding-top: 5.5rem; } }
   </style>
