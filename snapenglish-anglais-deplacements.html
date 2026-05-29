@@ -295,6 +295,15 @@
       .situations-grid { grid-template-columns:1fr; }
       .footer-grid { grid-template-columns:1fr; }
     }
+
+    .certifications { background: var(--warm); padding: 3rem var(--gutter); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
+    .certifications-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    .certifications-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); opacity: 0.45; }
+    .certifications-logos { display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .certif-logo-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0.8; transition: opacity 0.2s; }
+    .certif-logo-item:hover { opacity: 1; }
+    .certif-logo-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); opacity: 0.5; }
+    .certif-divider { width: 1px; height: 40px; background: var(--sand); }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1C5HRGQ6BR"></script>
@@ -677,6 +686,37 @@
 </section>
 
 </main>
+
+<!-- CERTIFICATIONS OFFICIELLES -->
+<section class="certifications" aria-label="Certifications officielles SnapEnglish">
+  <div class="certifications-inner">
+    <span class="certifications-label">Certifications &amp; accréditations officielles</span>
+    <div class="certifications-logos" role="list">
+      <div class="certif-logo-item" role="listitem">
+        <img src="/images/logo-qualiopi.jpg" alt="Qualiopi - Processus certifié Actions de Formation - Bureau Veritas - République Française" style="height:60px;width:auto;" loading="lazy" />
+      </div>
+      <div class="certif-divider" aria-hidden="true"></div>
+      <div class="certif-logo-item" role="listitem">
+        <img src="/images/logo-charte-cpf.png" alt="CPF - Entreprise de formation respectant la Charte de Déontologie" style="height:60px;width:auto;" loading="lazy" />
+      </div>
+      <div class="certif-divider" aria-hidden="true"></div>
+      <div class="certif-logo-item" role="listitem">
+        <img src="/images/logo-cloe.png" alt="CLOE Centre Partenaire - Certification RS6435" style="height:44px;width:auto;" loading="lazy" />
+        <span class="certif-logo-label">RS6435</span>
+      </div>
+      <div class="certif-divider" aria-hidden="true"></div>
+      <div class="certif-logo-item" role="listitem">
+        <img src="/images/logo-leveltel.png" alt="LEVELTEL - Certification RS7399" style="height:44px;width:auto;" loading="lazy" />
+        <span class="certif-logo-label">RS7399</span>
+      </div>
+      <div class="certif-divider" aria-hidden="true"></div>
+      <div class="certif-logo-item" role="listitem">
+        <img src="/images/logo-moncompteformation.png" alt="Mon Compte Formation - CPF" style="height:52px;width:auto;" loading="lazy" />
+        <span class="certif-logo-label">100% finançable</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer role="contentinfo">
   <div class="footer-inner">
