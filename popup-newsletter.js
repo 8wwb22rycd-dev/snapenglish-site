@@ -184,35 +184,35 @@
     document.getElementById('snap-popup-close').addEventListener('click', closePopup);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) closePopup(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
+
+    document.getElementById('snap-popup-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = document.getElementById('snap-popup-input').value.trim();
+      if (!email || !email.includes('@')) {
+        document.getElementById('snap-popup-input').focus();
+        return;
+      }
+      const btn = document.getElementById('snap-popup-btn');
+      btn.disabled = true;
+      btn.textContent = 'Envoi…';
+
+      try {
+        const body = new URLSearchParams({ email });
+        const res = await fetch('/.netlify/functions/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body.toString()
+        });
+        if (!res.ok) throw new Error('fail');
+        localStorage.setItem('snap_nl_subscribed', '1');
+        document.getElementById('snap-popup-form').style.display = 'none';
+        document.getElementById('snap-popup-success').style.display = 'block';
+      } catch {
+        btn.disabled = false;
+        btn.textContent = "Je m'abonne gratuitement";
+      }
+    });
   }
 
   setTimeout(showPopup, 10000);
-
-  document.getElementById('snap-popup-form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const email = document.getElementById('snap-popup-input').value.trim();
-    if (!email || !email.includes('@')) {
-      document.getElementById('snap-popup-input').focus();
-      return;
-    }
-    const btn = document.getElementById('snap-popup-btn');
-    btn.disabled = true;
-    btn.textContent = 'Envoi…';
-
-    try {
-      const body = new URLSearchParams({ email });
-      const res = await fetch('/.netlify/functions/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString()
-      });
-      if (!res.ok) throw new Error('fail');
-      localStorage.setItem('snap_nl_subscribed', '1');
-      document.getElementById('snap-popup-form').style.display = 'none';
-      document.getElementById('snap-popup-success').style.display = 'block';
-    } catch {
-      btn.disabled = false;
-      btn.textContent = "Je m'abonne gratuitement";
-    }
-  });
 })();
