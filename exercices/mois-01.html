@@ -128,6 +128,20 @@
       line-height: 1.25;
       letter-spacing: -0.01em;
     }
+    .ex-expression.hidden-expr { display: none; }
+    .ex-expression-placeholder {
+      padding: 1.75rem;
+      border: 1px dashed rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(247,244,239,0.25);
+      font-style: italic;
+      letter-spacing: 0.06em;
+    }
+    .btn-record:disabled { opacity: 0.2 !important; cursor: not-allowed !important; pointer-events: none; }
+    .btn-reveal:disabled { opacity: 0.2 !important; cursor: not-allowed !important; pointer-events: none; }
 
     /* ── ACTION BUTTONS ── */
     .ex-actions {
@@ -364,15 +378,19 @@
   <div class="intro-steps">
     <div class="intro-step">
       <span class="intro-step-icon">🔊</span>
-      <div class="intro-step-text"><strong>Écoutez</strong> chaque expression prononcée par une voix anglophone naturelle.</div>
+      <div class="intro-step-text"><strong>Étape 1 — Écoutez</strong> l'expression. L'anglais est caché : entraînez votre oreille avant vos yeux.</div>
+    </div>
+    <div class="intro-step">
+      <span class="intro-step-icon">🇬🇧</span>
+      <div class="intro-step-text"><strong>Étape 2 — Visualisez</strong> l'expression en anglais. Elle apparaît après l'écoute pour confirmer ce que vous avez entendu.</div>
     </div>
     <div class="intro-step">
       <span class="intro-step-icon">🎙️</span>
-      <div class="intro-step-text"><strong>Enregistrez-vous</strong> et réécoutez-vous. C'est là que l'ancrage se fait.</div>
+      <div class="intro-step-text"><strong>Étape 3 — Enregistrez-vous</strong> et réécoutez-vous. C'est là que l'ancrage se fait.</div>
     </div>
     <div class="intro-step">
       <span class="intro-step-icon">🇫🇷</span>
-      <div class="intro-step-text"><strong>Découvrez</strong> la traduction française après avoir pratiqué à l'oral.</div>
+      <div class="intro-step-text"><strong>Étape 4 — Révélez</strong> la traduction française. La compréhension arrive en dernier.</div>
     </div>
   </div>
   <button class="btn-start" onclick="startExercise()">Commencer l'exercice →</button>
@@ -383,6 +401,7 @@
   <div class="ex-card" id="exCard">
     <div class="ex-group" id="exGroup"></div>
     <p class="ex-context" id="exContext"></p>
+    <div class="ex-expression-placeholder" id="exPlaceholder">🔊 Écoutez d'abord...</div>
     <div class="ex-expression" id="exExpression"></div>
     <div class="ex-actions">
       <button class="btn-listen" id="btnListen" onclick="listenExpression()">
@@ -521,19 +540,24 @@ function render() {
   void card.offsetWidth;
   card.style.animation = '';
 
+  const alreadyListened = listened[current];
+
   document.getElementById('exGroup').textContent = expr.group;
   document.getElementById('exContext').textContent = expr.context;
   document.getElementById('exExpression').textContent = `"${expr.en}"`;
+  document.getElementById('exExpression').classList.toggle('hidden-expr', !alreadyListened);
+  document.getElementById('exPlaceholder').style.display = alreadyListened ? 'none' : '';
 
   // Listen button
   const btnListen = document.getElementById('btnListen');
   btnListen.className = 'btn-listen';
   btnListen.disabled = false;
-  document.getElementById('listenLabel').textContent = listened[current] ? 'Réécouter' : 'Écouter';
+  document.getElementById('listenLabel').textContent = alreadyListened ? 'Réécouter' : 'Écouter';
 
   // Record button
   const btnRecord = document.getElementById('btnRecord');
   btnRecord.className = 'btn-record';
+  btnRecord.disabled = !alreadyListened;
   document.getElementById('recordIcon').textContent = '🎙️';
   document.getElementById('recordLabel').textContent = "M'enregistrer";
 
@@ -541,7 +565,7 @@ function render() {
   const trans = document.getElementById('exTranslation');
   trans.textContent = `🇫🇷 ${expr.fr}`;
   trans.classList.toggle('visible', revealed[current]);
-  document.getElementById('btnReveal').style.display = revealed[current] ? 'none' : '';
+  document.getElementById('btnReveal').style.display = (alreadyListened && !revealed[current]) ? '' : 'none';
 
   // Nav
   document.getElementById('btnPrev').disabled = current === 0;
@@ -588,6 +612,16 @@ function listenExpression() {
     localStorage.setItem('slm01_listened', JSON.stringify(listened));
     resetListenBtn();
     renderDots();
+    // Révéler l'expression anglaise après l'écoute
+    document.getElementById('exPlaceholder').style.display = 'none';
+    const exEl = document.getElementById('exExpression');
+    exEl.classList.remove('hidden-expr');
+    exEl.style.animation = 'none';
+    void exEl.offsetWidth;
+    exEl.style.animation = 'fadeSlide 0.5s ease both';
+    // Activer enregistrement et traduction
+    document.getElementById('btnRecord').disabled = false;
+    if (!revealed[current]) document.getElementById('btnReveal').style.display = '';
   };
   utterance.onerror = () => { isPlaying = false; resetListenBtn(); };
 
