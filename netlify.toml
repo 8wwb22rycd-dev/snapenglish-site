@@ -283,3 +283,8 @@
   to = "/exercices/index.html"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/exercices/mois-01"
+  to = "/exercices/mois-01.html"
+  status = 200

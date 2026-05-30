@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Mois 01 · Interrupting Naturally | Sound Less French</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1B2A4A; --navy-dark: #111d33; --navy-light: #243660;
+      --gold: #B8975A; --gold-light: #cca96d;
+      --cream: #F7F4EF; --warm: #EDE8DF; --sand: #D4C9B4;
+      --charcoal: #2C2C2C; --white: #fff;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --radius: 6px;
+    }
+    html, body { height: 100%; overflow: hidden; }
+    body {
+      background: var(--navy-dark);
+      color: var(--cream);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    .ex-header {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: var(--navy-dark);
+    }
+    .ex-logo {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .ex-logo span { font-weight: 400; color: var(--gold); }
+    .ex-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(184,151,90,0.35);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+    }
+    .ex-counter {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(247,244,239,0.4);
+    }
+    .ex-counter strong { color: var(--cream); }
+
+    /* ── PROGRESS BAR ── */
+    .ex-progress {
+      flex-shrink: 0;
+      height: 3px;
+      background: rgba(255,255,255,0.06);
+    }
+    .ex-progress-bar {
+      height: 100%;
+      background: var(--gold);
+      transition: width 0.4s ease;
+    }
+
+    /* ── MAIN ── */
+    .ex-main {
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem 1.5rem 1rem;
+      max-width: 640px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ── CARD ── */
+    .ex-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      animation: fadeSlide 0.35s ease both;
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .ex-group {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.75;
+    }
+    .ex-context {
+      font-size: 0.82rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(247,244,239,0.45);
+      line-height: 1.5;
+      border-left: 2px solid rgba(184,151,90,0.25);
+      padding-left: 0.75rem;
+    }
+    .ex-expression {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 5vw, 2.4rem);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── ACTION BUTTONS ── */
+    .ex-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .btn-listen, .btn-record, .btn-reveal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      border: none;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      padding: 0.9rem 1.5rem;
+      transition: all 0.2s;
+      width: 100%;
+    }
+    .btn-listen {
+      background: var(--gold);
+      color: var(--navy-dark);
+    }
+    .btn-listen:hover { background: var(--gold-light); }
+    .btn-listen:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-listen.playing {
+      background: rgba(184,151,90,0.2);
+      color: var(--gold);
+      border: 1px solid rgba(184,151,90,0.4);
+    }
+
+    .btn-record {
+      background: rgba(255,255,255,0.05);
+      color: rgba(247,244,239,0.75);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .btn-record:hover { background: rgba(255,255,255,0.1); color: var(--cream); }
+    .btn-record.recording {
+      background: rgba(220,50,50,0.15);
+      color: #f87171;
+      border-color: rgba(220,50,50,0.3);
+      animation: pulse 1.2s ease infinite;
+    }
+    .btn-record.has-recording {
+      background: rgba(100,200,100,0.1);
+      color: #86efac;
+      border-color: rgba(100,200,100,0.25);
+    }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.65; } }
+
+    .btn-reveal {
+      background: transparent;
+      color: rgba(247,244,239,0.35);
+      border: 1px solid rgba(255,255,255,0.07);
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+    .btn-reveal:hover { color: rgba(247,244,239,0.65); border-color: rgba(255,255,255,0.15); }
+
+    /* ── TRANSLATION ── */
+    .ex-translation {
+      background: rgba(184,151,90,0.08);
+      border: 1px solid rgba(184,151,90,0.2);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--gold);
+      font-style: italic;
+      text-align: center;
+      display: none;
+      animation: fadeSlide 0.3s ease both;
+    }
+    .ex-translation.visible { display: block; }
+
+    /* ── STATUS DOTS ── */
+    .ex-status {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      transition: background 0.3s;
+    }
+    .status-dot.done { background: var(--gold); }
+
+    /* ── NAVIGATION ── */
+    .ex-nav {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .btn-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      color: rgba(247,244,239,0.45);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.6rem 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-nav:hover { color: var(--cream); border-color: rgba(255,255,255,0.25); }
+    .btn-nav:disabled { opacity: 0.2; cursor: not-allowed; }
+    .btn-next-main {
+      flex: 1;
+      background: var(--navy-light);
+      border: none;
+      border-radius: var(--radius);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.7rem 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .btn-next-main:hover { background: #2e4a80; }
+
+    /* ── INTRO SCREEN ── */
+    .screen-intro {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      max-width: 520px;
+      margin: 0 auto;
+      width: 100%;
+      gap: 1.5rem;
+    }
+    .intro-month { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+    .intro-title { font-family: var(--font-display); font-size: clamp(1.8rem, 6vw, 2.8rem); font-weight: 400; color: var(--cream); line-height: 1.2; }
+    .intro-title em { color: var(--gold); font-style: italic; }
+    .intro-desc { font-size: 0.9rem; font-weight: 300; color: rgba(247,244,239,0.6); line-height: 1.75; max-width: 380px; }
+    .intro-steps { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; text-align: left; }
+    .intro-step {
+      display: flex; align-items: center; gap: 0.75rem;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius); padding: 0.75rem 1rem;
+    }
+    .intro-step-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .intro-step-text { font-size: 0.82rem; color: rgba(247,244,239,0.65); line-height: 1.4; }
+    .intro-step-text strong { color: var(--cream); font-weight: 600; }
+    .btn-start {
+      background: var(--gold); color: var(--navy-dark);
+      border: none; border-radius: var(--radius);
+      font-family: var(--font-body); font-size: 1rem; font-weight: 700;
+      padding: 1rem 2.5rem; cursor: pointer;
+      transition: background 0.2s; width: 100%; max-width: 320px;
+      letter-spacing: 0.03em;
+    }
+    .btn-start:hover { background: var(--gold-light); }
+
+    /* ── END SCREEN ── */
+    .screen-end {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      max-width: 520px;
+      margin: 0 auto;
+      width: 100%;
+      gap: 1.5rem;
+    }
+    .end-trophy { font-size: 3.5rem; }
+    .end-title { font-family: var(--font-display); font-size: clamp(1.8rem, 6vw, 2.5rem); font-weight: 400; color: var(--cream); line-height: 1.2; }
+    .end-title em { color: var(--gold); font-style: italic; }
+    .end-desc { font-size: 0.9rem; font-weight: 300; color: rgba(247,244,239,0.6); line-height: 1.75; }
+    .end-next {
+      background: rgba(184,151,90,0.1); border: 1px solid rgba(184,151,90,0.25);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+      width: 100%; text-align: left;
+    }
+    .end-next-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .end-next-title { font-family: var(--font-display); font-size: 1rem; color: var(--cream); }
+    .btn-restart {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius); color: rgba(247,244,239,0.6);
+      font-family: var(--font-body); font-size: 0.82rem; font-weight: 500;
+      padding: 0.75rem 1.5rem; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-restart:hover { color: var(--cream); border-color: rgba(255,255,255,0.25); }
+
+    /* ── HIDDEN ── */
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="ex-header">
+  <div>
+    <div class="ex-logo">Sound<span>Less</span>French</div>
+  </div>
+  <div class="ex-badge">Mois 01</div>
+  <div class="ex-counter" id="counter"><strong>0</strong>/25</div>
+</header>
+
+<!-- PROGRESS -->
+<div class="ex-progress">
+  <div class="ex-progress-bar" id="progressBar" style="width:0%"></div>
+</div>
+
+<!-- INTRO SCREEN -->
+<div class="screen-intro" id="screenIntro">
+  <div class="intro-month">Sound Less French · Mois 01 / 12</div>
+  <h1 class="intro-title">Interrupting<br><em>Naturally</em></h1>
+  <p class="intro-desc">25 expressions pour intervenir en réunion anglaise — sans chercher vos mots, sans sonner français.</p>
+  <div class="intro-steps">
+    <div class="intro-step">
+      <span class="intro-step-icon">🔊</span>
+      <div class="intro-step-text"><strong>Écoutez</strong> chaque expression prononcée par une voix anglophone naturelle.</div>
+    </div>
+    <div class="intro-step">
+      <span class="intro-step-icon">🎙️</span>
+      <div class="intro-step-text"><strong>Enregistrez-vous</strong> et réécoutez-vous. C'est là que l'ancrage se fait.</div>
+    </div>
+    <div class="intro-step">
+      <span class="intro-step-icon">🇫🇷</span>
+      <div class="intro-step-text"><strong>Découvrez</strong> la traduction française après avoir pratiqué à l'oral.</div>
+    </div>
+  </div>
+  <button class="btn-start" onclick="startExercise()">Commencer l'exercice →</button>
+</div>
+
+<!-- EXERCISE SCREEN -->
+<div class="ex-main hidden" id="screenExercise">
+  <div class="ex-card" id="exCard">
+    <div class="ex-group" id="exGroup"></div>
+    <p class="ex-context" id="exContext"></p>
+    <div class="ex-expression" id="exExpression"></div>
+    <div class="ex-actions">
+      <button class="btn-listen" id="btnListen" onclick="listenExpression()">
+        <span>🔊</span> <span id="listenLabel">Écouter</span>
+      </button>
+      <button class="btn-record" id="btnRecord" onclick="toggleRecord()">
+        <span id="recordIcon">🎙️</span> <span id="recordLabel">M'enregistrer</span>
+      </button>
+      <button class="btn-reveal" id="btnReveal" onclick="revealTranslation()">
+        👁️ Voir la traduction française
+      </button>
+    </div>
+    <div class="ex-translation" id="exTranslation"></div>
+    <div class="ex-status" id="exStatus"></div>
+  </div>
+
+  <nav class="ex-nav">
+    <button class="btn-nav" id="btnPrev" onclick="goTo(current-1)" disabled>← Précédent</button>
+    <button class="btn-next-main" id="btnNext" onclick="goNext()">Suivant →</button>
+  </nav>
+</div>
+
+<!-- END SCREEN -->
+<div class="screen-end hidden" id="screenEnd">
+  <div class="end-trophy">🏆</div>
+  <h2 class="end-title">Exercice<br><em>terminé !</em></h2>
+  <p class="end-desc">Vous avez travaillé les 25 expressions du Mois 01. Revenez les pratiquer régulièrement — la répétition espacée ancre l'automatisme.</p>
+  <div class="end-next">
+    <div class="end-next-label">Mois 02 · À venir</div>
+    <div class="end-next-title">Agreeing & Disagreeing Diplomatically</div>
+  </div>
+  <button class="btn-restart" onclick="restart()">↺ Recommencer depuis le début</button>
+</div>
+
+<script>
+const expressions = [
+  // Groupe A
+  { en: "Can I jump in for a second?", fr: "Je peux intervenir une seconde ?", context: "La plus naturelle — utilisable dans toutes les réunions", group: "Interruptions douces" },
+  { en: "Sorry to cut in, but...", fr: "Désolé de vous couper, mais...", context: "Poli — reconnaît qu'on interrompt", group: "Interruptions douces" },
+  { en: "If I could just add something here...", fr: "Si je peux juste ajouter quelque chose...", context: "Très professionnel, non-intrusif", group: "Interruptions douces" },
+  { en: "Could I just say something quickly?", fr: "Est-ce que je peux juste dire quelque chose rapidement ?", context: "Doux — demande la permission avant d'intervenir", group: "Interruptions douces" },
+  { en: "I don't want to interrupt, but...", fr: "Je ne veux pas interrompre, mais...", context: "Auto-contradictoire — et pourtant très naturel en anglais", group: "Interruptions douces" },
+  // Groupe B
+  { en: "Can I just pick up on that?", fr: "Je peux rebondir là-dessus ?", context: "Pour réagir immédiatement à un point précis", group: "Rebondir sur ce qui vient d'être dit" },
+  { en: "Just to build on what you said...", fr: "Pour appuyer ce que vous venez de dire...", context: "Constructif — montre qu'on a écouté activement", group: "Rebondir sur ce qui vient d'être dit" },
+  { en: "That's a great point — and it makes me think...", fr: "C'est un excellent point — et ça me fait penser...", context: "Pour enchaîner naturellement après quelqu'un", group: "Rebondir sur ce qui vient d'être dit" },
+  { en: "Going back to what [name] said...", fr: "En revenant à ce que [prénom] a dit...", context: "Pour référencer et valoriser un collègue", group: "Rebondir sur ce qui vient d'être dit" },
+  { en: "Actually, can I just add to that?", fr: "En fait, puis-je juste ajouter à ça ?", context: "« Actually » = signal naturel d'intervention en anglais", group: "Rebondir sur ce qui vient d'être dit" },
+  // Groupe C
+  { en: "Can we just pause on that for a second?", fr: "On peut juste faire une pause là-dessus ?", context: "Pour marquer un point important avant de continuer", group: "Demander une pause" },
+  { en: "Hold on — I want to flag something.", fr: "Attendez — je veux signaler quelque chose.", context: "Urgent — signale une info critique qui ne peut pas attendre", group: "Demander une pause" },
+  { en: "Before we move on, can I just say...", fr: "Avant de passer à la suite, puis-je juste dire...", context: "Pour retenir le fil avant un changement de sujet", group: "Demander une pause" },
+  { en: "Sorry, can I stop you there?", fr: "Désolé, je peux vous arrêter là ?", context: "Direct mais tout à fait correct en réunion professionnelle", group: "Demander une pause" },
+  { en: "Let me just stop you there for a moment.", fr: "Laissez-moi juste vous arrêter un moment.", context: "Plus assertif — pour les managers ou team leads", group: "Demander une pause" },
+  // Groupe D
+  { en: "Sorry for cutting in, but this is important.", fr: "Désolé de couper, mais c'est important.", context: "Justifie l'interruption directement — efficace et clair", group: "Interventions urgentes" },
+  { en: "Wait — I think this is worth flagging.", fr: "Attendez — je pense que ça mérite d'être signalé.", context: "Pour une information urgente qui change la discussion", group: "Interventions urgentes" },
+  { en: "I hate to interrupt, but...", fr: "Je déteste interrompre, mais...", context: "Atténue l'interruption — très utilisé par les natifs", group: "Interventions urgentes" },
+  { en: "Just quickly — before we lose this...", fr: "Juste rapidement — avant qu'on passe à autre chose...", context: "Pour ne pas perdre un point avant le changement de sujet", group: "Interventions urgentes" },
+  { en: "Can I throw something in here?", fr: "Je peux apporter quelque chose là ?", context: "Informel mais professionnel — ton dynamique", group: "Interventions urgentes" },
+  // Groupe E
+  { en: "Can we circle back to that?", fr: "On peut revenir là-dessus ?", context: "« Circle back » = expression clé des réunions anglo-saxonnes", group: "Revenir en arrière" },
+  { en: "I'd like to come back to something you said earlier.", fr: "J'aimerais revenir sur quelque chose que vous avez dit plus tôt.", context: "Pour rappeler un point oublié ou glissé sous le tapis", group: "Revenir en arrière" },
+  { en: "Sorry — can we just go back to...?", fr: "Désolé — on peut juste revenir à... ?", context: "Simple et direct pour reprendre le fil de la discussion", group: "Revenir en arrière" },
+  { en: "I want to make sure we don't lose the point about...", fr: "Je veux m'assurer qu'on ne perde pas le point sur...", context: "Pour ancrer une idée importante avant la suite", group: "Revenir en arrière" },
+  { en: "Just one thing before we move on...", fr: "Juste une chose avant de continuer...", context: "La plus universelle — fonctionne dans tous les contextes", group: "Revenir en arrière" },
+];
+
+let current = 0;
+let listened = new Array(expressions.length).fill(false);
+let revealed = new Array(expressions.length).fill(false);
+let isPlaying = false;
+let isRecording = false;
+let hasRecording = false;
+let mediaRecorder = null;
+let audioChunks = [];
+let recordedBlob = null;
+let recordingAudio = null;
+let stream = null;
+
+// Voice
+let voices = [];
+let selectedVoice = null;
+
+function loadVoices() {
+  voices = window.speechSynthesis.getVoices();
+  const preferred = [
+    'Google UK English Female', 'Google UK English Male',
+    'Google US English', 'Samantha', 'Alex', 'Karen', 'Daniel'
+  ];
+  for (const name of preferred) {
+    const v = voices.find(v => v.name === name);
+    if (v) { selectedVoice = v; break; }
+  }
+  if (!selectedVoice) {
+    selectedVoice = voices.find(v => v.lang && v.lang.startsWith('en')) || null;
+  }
+}
+
+window.speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+
+function startExercise() {
+  // Restore progress
+  const saved = localStorage.getItem('slm01_current');
+  if (saved && parseInt(saved) > 0 && parseInt(saved) < expressions.length) {
+    current = parseInt(saved);
+  } else {
+    current = 0;
+  }
+  listened = JSON.parse(localStorage.getItem('slm01_listened') || '[]');
+  if (listened.length !== expressions.length) listened = new Array(expressions.length).fill(false);
+  revealed = JSON.parse(localStorage.getItem('slm01_revealed') || '[]');
+  if (revealed.length !== expressions.length) revealed = new Array(expressions.length).fill(false);
+
+  document.getElementById('screenIntro').classList.add('hidden');
+  document.getElementById('screenExercise').classList.remove('hidden');
+  render();
+}
+
+function render() {
+  const expr = expressions[current];
+
+  // Reset recording state on navigation
+  hasRecording = false;
+  isRecording = false;
+  if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; }
+
+  // Header
+  document.getElementById('counter').innerHTML = `<strong>${current + 1}</strong>/25`;
+  document.getElementById('progressBar').style.width = `${((current + 1) / expressions.length) * 100}%`;
+
+  // Card - animate
+  const card = document.getElementById('exCard');
+  card.style.animation = 'none';
+  void card.offsetWidth;
+  card.style.animation = '';
+
+  document.getElementById('exGroup').textContent = expr.group;
+  document.getElementById('exContext').textContent = expr.context;
+  document.getElementById('exExpression').textContent = `"${expr.en}"`;
+
+  // Listen button
+  const btnListen = document.getElementById('btnListen');
+  btnListen.className = 'btn-listen';
+  btnListen.disabled = false;
+  document.getElementById('listenLabel').textContent = listened[current] ? 'Réécouter' : 'Écouter';
+
+  // Record button
+  const btnRecord = document.getElementById('btnRecord');
+  btnRecord.className = 'btn-record';
+  document.getElementById('recordIcon').textContent = '🎙️';
+  document.getElementById('recordLabel').textContent = "M'enregistrer";
+
+  // Translation
+  const trans = document.getElementById('exTranslation');
+  trans.textContent = `🇫🇷 ${expr.fr}`;
+  trans.classList.toggle('visible', revealed[current]);
+  document.getElementById('btnReveal').style.display = revealed[current] ? 'none' : '';
+
+  // Nav
+  document.getElementById('btnPrev').disabled = current === 0;
+  document.getElementById('btnNext').textContent = current === expressions.length - 1 ? 'Terminer ✓' : 'Suivant →';
+
+  // Status dots
+  renderDots();
+
+  // Save progress
+  localStorage.setItem('slm01_current', current);
+}
+
+function renderDots() {
+  const el = document.getElementById('exStatus');
+  el.innerHTML = '';
+  const show = 5;
+  const start = Math.max(0, Math.min(current - 2, expressions.length - show));
+  for (let i = start; i < Math.min(start + show, expressions.length); i++) {
+    const d = document.createElement('div');
+    d.className = 'status-dot' + (listened[i] ? ' done' : '');
+    if (i === current) d.style.background = 'var(--cream)';
+    el.appendChild(d);
+  }
+}
+
+function listenExpression() {
+  if (isPlaying) { window.speechSynthesis.cancel(); isPlaying = false; resetListenBtn(); return; }
+
+  const expr = expressions[current];
+  const utterance = new SpeechSynthesisUtterance(expr.en);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.85;
+  utterance.pitch = 1.0;
+  if (selectedVoice) utterance.voice = selectedVoice;
+
+  isPlaying = true;
+  const btn = document.getElementById('btnListen');
+  btn.className = 'btn-listen playing';
+  document.getElementById('listenLabel').textContent = '⏸ En cours...';
+
+  utterance.onend = () => {
+    isPlaying = false;
+    listened[current] = true;
+    localStorage.setItem('slm01_listened', JSON.stringify(listened));
+    resetListenBtn();
+    renderDots();
+  };
+  utterance.onerror = () => { isPlaying = false; resetListenBtn(); };
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function resetListenBtn() {
+  const btn = document.getElementById('btnListen');
+  btn.className = 'btn-listen';
+  btn.disabled = false;
+  document.getElementById('listenLabel').textContent = listened[current] ? 'Réécouter' : 'Écouter';
+}
+
+async function toggleRecord() {
+  if (isRecording) {
+    stopRecording();
+  } else if (hasRecording) {
+    // Play back recording
+    if (recordingAudio) {
+      recordingAudio.currentTime = 0;
+      recordingAudio.play();
+      document.getElementById('recordLabel').textContent = '▶ Lecture...';
+      recordingAudio.onended = () => {
+        document.getElementById('recordIcon').textContent = '▶';
+        document.getElementById('recordLabel').textContent = 'Rejouer mon enregistrement';
+      };
+    }
+  } else {
+    await startRecording();
+  }
+}
+
+async function startRecording() {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    audioChunks = [];
+    mediaRecorder = new MediaRecorder(stream);
+    mediaRecorder.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
+    mediaRecorder.onstop = () => {
+      recordedBlob = new Blob(audioChunks, { type: 'audio/webm' });
+      const url = URL.createObjectURL(recordedBlob);
+      recordingAudio = new Audio(url);
+      hasRecording = true;
+      isRecording = false;
+      const btn = document.getElementById('btnRecord');
+      btn.className = 'btn-record has-recording';
+      document.getElementById('recordIcon').textContent = '▶';
+      document.getElementById('recordLabel').textContent = 'Rejouer mon enregistrement';
+      stream.getTracks().forEach(t => t.stop());
+    };
+    mediaRecorder.start();
+    isRecording = true;
+    const btn = document.getElementById('btnRecord');
+    btn.className = 'btn-record recording';
+    document.getElementById('recordIcon').textContent = '⏹';
+    document.getElementById('recordLabel').textContent = 'Arrêter l\'enregistrement';
+  } catch (e) {
+    alert('Microphone non disponible. Vérifiez les permissions de votre navigateur.');
+  }
+}
+
+function stopRecording() {
+  if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+    mediaRecorder.stop();
+  }
+}
+
+function revealTranslation() {
+  revealed[current] = true;
+  localStorage.setItem('slm01_revealed', JSON.stringify(revealed));
+  const trans = document.getElementById('exTranslation');
+  trans.classList.add('visible');
+  document.getElementById('btnReveal').style.display = 'none';
+}
+
+function goTo(index) {
+  if (index < 0 || index >= expressions.length) return;
+  window.speechSynthesis.cancel();
+  current = index;
+  render();
+}
+
+function goNext() {
+  window.speechSynthesis.cancel();
+  if (current === expressions.length - 1) {
+    showEnd();
+  } else {
+    current++;
+    localStorage.setItem('slm01_current', current);
+    render();
+  }
+}
+
+function showEnd() {
+  document.getElementById('screenExercise').classList.add('hidden');
+  document.getElementById('screenEnd').classList.remove('hidden');
+  localStorage.removeItem('slm01_current');
+}
+
+function restart() {
+  current = 0;
+  listened = new Array(expressions.length).fill(false);
+  revealed = new Array(expressions.length).fill(false);
+  localStorage.removeItem('slm01_current');
+  localStorage.removeItem('slm01_listened');
+  localStorage.removeItem('slm01_revealed');
+  document.getElementById('screenEnd').classList.add('hidden');
+  document.getElementById('screenExercise').classList.remove('hidden');
+  render();
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  if (document.getElementById('screenExercise').classList.contains('hidden')) return;
+  if (e.key === 'ArrowRight' || e.key === 'Enter') goNext();
+  if (e.key === 'ArrowLeft') goTo(current - 1);
+  if (e.key === ' ') { e.preventDefault(); listenExpression(); }
+});
+</script>
+</body>
+</html>
